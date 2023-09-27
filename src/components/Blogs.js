@@ -11,29 +11,37 @@ import watar_rift from "../images/water-rifting.jpg";
 
 const Blogs = () => {
   return (
-    <div className="w-4/5 m-auto mt-20">
-      <h1 className="font-bold text-6xl">Popular Destinations</h1>
+    <div className="w-4/5 m-auto mt-32">
+      <div className="text-center"></div>
+      <h1 className="text-4xl text-center my-5">POPULAR DESTINATIONS TO GO</h1>
+      <p className="text-center">
+        You are the type of person who wants to take amazing unique
+        vacations-the kink where luxury meets authentic, and each experience
+        above all else and are differentiated by serving their needs first - we
+        want to make their hectic and stressful lives easier by enabling them to
+        forcus on enjoying their vacation and ensuring they get the most.
+      </p>
       <div className="grid grid-flow-row grid-cols-3 gap-5 mt-10">
-        <div className="bg-red-200 col-span-2 row-span-2">
-          <img src={beach_3} alt="" className="h-full" />
+        <div className="col-span-2 row-span-2">
+          <img src={beach_3} alt="" className="h-full rounded-xl" />
         </div>
-        <div className="bg-red-300 row-span-2">
-          <img src={beach_2} alt="" className="h-full" />
+        <div className="row-span-2">
+          <img src={beach_2} alt="" className="h-full rounded-xl" />
         </div>
-        <div className="bg-red-400">
-          <img src={oruva} alt="" className="h-full" />
+        <div className="">
+          <img src={oruva} alt="" className="h-full rounded-xl" />
         </div>
-        <div className="bg-red-600">
-          <img src={elephant} alt="" className="h-full" />
+        <div className="">
+          <img src={elephant} alt="" className="h-full rounded-xl" />
         </div>
-        <div className="bg-red-800">
-          <img src={perahara} alt="" className="h-full" />
+        <div className="">
+          <img src={perahara} alt="" className="h-full rounded-xl" />
         </div>
-        <div className="bg-red-800">
-          <img src={train} alt="" className="h-full" />
+        <div className="">
+          <img src={train} alt="" className="h-full rounded-xl" />
         </div>{" "}
-        <div className="bg-red-800 col-span-2">
-          <img src={watar_rift} alt="" className="h-full" />
+        <div className="col-span-2">
+          <img src={watar_rift} alt="" className="h-full rounded-xl" />
         </div>
       </div>
     </div>
