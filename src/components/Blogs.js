@@ -1,5 +1,4 @@
 import React from "react";
-import beach_1 from "../images/beach-1.jpg";
 import beach_2 from "../images/beach-2.jpeg";
 import beach_3 from "../images/beach-3.jpg";
 import elephant from "../images/elephant.jpg";

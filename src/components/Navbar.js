@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "./Hero";
-import image from "../images/tourist image 1.jpg";
 
 const Navbar = () => {
   return (
