@@ -5,13 +5,14 @@ const Navbar = () => {
   return (
     <div>
       <div className="flex justify-between px-8 my-5 absolute top-0 left-0 w-full z-10 font-semibold text-white text-lg">
-        <div>JAGATH TRAVELS</div>
+        <div>Genius Lanka Tours</div>
         <div className="w-1/3">
           <ul className="flex justify-around">
             <li>Packages</li>
             <li>Blogs</li>
-            <li>Reviwes</li>
+            <li>reviews</li>
             <li>Contact us</li>
+            <li>About us</li>
           </ul>
         </div>
         <div>Register now</div>
