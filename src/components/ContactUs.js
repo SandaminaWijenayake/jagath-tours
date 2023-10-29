@@ -39,9 +39,7 @@ const ContactUs = () => {
           <div className="mt-10">
             <div className="flex my-5">
               <ApartmentIcon fontSize="large" />
-              <p className="ml-5 translate-y-1">
-                545 Mavis Island Chicago, IL 99191
-              </p>
+              <p className="ml-5 translate-y-1">545, Kaluwamodara, Aluthgama</p>
             </div>
             <div className="flex my-5">
               <LocalPhoneIcon fontSize="large" />{" "}
