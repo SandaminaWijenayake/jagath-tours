@@ -10,7 +10,7 @@ const SriLanka = () => {
         <div className="w-6/12">
           <h1 className="text-4xl  my-5">What is Sri Lanka?</h1>
           <p className="text-xl mt-10 text-justify">
-            Sri lanka Officially, the democratic socialist republic of Sri Lanka
+            Sri Lanka officially, the democratic socialist republic of Sri Lanka
             is an island country located to the southeast of India. Being a
             democracy Free elections are held every five years to choose a
             president and its government. In ancient times, it was known by
@@ -56,7 +56,7 @@ const SriLanka = () => {
         Recent excavations show that even during the Neolithic Age, there were
         food gatherers and rice cultivators in Sri Lanka.
       </p>
-      <p className="text-xl mt-10 text-justify mt-5">
+      <p className="text-xl mt-5 text-justify">
         The Mahavansa relates that the island was conquered in 504 BC by Vijaya,
         a hindu prince from Northeast India. After subjugating the aboriginal
         inhabitants, a people now know as Veddas, vijaya married a native
@@ -161,6 +161,14 @@ const SriLanka = () => {
       <p className="text-xl mt-5 text-justify">
         A variety of cuisines are available, which include both eastern and
         western Chinese and local dishes.
+      </p>
+
+      <p className="text-xl mt-10 text-justify">
+        <h1 className="text-4xl  my-5">Travel Guides</h1>
+        Our Sri Lanka Travel Guides will tell you all you need to know about
+        visiting the wonderful island of Sri Lanka. Tourist guides provides the
+        visitor with in depth knowledge in their mother tongue, all
+        language speaking
       </p>
     </div>
   );

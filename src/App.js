@@ -1,23 +1,30 @@
 import Navbar from "./components/Navbar";
-import Section1 from "./components/Section1";
-import Blogs from "./components/Blogs";
-import Section2 from "./components/Section2";
-import Accodion from "./components/Accodion";
-import SriLanka from "./components/SriLanka";
-import Footer from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
+import Layout from "./components/Layout";
+import Packages from "./components/Packages";
+import BlogContent from "./components/BlogContent";
+import Reviews from "./components/Reviews";
+import ContactUs from "./components/ContactUs";
+import Create from "./components/Create";
 
-function App() {
+const App = () => {
   return (
     <>
-      <Navbar />
-      <Section1 />
-      <SriLanka />
-      <Blogs />
-      <Section2 />
-      <Accodion />
-      <Footer />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/Packages" element={<Packages />} />
+          <Route path="/Blogs" element={<BlogContent />} />
+          <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/Contact_us" element={<ContactUs />} />
+          <Route path="/About_us" element={<AboutUs />} />
+          <Route path="/Create" element={<Create />} />
+        </Route>
+      </Routes>
     </>
   );
-}
+};
 
 export default App;
