@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="flex justify-between px-8 my-4 top-0 left-0 w-full z-10 font-semibold  text-lg">
+      <div className="flex justify-between px-8 top-0 left-0 w-full z-10 font-semibold fixed bg-white p-4 text-lg">
         <div className="translate-y-1">
           <Link to="/" className="hover:text-sky-500">
             Genius Lanka Tours

@@ -2,6 +2,9 @@ import React from "react";
 import image from "../images/sri-lanka-tourist-map.jpg";
 import image1 from "../images/New folder/lep.webp";
 import image2 from "../images/water-rifting.jpg";
+import Lottie from "lottie-react";
+import animationData from "../images/svg/Animation - 1698640438657.json";
+import animationData2 from "../images/svg/Animation - 1698641345767.json";
 
 const SriLanka = () => {
   return (
@@ -162,14 +165,18 @@ const SriLanka = () => {
         A variety of cuisines are available, which include both eastern and
         western Chinese and local dishes.
       </p>
-
-      <p className="text-xl mt-10 text-justify">
-        <h1 className="text-4xl  my-5">Travel Guides</h1>
-        Our Sri Lanka Travel Guides will tell you all you need to know about
-        visiting the wonderful island of Sri Lanka. Tourist guides provides the
-        visitor with in depth knowledge in their mother tongue, all
-        language speaking
-      </p>
+      <div className="flex mt-10">
+        <div className="w-1/3">
+          <Lottie animationData={animationData2} />
+        </div>
+        <p className="text-xl mt-10 text-justify w-2/3 ml-10">
+          <h1 className="text-4xl  my-5">Travel Guides</h1>
+          Our Sri Lanka Travel Guides will tell you all you need to know about
+          visiting the wonderful island of Sri Lanka. Tourist guides provides
+          the visitor with in depth knowledge in their mother tongue, all
+          language speaking
+        </p>
+      </div>
     </div>
   );
 };

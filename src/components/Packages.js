@@ -13,7 +13,7 @@ const Packages = () => {
         <h1 className="pb-5 font-semibold text-xl text-sky-700">
           Three Days (Two Nights Tour Packages)
         </h1>
-        <table id="customers" className="">
+        <table id="packageTable" className="">
           <tr>
             <th className="w-14">No</th>
             <th>Tour name</th>

@@ -9,6 +9,8 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import Button from "@mui/material/Button";
+import Lottie from "lottie-react";
+import animationData from "../images/svg/Animation - 1698642072236.json";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -25,7 +27,7 @@ const ContactUs = () => {
         <p className="text-5xl font-light mb-0">LET'S KEEP IN TOUCH</p>
         <h1 className="text-7xl font-bold">CONTACT US</h1>
       </div>
-      <div className="overflow-hidden mb-16">
+      <div className="overflow-hidden mb-16 mt-16">
         <img src={image} alt="" className="" />
       </div>
       <div className="flex w-5/6 m-auto">
@@ -121,6 +123,7 @@ const ContactUs = () => {
           <div className="mt-5 flex justify-end">
             <Button variant="contained">send message</Button>
           </div>
+          <div>{/* <Lottie animationData={animationData} /> */}</div>
         </div>
       </div>
     </>

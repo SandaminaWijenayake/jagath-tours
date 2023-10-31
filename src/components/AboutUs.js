@@ -5,6 +5,8 @@ import about2 from "../images/about/photo-1623595289196-007a22dd8560.avif";
 import about3 from "../images/about/photo-1585171328560-947fbd92d6f0.jpeg";
 import about4 from "../images/about/photo-1627895457805-c7bf42cb9873.png";
 import about5 from "../images/about/photo-1665194653893-e5c58037fd0b.avif";
+import Lottie from "lottie-react";
+import animationData from "../images/svg/Animation - 1698642732391.json";
 
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -44,7 +46,7 @@ const AboutUs = () => {
               operators started liaising closely with me about their travel
               arrangements and tours. These tour operators were Finnmatkat
               (Scandinavian), Vingresor, Scan Tours, Tiaereborg, Ving Tours, My
-              Travel, Always Fritidsresor, Arurinko Matkat Tui Nordic, Tui, and
+              Travel, Always Fritidsresor, Arurinko Matkat, Tui Nordic, Tui, and
               Start Tour. I handled these travel operations under my travel
               company, Genius Lanka Tours. With the industry in Sri Lanka, I
               opened a seafood restaurant named Sunset Restaurant in Bentota
@@ -57,7 +59,8 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="w-1/2 h-32 mt-36">
-            <img className="rounded-xl" src={aboutusImage} alt="" />
+            <Lottie animationData={animationData} />
+            {/* <img className="rounded-xl" src={aboutusImage} alt="" /> */}
           </div>
         </div>
         <div className="flex">
