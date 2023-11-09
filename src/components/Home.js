@@ -15,7 +15,7 @@ const Home = () => {
       <SriLanka />
       <Blogs />
       <Section2 />
-      <Accodion />
+      {/* <Accodion /> */}
     </>
   );
 };

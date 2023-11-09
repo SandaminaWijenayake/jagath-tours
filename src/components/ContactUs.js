@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../images/New folder/edit2height.jpg";
+import image from "../images/New folder/contact.png";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
@@ -22,18 +22,22 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const ContactUs = () => {
   return (
-    <>
-      <div className="absolute text-white top-1/4 left-1/3 text-5xl font-sans  font-semibold  text-center">
-        <p className="text-5xl font-light mb-0">LET'S KEEP IN TOUCH</p>
-        <h1 className="text-7xl font-bold">CONTACT US</h1>
+    <div className="font-manrope">
+      <div className=" font-Roboto font-semibold mt-24 text-center">
+        <p className="lg:text-6xl text-4xl font-light mb-0">
+          LET'S KEEP IN TOUCH
+        </p>
+        <h1 className="lg:text-8xl text-5xl font-bold">CONTACT US</h1>
       </div>
-      <div className="overflow-hidden mb-16 mt-16">
-        <img src={image} alt="" className="" />
+      <div className="overflow-hidden mb-16 mt-5 lg:h-96 lg:w-10/12 m-auto lg:rounded-full rounded-s-full">
+        <img src={image} alt="" className="object-cover w-full" />
       </div>
-      <div className="flex w-5/6 m-auto">
-        <div className="w-1/2 mr-10">
-          <h1 className="text-5xl font-bold mb-10">Get in touch</h1>
-          <p className="text-xl text-gray-700">
+      <div className="lg:flex w-5/6 m-auto">
+        <div className="lg:w-1/2 lg:mr-10">
+          <h1 className="text-4xl font-semibold my-5 font-Roboto">
+            Get in touch
+          </h1>
+          <p className="text-xl text-gray-700 text-justify">
             We'd love to hear from you! For any questions, travel inquiries, or
             special requests, our team is ready to assist. Reach out to us to
             start planning your next unforgettable journey. Contact us today.
@@ -53,10 +57,10 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 ml-10">
+        <div className="lg:w-1/2 lg:ml-10 w-11/12 m-auto">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={4}>
-              <Grid item xs={6}>
+              <Grid item xs={12}>
                 <Box>
                   <TextField
                     id="outlined-basic"
@@ -68,7 +72,7 @@ const ContactUs = () => {
                   />
                 </Box>{" "}
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12}>
                 <Box>
                   <TextField
                     id="outlined-basic"
@@ -120,13 +124,13 @@ const ContactUs = () => {
               </Grid>
             </Grid>
           </Box>
-          <div className="mt-5 flex justify-end">
+          <div className="mt-5 flex justify-center lg:justify-end">
             <Button variant="contained">send message</Button>
           </div>
           <div>{/* <Lottie animationData={animationData} /> */}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

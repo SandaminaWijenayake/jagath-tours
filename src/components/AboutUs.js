@@ -27,7 +27,7 @@ const AboutUs = () => {
       <div className="w-11/12 m-auto">
         <div className="flex  mt-40">
           <div className="w-1/2">
-            <h1 className="text-6xl font-bold mb-10">Who We Are</h1>
+            <h1 className="lg:text-8xl text-5xl font-bold">Who We Are</h1>
             <p className="text-lg  w-5/6 text-gray-700">
               My name is Jagath Nilantha de Silva (Jagath de Silva). My family
               hails from Kaluwamodara Aluthgama in the Kaluthara district. This
@@ -59,8 +59,8 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="w-1/2 h-32 mt-36">
-            <Lottie animationData={animationData} />
-            {/* <img className="rounded-xl" src={aboutusImage} alt="" /> */}
+            {/* <Lottie animationData={animationData} /> */}
+            <img className="rounded-xl" src={aboutusImage} alt="" />
           </div>
         </div>
         <div className="flex">

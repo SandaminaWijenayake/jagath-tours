@@ -7,7 +7,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 const Footer = () => {
   return (
     <div className="bg-black h-full mt-20 rounded-t-lg text-white">
-      <div className="flex w-11/12 m-auto py-28">
+      {/* <div className="flex w-11/12 m-auto py-28">
         <div className="w-2/6 flex justify-around mx-10">
           <FacebookOutlinedIcon fontSize="large" />
           <TwitterIcon fontSize="large" />
@@ -54,7 +54,7 @@ const Footer = () => {
       <div className="w-11/12 m-auto border-slate-600 border-double border-t-2"></div>
       <p className="font-extralight text-sm w-11/12 m-auto py-5 ">
         © 2023 Jagath Travels, Inc. All rights reserved.
-      </p>
+      </p> */}
     </div>
   );
 };

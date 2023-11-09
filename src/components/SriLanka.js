@@ -1,17 +1,27 @@
 import React from "react";
 import image from "../images/sri-lanka-tourist-map.jpg";
-import image1 from "../images/New folder/lep.webp";
-import image2 from "../images/water-rifting.jpg";
+import image1 from "../images/New folder/lep.png";
+import image3 from "../images/New folder/lepperd.jpg";
+import image4 from "../images/New folder/yala-2.jpeg";
+
+//activity
+import activity_1 from "../images/New folder/activity_1.jpg";
+import activity_2 from "../images/New folder/Activity_2.jpg";
+import activity_3 from "../images/New folder/Activity_3.jpg";
+import activity_4 from "../images/New folder/activity_4.jpg";
+
 import Lottie from "lottie-react";
 import animationData from "../images/svg/Animation - 1698640438657.json";
 import animationData2 from "../images/svg/Animation - 1698641345767.json";
 
 const SriLanka = () => {
   return (
-    <div className="w-4/5 m-auto mt-20">
-      <div className="flex gap-10">
-        <div className="w-6/12">
-          <h1 className="text-4xl  my-5">What is Sri Lanka?</h1>
+    <div className="xl:w-4/5 m-auto mt-20 font-manrope w-11/12">
+      <div className="xl:flex lg:gap-10">
+        <div className="xl:w-6/12">
+          <h1 className="xl:text-4xl text-4xl my-5 font-semibold font-Roboto">
+            What is Sri Lanka?
+          </h1>
           <p className="text-xl mt-10 text-justify">
             Sri Lanka officially, the democratic socialist republic of Sri Lanka
             is an island country located to the southeast of India. Being a
@@ -21,8 +31,16 @@ const SriLanka = () => {
             Arabs called it Serendib. Before independence in 1948, it was called
             Ceylon.
           </p>
+          <img
+            src={image}
+            alt=""
+            className="rounded-md my-5 w-full xl:hidden"
+          />
+
           <p className="text-xl mt-10 text-justify">
-            <h1 className="text-4xl  my-5">Demograpy</h1>
+            <h1 className="text-4xl font-semibold my-5 font-Roboto">
+              Demograpy
+            </h1>
             Sri Lanka is home to a rich mixture of people. They are the
             Sinhalese, comprising 75% of the population of Tamils and Muslims.
             They practice a variety of religions, namely Buddhism, Hinduism and
@@ -32,7 +50,9 @@ const SriLanka = () => {
             country with a population of more than 20 million.
           </p>
           <p className="text-xl mt-10 text-justify">
-            <h1 className="text-4xl  my-5">Geography</h1>
+            <h1 className="text-4xl font-semibold my-5 font-Roboto">
+              Geography
+            </h1>
             Geographically, it is approximately 433km long, 244km wide, and 66
             000 square kilometres in extent. The coastal parts of Sri Lanka are
             the chief crops grown in these parts. The central parts are hilly.
@@ -41,7 +61,7 @@ const SriLanka = () => {
             close to the equator, it has a hot, wet climate.
           </p>
         </div>
-        <img src={image} alt="" className="w-6/12 rounded-md" />
+        <img src={image} alt="" className="w-6/12 rounded-md hidden xl:block" />
       </div>
 
       {/* <p className="text-xl mt-10">
@@ -53,7 +73,7 @@ const SriLanka = () => {
         equator, it has a hot, wet climate.
       </p> */}
       <p className="text-xl mt-10 text-justify">
-        <h1 className="text-4xl  my-5">History</h1>
+        <h1 className="text-4xl font-semibold my-5 font-Roboto">History</h1>
         Sri Lanka was ruled by Kings from ancient times as far back as the 3rd
         century B.C spanning over 2.500 years as recorded history depicts.
         Recent excavations show that even during the Neolithic Age, there were
@@ -80,7 +100,7 @@ const SriLanka = () => {
         southeast. both in succession became capitals of the Sinhalese kingdom.
       </p>
       <p className="text-xl mt-10 text-justify">
-        <h1 className="text-4xl  my-5">Wildlife</h1>
+        <h1 className="text-4xl font-semibold my-5 font-Roboto">Wildlife</h1>
         Sri Lanka is the Best for Big Game Safaris outside Africa. Its Big Five
         are the Elephant, Leopard, Sloth Bear, Blue and Sperm Whale. Few
         countries can rival its combination of Big Game safari animals, species
@@ -88,9 +108,41 @@ const SriLanka = () => {
         Island Safari. Sri Lanka offers with six most recommended wildlife
         safari Udawalwawe, Yala, Wilpattu, Minneriya national parks, Kaudulla
         and Eco park.
+        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0 text-base sm:text-xl">
+          <li>Udawalawa National Park</li>
+          <li>Yala National Park</li>
+          <li>Wilpattu National Park</li>
+          <li>Minneriya National Park</li>
+        </ul>
       </p>
+      <div className="lg:flex  lg:justify-between mt-12">
+        <div className="lg:w-1/3">
+          <img
+            src={image1}
+            alt=""
+            className="h-64 w-11/12 m-auto rounded-md object-cover"
+          />
+          <p className="text-center mt-4 font-medium"></p>
+        </div>
+        <div className="lg:w-1/3">
+          <img
+            src={image3}
+            alt=""
+            className="h-64 w-11/12 m-auto rounded-md object-cover"
+          />
+          <p className="text-center  mt-4 font-medium"></p>
+        </div>
+        <div className="lg:w-1/3">
+          <img
+            src={image4}
+            alt=""
+            className="h-64 w-11/12 m-auto rounded-md object-cover"
+          />
+          <p className="text-center  mt-4 font-medium"></p>
+        </div>
+      </div>
       <p className="text-xl mt-10 text-justify">
-        <h1 className="text-4xl  my-5">Activities</h1>
+        <h1 className="text-4xl font-semibold my-5 font-Roboto">Activities</h1>
         There's good swimming at any number of beaches along the south western
         coast with excellent scuba diving, snorkelling and surfing found at
         Hikkaduwa, Unawatuna and Weligama along with sailing, windsurfing and
@@ -104,24 +156,31 @@ const SriLanka = () => {
         Samanala Kanda (butterfly mountain). Climbing Sigiriya or Sinhagiri is
         an ancient rock fortress located in the northern Matale District near
         the town of Dambulla in the Central Province, Sri Lanka.
+        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0 text-base sm:text-xl">
+          <li>Water rafting- kithulgala </li>
+          <li>Ella rock climbing </li>
+          <li>Flying ravana</li>
+          <li>Sigiri rock climbing </li>
+          <li>Water sports Bentota</li>
+        </ul>
       </p>
 
-      <div className="flex  justify-between mt-12">
-        <div className="w-1/3">
-          <img src={image1} alt="" className="h-64 w-11/12 m-auto rounded-xl" />
-          <p className="text-center mt-4 font-medium">
-            Wildlife in Yala National Park
-          </p>
-        </div>
-        <div className="w-2/3">
-          <img src={image2} alt="" className="h-64 w-11/12 m-auto rounded-xl" />
-          <p className="text-center  mt-4 font-medium">
-            Water Rafting and Adventure Activities
-          </p>
-        </div>
+      <div className="lg:grid  lg:grid-cols-2 mt-12 lg:gap-4">
+        <img
+          src={activity_4}
+          alt=""
+          className="col-span-2 rounded-md object-cover h-44 sm:h-full"
+        />
+        <img src={activity_2} alt="" className="rounded-md object-cover mt-2" />
+        <img
+          src={activity_3}
+          alt=""
+          className="row-span-2 rounded-md object-cover mt-2"
+        />
+        <img src={activity_1} alt="" className="rounded-md object-cover mt-2" />
       </div>
       <p className="text-xl mt-10 text-justify">
-        <h1 className="text-4xl  my-5">Economy</h1>
+        <h1 className="text-4xl font-semibold my-5">Economy</h1>
         The currency in use is the Sri Lankan rupee. Sri Lanka, being a
         developing country, has initiated many development projects. The road
         network is constantly being improved with the opening of many road
@@ -142,7 +201,9 @@ const SriLanka = () => {
         from filtered wells for their own consumption.
       </p>
       <p className="text-xl mt-10 text-justify">
-        <h1 className="text-4xl  my-5">Sri Lankan Cuisines</h1>
+        <h1 className="text-3xl sm:text-4xl font-semibold my-5">
+          Sri Lankan Cuisines
+        </h1>
         Due to its tropical location and varied landscapes, Sri Lanka has a
         healthy supply of fresh vegetables and luscious fruits throughout the
         year; they are also organically grown in the rural regions of the
@@ -165,17 +226,20 @@ const SriLanka = () => {
         A variety of cuisines are available, which include both eastern and
         western Chinese and local dishes.
       </p>
-      <div className="flex mt-10">
-        <div className="w-1/3">
+      <div className="lg:flex mt-10">
+        <div className="lg:w-1/3 lg:block hidden lg:mt-10">
           <Lottie animationData={animationData2} />
         </div>
-        <p className="text-xl mt-10 text-justify w-2/3 ml-10">
-          <h1 className="text-4xl  my-5">Travel Guides</h1>
+        <p className="text-xl mt-10 text-justify lg:w-2/3 lg:ml-10">
+          <h1 className="text-4xl font-semibold my-5">Travel Guides</h1>
           Our Sri Lanka Travel Guides will tell you all you need to know about
           visiting the wonderful island of Sri Lanka. Tourist guides provides
           the visitor with in depth knowledge in their mother tongue, all
           language speaking
         </p>
+        <div className="lg:w-1/3 lg:hidden mt-10">
+          <Lottie animationData={animationData2} />
+        </div>
       </div>
     </div>
   );
