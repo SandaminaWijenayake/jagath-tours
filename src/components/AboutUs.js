@@ -1,10 +1,10 @@
 import React from "react";
 import aboutusImage from "../images/beach-1.jpg";
 import about1 from "../images/about/photo-1585171328560-947fbd92d6f0.jpeg";
-import about2 from "../images/about/photo-1623595289196-007a22dd8560.avif";
-import about3 from "../images/about/photo-1585171328560-947fbd92d6f0.jpeg";
+import about2 from "../images/about/photo-1623595289196-007a22dd8560.png";
+import about3 from "../images/about/tooth.jpg";
 import about4 from "../images/about/photo-1627895457805-c7bf42cb9873.png";
-import about5 from "../images/about/photo-1665194653893-e5c58037fd0b.avif";
+import about5 from "../images/about/photo-1665194653893-e5c58037fd0b.png";
 import Lottie from "lottie-react";
 import animationData from "../images/svg/Animation - 1698642732391.json";
 
@@ -24,11 +24,18 @@ const Item = styled(Paper)(({ theme }) => ({
 const AboutUs = () => {
   return (
     <>
-      <div className="w-11/12 m-auto">
-        <div className="flex  mt-40">
-          <div className="w-1/2">
-            <h1 className="lg:text-8xl text-5xl font-bold">Who We Are</h1>
-            <p className="text-lg  w-5/6 text-gray-700">
+      <div className="w-11/12 m-auto font-Roboto">
+        <h1 className="sm:text-6xl text-5xl font-bold mt-28 lg:text-left text-center">
+          Who We Are
+        </h1>
+        <div className="lg:flex lg:pt-14">
+          <div className="lg:w-1/2 text-justify">
+            <img
+              className="rounded-xl lg:hidden my-10"
+              src={aboutusImage}
+              alt=""
+            />
+            <p className="text-lg  lg:w-5/6 w-11/12 m-auto lg:m-0 text-gray-700">
               My name is Jagath Nilantha de Silva (Jagath de Silva). My family
               hails from Kaluwamodara Aluthgama in the Kaluthara district. This
               town is in close proximity to the world-famous Golden Mile, a
@@ -40,7 +47,13 @@ const AboutUs = () => {
               with the passage of time, I came into close contact with travel
               agents from Scandinavian and European countries.
             </p>
-            <p className="text-lg  mt-10 w-5/6 text-gray-700">
+            {/* <img
+              className="rounded-xl lg:hidden my-10"
+              src={aboutusImage}
+              alt=""
+            /> */}
+
+            <p className="text-lg  mt-10 lg:w-5/6 m-auto lg:m-0 lg:mt-10  w-11/12 text-gray-700">
               I started my trade as a guide cum driver. I was rewarded for my
               hard work, dedication, efficiency, and honesty. when the tour
               operators started liaising closely with me about their travel
@@ -58,15 +71,19 @@ const AboutUs = () => {
               security and safety at all times during your stay in Sri Lanka.
             </p>
           </div>
-          <div className="w-1/2 h-32 mt-36">
+          <div className="w-1/2 h-32 lg:mt-36">
             {/* <Lottie animationData={animationData} /> */}
-            <img className="rounded-xl" src={aboutusImage} alt="" />
+            <img
+              className="rounded-xl hidden lg:block"
+              src={aboutusImage}
+              alt=""
+            />
           </div>
         </div>
-        <div className="flex">
-          <div className="w-1/2 pt-96">
-            <h1 className="text-5xl  font-bold mb-10">Our Vision for You</h1>
-            <p className="text-xl  w-5/6 text-gray-700">
+        <div className="sm:flex">
+          <div className="sm:w-1/2 lg:pt-96 w-11/12 m-auto sm:m-0 md:pt-44">
+            <h1 className="text-5xl font-bold mb-10">Our Vision for You</h1>
+            <p className="text-xl  md:w-5/6 w-11/12 m-auto md:m-0 text-gray-700 text-justify">
               Our vision is to be your trusted partner in discovering the true
               essence of Sri Lanka. We aspire to create journeys that connect
               you with the country's culture, heritage, and natural beauty. When
@@ -74,13 +91,13 @@ const AboutUs = () => {
               an adventure.
             </p>
           </div>
-          <div className="flex w-1/2 h-96 mb-96 pb-10 ">
+          <div className="flex sm:w-1/2 h-96 mb-96 pb-10 pt-10 md:pt-0">
             <div className="w-1/3 mx-2 mt-80 h-full ">
               <img className="rounded-lg" src={about1} alt="" />
             </div>
             <div className="w-1/3  mx-2 mt-40 h-full">
               <img className="rounded-lg my-4" src={about2} alt="" />
-              <img className="rounded-lg" src={about5} alt="" />
+              <img className="rounded-lg object-cover" src={about3} alt="" />
             </div>
             <div className="w-1/3  mx-2 h-full">
               <img className="rounded-lg my-4" src={about4} alt="" />
@@ -88,17 +105,17 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className=" mt-40 pb-32">
-          <div className="w-1/2 mb-16">
+        <div className=" md:mt-40 pb-32">
+          <div className="xl:w-1/2 mb-16">
             <h1 className="text-5xl mt-16 font-bold mb-10">
               Why Choose Genius Lanka Tours?
             </h1>
-            <p className="text-xl  w-5/6 text-gray-700">
+            <p className="text-xl  sm:w-5/6 text-gray-700">
               Join us at Genius Lanka Tours, and let's embark on a journey that
               will forever change the way you see Sri Lanka.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-14">
+          <div className="sm:grid grid-cols-3 gap-14">
             <div className="">
               <h1 className="text-lg font-semibold">Local Expertise</h1>
               <p className=" text-gray-700 text-lg">
@@ -106,7 +123,7 @@ const AboutUs = () => {
                 taking you off the beaten path to discover hidden gems.
               </p>
             </div>
-            <div className="">
+            <div className="mt-5 sm:mt-0">
               <h1 className="text-lg font-semibold">
                 Personalized Experiences
               </h1>
@@ -115,21 +132,21 @@ const AboutUs = () => {
                 interests and preferences, ensuring a memorable adventure.
               </p>
             </div>
-            <div className="">
+            <div className="mt-5 sm:mt-0">
               <h1 className="text-lg font-semibold">Safety and Comfort</h1>
               <p className=" text-gray-700 text-lg">
                 Your safety is our priority. Our experienced team is dedicated
                 to ensuring you have a secure and comfortable journey.
               </p>
             </div>
-            <div className="">
+            <div className="mt-5 sm:mt-0">
               <h1 className="text-lg font-semibold">Diverse Services</h1>
               <p className=" text-gray-700 text-lg">
                 From guided tours to accommodations, dining, and currency
                 exchange, we've got all your travel needs covered.
               </p>
             </div>
-            <div className="">
+            <div className="mt-5 sm:mt-0">
               <h1 className="text-lg font-semibold">Legacy of Excellence</h1>
               <p className=" text-gray-700 text-lg">
                 With three decades of experience, we've gained the trust of
@@ -137,7 +154,7 @@ const AboutUs = () => {
                 industry.
               </p>
             </div>
-            <div className="">
+            <div className="mt-5 sm:mt-0">
               <h1 className="text-lg font-semibold">Local Expertise</h1>
               <p className=" text-gray-700 text-lg">
                 With deep roots in Sri Lanka, we provide authentic experiences,

@@ -9,7 +9,7 @@ const sxStyle = {
 
 const BlogContent = () => {
   return (
-    <div className="w-4/5 m-auto font-Roboto">
+    <div className="w-4/5 m-auto font-manrope">
       <div className="py-14 text-center"></div>
       <h1 className="text-4xl sm:text-6xl  font-bold">
         Sri Lanka Holiday & Tour Packages

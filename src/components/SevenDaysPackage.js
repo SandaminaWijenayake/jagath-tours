@@ -170,12 +170,22 @@ const Packages = () => {
   return (
     <div className="font-Roboto">
       <div className="py-14 w-3/4 m-auto">
-        <h1 className="text-6xl  font-bold  mt-16">
+        <h1 className="sm:text-6xl text-4xl font-bold font-manrope lg:mt-20 mt-16 lg:text-left text-center">
           Genius Lanka Tours packages
         </h1>
       </div>
-      <div className="w-3/4 m-auto">
-        <h1 className="my-12 text-left  m-auto  text-4xl border-b-2">
+      <div className="w-11/12 m-auto  md:hidden">
+        <ul className="list-disc list-item marker:text-sky-500 text-xl">
+          <li>day 01 - Sigiriya</li>
+          <li>day 02 - kandy</li>
+          <li>day 03 - Nuwara Eliya</li>
+          <li>day 04 - Yala</li>
+          <li>day 05 and 06 - Mirissa</li>
+          <li>day 07 - Bentota</li>
+        </ul>
+      </div>
+      <div className="w-3/4 m-auto hidden md:block">
+        <h1 className="my-10 md:text-left font-manrope m-auto text-2xl text-center sm:text-4xl border-b-2">
           Tour Package 7 Days (Two Nights Tour Packages)
         </h1>
         <table id="packageTable">
@@ -298,8 +308,8 @@ const Packages = () => {
         </table>
       </div>
       <div>
-        <div className="mt-20">
-          <h1 className="my-12 text-left w-3/4 m-auto  text-4xl  font-semibold border-b-2">
+        <div className="md:mt-20 mt-16">
+          <h1 className="my-12 md:text-left md:w-3/4 w-11/12 m-auto text-center  text-4xl font-semibold border-b-2">
             Detailed Itinerary
           </h1>
           <div>
@@ -307,8 +317,12 @@ const Packages = () => {
               <LocationOnIcon fontSize="large" sx={iconColors} />
               Sigiriya
             </h1>
-            <img className="w-3/4 m-auto mb-12" src={sigiriya} alt="" />
-            <p className="py-10 w-3/5 m-auto text-justify border-y-2">
+            <img
+              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+              src={sigiriya}
+              alt=""
+            />
+            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
               We guarantee that when you enter Sigiriya, you will feel like you
               are walking back in time to the age of the Kings and the Queens.
               This ancient city preserves monuments from our ancestors that date
@@ -319,8 +333,8 @@ const Packages = () => {
               greenery and the tranquility of this beautiful village while
               devouring an authentic Sri Lankan village-style cuisine.
             </p>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl">
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 01 Program - Sigiriya
               </h1>
@@ -347,40 +361,13 @@ const Packages = () => {
                 <li>Check in to hotel in Sigiriya and stay relax.</li>
               </ul>
             </div>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl border-b-2">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
                 <StarIcon fontSize="large" sx={iconColors} />
                 Sigiriya Highlights
               </h1>
               <div>
-                {/* <div>
-                  <img src={sigiriya_1} alt="" />
-
-                  <h1 className="text-lg my-3">Sigiriya Rock Fortress</h1>
-                  <p>
-                    Designated a World Heritage Site in 1982, Sigiriya Rock
-                    Fortress built in the 5th century, rises a sheer 200 meters
-                    above a forested plain
-                  </p>
-                </div>
-                <div>
-                  <img src={rockTemple} alt="" />
-                  <h1 className="text-lg my-3">The Rock Temple</h1>
-                  <p>
-                    Designated a World Heritage Site in 1982, Sigiriya Rock
-                    Fortress built in the 5th century, rises a sheer 200 meters
-                    above a forested plain
-                  </p>
-                </div>
-                <div>
-                  <img src={sigiriya_boat_ride} alt="" />
-                  <h1 className="text-lg my-3">Sigiriya Boat Ride</h1>
-                </div>
-                <div>
-                  <img src={sigiriya_1} alt="" />
-                  <h1 className="text-lg my-3">Sri Lanka Village Walk</h1>
-                </div> */}
-                <ImageList sx={{ width: 1000, height: 450 }}>
+                <ImageList sx={{ width: "100%", height: 450 }}>
                   {itemData.map((item) => (
                     <ImageListItem key={item.img}>
                       <img
@@ -405,8 +392,12 @@ const Packages = () => {
               <LocationOnIcon fontSize="large" sx={iconColors} />
               Kandy
             </h1>
-            <img className="w-3/4 m-auto mb-12" src={thetempleoftooth} alt="" />
-            <p className="py-10 w-3/5 m-auto text-justify border-y-2">
+            <img
+              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+              src={thetempleoftooth}
+              alt=""
+            />
+            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
               Explore the cultural capital of Sri Lanka and delve deep into the
               essence of the island. With mind-blowing scenery and
               well-preserved Sri Lankan culture and traditions, the city will
@@ -418,8 +409,8 @@ const Packages = () => {
               yourself with modern luxuries and enjoying the cool climate and
               traditional values
             </p>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl">
                 {" "}
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 02 Program - Kandy
@@ -467,12 +458,12 @@ const Packages = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl border-b-2">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
                 <StarIcon fontSize="large" sx={iconColors} />
                 Kandy Highlights
               </h1>
-              <ImageList sx={{ width: 1000, height: 450 }}>
+              <ImageList sx={{ width: "100%", height: 450 }}>
                 {itemDataKandy.map((item) => (
                   <ImageListItem key={item.img}>
                     <img
@@ -492,12 +483,16 @@ const Packages = () => {
             </div>
           </div>
           <div className="mt-20">
-            <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
+            <h1 className="mb-12 md:text-left text-center w-3/4 m-auto font-semibold text-4xl">
               <LocationOnIcon fontSize="large" sx={iconColors} />
               NUWARA ELIYA
             </h1>
-            <img className="w-3/4 m-auto mb-12" src={nuwara_eliya_2} alt="" />
-            <p className="py-10 w-3/5 m-auto text-justify border-y-2">
+            <img
+              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+              src={nuwara_eliya_2}
+              alt=""
+            />
+            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
               In the central hills of the island rests the Nuwara Eliya city
               which is fondly known as 'Little England' as it resembles England
               in its cool climate and colonial-style bungalows. When you walk
@@ -508,8 +503,8 @@ const Packages = () => {
               surround you! Have a lovely stay in this city of wonder and get a
               chance to explore its hidden treasures!
             </p>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl">
                 {" "}
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 03 Program - Nuwara Eliya
@@ -558,12 +553,12 @@ const Packages = () => {
                 <li>Check into the hotel in Nuwara Eliya and relax</li>
               </ul>
             </div>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl border-b-2">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
                 <StarIcon fontSize="large" sx={iconColors} />
                 Nuwara Eliya Highlights
               </h1>
-              <ImageList sx={{ width: 1000, height: 450 }}>
+              <ImageList sx={{ width: "100%", height: 450 }}>
                 {itemDataNuwaraEliya.map((item) => (
                   <ImageListItem key={item.img}>
                     <img
@@ -587,8 +582,12 @@ const Packages = () => {
               <LocationOnIcon fontSize="large" sx={iconColors} />
               YALA
             </h1>
-            <img className="w-3/4 m-auto mb-12" src={yala_3} alt="" />
-            <p className="py-10 w-3/5 m-auto text-justify border-y-2">
+            <img
+              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+              src={yala_3}
+              alt=""
+            />
+            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
               The Yala National Park is the most famous wildlife sanctuary in
               Sri Lanka and this vast reserve is home to a multitude of
               fascinating wildlife as well as plant life. Deer, peacocks, wild
@@ -598,8 +597,8 @@ const Packages = () => {
               home to an amazing array of endemic birds. Explore this amazing
               realm in a jeep safari escorted.
             </p>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl">
                 {" "}
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 04 Program - Yala
@@ -650,13 +649,13 @@ const Packages = () => {
                 <li>Check in to the hotel & Relax</li>
               </ul>
             </div>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl border-b-2">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
                 <StarIcon fontSize="large" sx={iconColors} />
                 Yala Highlights
               </h1>
-              <div className="grid grid-cols-4 gap-10">
-                <ImageList sx={{ width: 1000, height: 450 }}>
+              <div>
+                <ImageList sx={{ width: "100%", height: 450 }}>
                   {itemDataYala.map((item) => (
                     <ImageListItem key={item.img}>
                       <img
@@ -681,8 +680,12 @@ const Packages = () => {
               <LocationOnIcon fontSize="large" sx={iconColors} />
               MIRISSA
             </h1>
-            <img className="w-3/4 m-auto mb-12" src={mirissa_1} alt="" />
-            <p className="py-10 w-3/5 m-auto text-justify border-y-2">
+            <img
+              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+              src={mirissa_1}
+              alt=""
+            />
+            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
               Mirissa has without doubt the best beach in the Deep South of Sri
               Lanka. The ever smiling, mischievous dolphins will put on a show
               while some of the oldest and the largest sea creatures, the
@@ -695,9 +698,8 @@ const Packages = () => {
               trees. This destination has become the place of choice for
               tourist.
             </p>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl">
-                {" "}
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl">
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 05 Program - Mirissa
               </h1>
@@ -747,12 +749,12 @@ const Packages = () => {
                 <li>Check in to the hotel & Relax.</li>
               </ul>
             </div>
-            <div className="w-3/4 m-auto">
-              <h1 className="my-12 text-left text-4xl border-b-2">
+            <div className="md:w-3/4 w-11/12 m-auto">
+              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
                 <StarIcon fontSize="large" sx={iconColors} />
                 Mirissa Highlights
               </h1>
-              <ImageList sx={{ width: 1000, height: 450 }}>
+              <ImageList sx={{ width: "100%", height: 450 }}>
                 {itemDataMirissa.map((item) => (
                   <ImageListItem key={item.img}>
                     <img
@@ -771,8 +773,8 @@ const Packages = () => {
               </ImageList>
             </div>
           </div>
-          <div className="w-3/4 m-auto">
-            <h1 className="my-12 text-left text-4xl">
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
               {" "}
               <EventNoteIcon fontSize="large" sx={iconColors} />
               Day 06 Program - Mirissa
@@ -787,8 +789,12 @@ const Packages = () => {
             <LocationOnIcon fontSize="large" sx={iconColors} />
             BENTOTA
           </h1>
-          <img className="w-3/4 m-auto mb-12" src={bentota_1} alt="" />
-          <p className="py-10 w-3/5 m-auto text-justify border-y-2">
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={bentota_1}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
             Bentota is a small resort town by the southern coastal belt of Sri
             Lanka. Cycle around the vibrant town and try out delicious Sri
             Lankan seafood. Connect with turtles in a turtle sanctuary and
@@ -800,9 +806,8 @@ const Packages = () => {
             itinerary as you will experience the gifts of nature every minute of
             your stay!
           </p>
-          <div className="w-3/4 m-auto">
-            <h1 className="my-12 text-left text-4xl">
-              {" "}
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
               Day 07 Program - Bentota
             </h1>
@@ -851,12 +856,12 @@ const Packages = () => {
               <li>Check in to the hotel & Relax</li>
             </ul>
           </div>
-          <div className="w-3/4 m-auto">
-            <h1 className="my-12 text-left text-4xl border-b-2">
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
               <StarIcon fontSize="large" sx={iconColors} />
               Bentota Highlights
             </h1>
-            <ImageList sx={{ width: 1000, height: 450 }}>
+            <ImageList sx={{ width: "100%", height: 450 }}>
               {itemDataBentota.map((item) => (
                 <ImageListItem key={item.img}>
                   <img
@@ -880,8 +885,8 @@ const Packages = () => {
             <LocationOnIcon fontSize="large" sx={iconColors} />
             Departure
           </h1>
-          <div className="w-3/4 m-auto">
-            <h1 className="my-12 text-left text-4xl">
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-3xl md:text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
               Day 08 Program - Departure
             </h1>

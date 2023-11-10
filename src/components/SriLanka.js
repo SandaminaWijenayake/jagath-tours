@@ -10,13 +10,20 @@ import activity_2 from "../images/New folder/Activity_2.jpg";
 import activity_3 from "../images/New folder/Activity_3.jpg";
 import activity_4 from "../images/New folder/activity_4.jpg";
 
+//cuisines
+import cuisines_1 from "../images/Cuisines/food.png";
+import cuisines_2 from "../images/Cuisines/fresh-fruits.png";
+import cuisines_3 from "../images/Cuisines/image.jpg";
+import cuisines_4 from "../images/Cuisines/seafood.png";
+// import cuisines_5 from "../images/Cuisines/tea.jpg";
+
 import Lottie from "lottie-react";
 import animationData from "../images/svg/Animation - 1698640438657.json";
 import animationData2 from "../images/svg/Animation - 1698641345767.json";
 
 const SriLanka = () => {
   return (
-    <div className="xl:w-4/5 m-auto mt-20 font-manrope w-11/12">
+    <div className="xl:w-4/5 m-auto mt-20 font-Roboto w-11/12">
       <div className="xl:flex lg:gap-10">
         <div className="xl:w-6/12">
           <h1 className="xl:text-4xl text-4xl my-5 font-semibold font-Roboto">
@@ -108,7 +115,7 @@ const SriLanka = () => {
         Island Safari. Sri Lanka offers with six most recommended wildlife
         safari Udawalwawe, Yala, Wilpattu, Minneriya national parks, Kaudulla
         and Eco park.
-        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0 text-base sm:text-xl">
+        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0 text-lg sm:text-xl">
           <li>Udawalawa National Park</li>
           <li>Yala National Park</li>
           <li>Wilpattu National Park</li>
@@ -156,7 +163,7 @@ const SriLanka = () => {
         Samanala Kanda (butterfly mountain). Climbing Sigiriya or Sinhagiri is
         an ancient rock fortress located in the northern Matale District near
         the town of Dambulla in the Central Province, Sri Lanka.
-        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0 text-base sm:text-xl">
+        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0  text-lg sm:text-xl">
           <li>Water rafting- kithulgala </li>
           <li>Ella rock climbing </li>
           <li>Flying ravana</li>
@@ -217,6 +224,24 @@ const SriLanka = () => {
         Dishes are accompanied by pickled fruits or vegetables, chutneys, and
         sambols.
       </p>
+      <div className="lg:grid  lg:grid-cols-2 mt-12 lg:gap-4 overflow-hidden">
+        <img
+          src={cuisines_1}
+          alt=""
+          className="rounded-md object-cover h-44 sm:h-full"
+        />
+        <img src={cuisines_2} alt="" className="rounded-md object-cover" />
+        <img
+          src={cuisines_3}
+          alt=""
+          className="rounded-md object-cover h-full"
+        />
+        <img
+          src={cuisines_4}
+          alt=""
+          className="rounded-md h-full object-cover"
+        />
+      </div>
       <p className="text-xl mt-5 text-justify">
         Boiled or steamed rice, served with a curry of fish or meat, along with
         other curries made with vegetables, lentils, or fruits. Dishes are

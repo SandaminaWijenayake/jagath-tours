@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Section1 = () => {
   return (
-    <div className="lg:w-4/5 m-auto mt-20 font-Roboto">
+    <div className="lg:w-4/5 w-11/12 m-auto mt-20 font-Roboto">
       <h1 className="text-4xl sm:text-6xl  font-bold">Welcome to Sri Lanka</h1>
       <p className="mt-7 text-xl sm:w-4/6 w-full">
         See what's waiting for you on your next island getaway. Savour the
@@ -18,7 +18,7 @@ const Section1 = () => {
             <img
               src={image1}
               alt=""
-              className="h-80 w-11/12 m-auto rounded-xl object-cover"
+              className="h-80 sm:w-11/12 m-auto rounded-xl object-cover"
             />
             <p className="text-center text-xl mt-4 font-medium">
               Hotels to stay
@@ -30,7 +30,7 @@ const Section1 = () => {
               <img
                 src={image3}
                 alt=""
-                className="h-80 w-11/12 m-auto rounded-xl object-cover"
+                className="h-80 sm:w-11/12 m-auto rounded-xl object-cover"
               />
               <p className="text-center text-xl mt-4 font-medium">Book trips</p>
             </Link>

@@ -22,7 +22,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const ContactUs = () => {
   return (
-    <div className="font-manrope">
+    <div className="font-Roboto">
       <div className=" font-Roboto font-semibold mt-24 text-center">
         <p className="lg:text-6xl text-4xl font-light mb-0">
           LET'S KEEP IN TOUCH
