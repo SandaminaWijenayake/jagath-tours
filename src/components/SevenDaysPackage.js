@@ -175,7 +175,7 @@ const Packages = () => {
         </h1>
       </div>
       <div className="w-11/12 m-auto  md:hidden">
-        <ul className="list-disc list-item marker:text-sky-500 text-xl">
+        <ul className="list-disc list-item marker:text-sky-500 text-xl pl-5">
           <li>day 01 - Sigiriya</li>
           <li>day 02 - kandy</li>
           <li>day 03 - Nuwara Eliya</li>
@@ -338,7 +338,7 @@ const Packages = () => {
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 01 Program - Sigiriya
               </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside ">
+              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
                 <li>
                   Arrival and assistant at the airport Proceed to Sigiriya
                 </li>
@@ -415,7 +415,7 @@ const Packages = () => {
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 02 Program - Kandy
               </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside ">
+              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
                 <li>After breakfast at the hotel enjoy Kandy city tour</li>
                 <li>
                   Experience the spice village tour and get to know about world
