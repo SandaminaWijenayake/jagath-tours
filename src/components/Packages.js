@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.jpeg";
+import fourDaysTourPackage from "../images/packages/beach-4.png";
 import { Link } from "react-router-dom";
 
 const sxStyle = {
@@ -22,7 +23,7 @@ const BlogContent = () => {
         <Link to="/SevenDaysPackage">
           <div class="max-w-sm rounded overflow-hidden shadow-lg">
             <img
-              class="w-full"
+              class="w-full h-56 object-cover"
               src={sevenDaysTourPackage}
               alt="Sunset in the mountains"
             />
@@ -30,7 +31,7 @@ const BlogContent = () => {
               <div class="font-bold sm:text-xl text-lg mb-2">
                 7 days tour package
               </div>
-              <p class="text-gray-700 text-sm lg:text-base">
+              <p class="text-gray-700 text-sm lg:text-base line-clamp-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptatibus quia, nulla! Maiores et perferendis eaque,
                 exercitationem praesentium nihil.
@@ -49,18 +50,18 @@ const BlogContent = () => {
             </div>
           </div>
         </Link>
-        <Link to="/SevenDaysPackage">
+        <Link to="/fourDaysPackage">
           <div class="max-w-sm rounded overflow-hidden shadow-lg mt-5 sm:mt-0">
             <img
-              class="w-full"
-              src={sevenDaysTourPackage}
+              class="w-full h-56 object-cover"
+              src={fourDaysTourPackage}
               alt="Sunset in the mountains"
             />
             <div class="px-6 py-4">
               <div class="font-bold sm:text-xl text-lg mb-2">
-                7 days tour package
+                4 days tour package
               </div>
-              <p class="text-gray-700 text-sm lg:text-base">
+              <p class="text-gray-700 text-sm lg:text-base line-clamp-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptatibus quia, nulla! Maiores et perferendis eaque,
                 exercitationem praesentium nihil.

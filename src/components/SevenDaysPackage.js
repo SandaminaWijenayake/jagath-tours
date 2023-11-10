@@ -186,7 +186,7 @@ const Packages = () => {
       </div>
       <div className="w-3/4 m-auto hidden md:block">
         <h1 className="my-10 md:text-left font-manrope m-auto text-2xl text-center sm:text-4xl border-b-2">
-          Tour Package 7 Days (Two Nights Tour Packages)
+          Tour Package 7 Days (6 Nights Tour Packages)
         </h1>
         <table id="packageTable">
           <tr className="font-semibold">
@@ -312,159 +312,62 @@ const Packages = () => {
           <h1 className="my-12 md:text-left md:w-3/4 w-11/12 m-auto text-center  text-4xl font-semibold border-b-2">
             Detailed Itinerary
           </h1>
-          <div>
-            <h1 className="mb-12 text-left w-3/4 m-auto text-4xl  font-semibold">
-              <LocationOnIcon fontSize="large" sx={iconColors} />
-              Sigiriya
+        </div>
+        <div>
+          <h1 className="mb-12 text-left w-3/4 m-auto text-4xl  font-semibold">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            Sigiriya
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={sigiriya}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
+            We guarantee that when you enter Sigiriya, you will feel like you
+            are walking back in time to the age of the Kings and the Queens.
+            This ancient city preserves monuments from our ancestors that date
+            back to 2500 years. Visit the famous Sigiriya Rock Fortress and
+            sightsee remnants of a prestigious history. Walk through the royal
+            gardens and alternatively, hike Pidurangala Rock to view the
+            stunning fortress from a different eye. Admire the luscious greenery
+            and the tranquility of this beautiful village while devouring an
+            authentic Sri Lankan village-style cuisine.
+          </p>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
+              <EventNoteIcon fontSize="large" sx={iconColors} />
+              Day 01 Program - Sigiriya
             </h1>
-            <img
-              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
-              src={sigiriya}
-              alt=""
-            />
-            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
-              We guarantee that when you enter Sigiriya, you will feel like you
-              are walking back in time to the age of the Kings and the Queens.
-              This ancient city preserves monuments from our ancestors that date
-              back to 2500 years. Visit the famous Sigiriya Rock Fortress and
-              sightsee remnants of a prestigious history. Walk through the royal
-              gardens and alternatively, hike Pidurangala Rock to view the
-              stunning fortress from a different eye. Admire the luscious
-              greenery and the tranquility of this beautiful village while
-              devouring an authentic Sri Lankan village-style cuisine.
-            </p>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl">
-                <EventNoteIcon fontSize="large" sx={iconColors} />
-                Day 01 Program - Sigiriya
-              </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-                <li>
-                  Arrival and assistant at the airport Proceed to Sigiriya
-                </li>
-                <li>
-                  Visit the Pinnawala Elephant orphanage to make friends with
-                  elephants
-                </li>
-                <li>
-                  Sri Lanka is one of the few destinations where you get to
-                  spend time with the majestic beast the elephant, bathing and
-                  feeding them are some of the few activities you will get to do
-                </li>
-                <li>Get to know about elephant dung products</li>
-                <li>Once completed proceeds to Sigiriya</li>
-                <li>
-                  Later in the afternoon, head to Pidurangala Rock, which offers
-                  stunning views of Sigiriya. Hike to the top and enjoy the
-                  panoramic vistas of the surrounding countryside.
-                </li>
-                <li>Check in to hotel in Sigiriya and stay relax.</li>
-              </ul>
-            </div>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
-                <StarIcon fontSize="large" sx={iconColors} />
-                Sigiriya Highlights
-              </h1>
-              <div>
-                <ImageList sx={{ width: "100%", height: 450 }}>
-                  {itemData.map((item) => (
-                    <ImageListItem key={item.img}>
-                      <img
-                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        src={`${item.img}?w=248&fit=crop&auto=format`}
-                        alt={item.title}
-                        loading="lazy"
-                      />
-                      <ImageListItemBar
-                        title={item.title}
-                        subtitle={<span>{item.author}</span>}
-                        position="below"
-                      />
-                    </ImageListItem>
-                  ))}
-                </ImageList>
-              </div>
-            </div>
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
+              <li>Arrival and assistant at the airport Proceed to Sigiriya</li>
+              <li>
+                Visit the Pinnawala Elephant orphanage to make friends with
+                elephants
+              </li>
+              <li>
+                Sri Lanka is one of the few destinations where you get to spend
+                time with the majestic beast the elephant, bathing and feeding
+                them are some of the few activities you will get to do
+              </li>
+              <li>Get to know about elephant dung products</li>
+              <li>Once completed proceeds to Sigiriya</li>
+              <li>
+                Later in the afternoon, head to Pidurangala Rock, which offers
+                stunning views of Sigiriya. Hike to the top and enjoy the
+                panoramic vistas of the surrounding countryside.
+              </li>
+              <li>Check in to hotel in Sigiriya and stay relax.</li>
+            </ul>
           </div>
-          <div className="mt-20">
-            <h1 className="mb-12 text-left w-3/4 m-auto  text-4xl   ">
-              <LocationOnIcon fontSize="large" sx={iconColors} />
-              Kandy
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Sigiriya Highlights
             </h1>
-            <img
-              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
-              src={thetempleoftooth}
-              alt=""
-            />
-            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
-              Explore the cultural capital of Sri Lanka and delve deep into the
-              essence of the island. With mind-blowing scenery and
-              well-preserved Sri Lankan culture and traditions, the city will
-              surprise you at every corner. The temple of the tooth being the
-              main attraction, Kandy has many interesting attractions, which
-              include Udawaththa Kele Sanctuary, Kandy lake,and Bahirawa Kanda
-              temple. Get a glimpse into the luxurious lives of the ancient king
-              as you experience the authentic Sri Lankan culture while pampering
-              yourself with modern luxuries and enjoying the cool climate and
-              traditional values
-            </p>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl">
-                {" "}
-                <EventNoteIcon fontSize="large" sx={iconColors} />
-                Day 02 Program - Kandy
-              </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-                <li>After breakfast at the hotel enjoy Kandy city tour</li>
-                <li>
-                  Experience the spice village tour and get to know about world
-                  famous Ceylon spices
-                </li>
-                <li>
-                  Wanna enjoy a bird's eye view over the Historic Kandy city
-                  center? Yes, today
-                </li>
-                <li>
-                  Explore the world-famous temple of the Tooth, the main
-                  attraction in Kandy
-                </li>
-                <li>
-                  Explore the Bahirawakanda Vihara Buddha Statue: Climb up to
-                  the hilltop where the magnificent Bahirawakanda Vihara Buddha
-                  Statue stands tall. Enjoy panoramic views of Kandy and pay
-                  your respects to the impressive Buddha statue.
-                </li>
-                <li>
-                  Take a Walk around Kandy Lake: This picturesque lake is
-                  located in the heart of the city and offers a peaceful escape
-                  from the bustling streets. Enjoy a leisurely walk, rent a
-                  paddleboat, or simply relax and take in the scenic views.
-                </li>
-                <li>
-                  Wander around the secluded nature of the Royal botanical
-                  garden in Kandy (Optional)
-                </li>
-                <li>
-                  Witness how Sri Lankan handicrafts and famous batiks are made
-                </li>
-                <li>Learn about the famous Ceylon Gems</li>
-                <li>
-                  Watch a Cultural Performance: Experience the vibrant
-                  traditions of Sri Lanka by attending a cultural performance in
-                  Kandy. Enjoy traditional dance forms, mesmerizing drumming,
-                  and captivating costumes that showcase the rich cultural
-                  heritage of the countr
-                </li>
-              </ul>
-            </div>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
-                <StarIcon fontSize="large" sx={iconColors} />
-                Kandy Highlights
-              </h1>
+            <div>
               <ImageList sx={{ width: "100%", height: 450 }}>
-                {itemDataKandy.map((item) => (
+                {itemData.map((item) => (
                   <ImageListItem key={item.img}>
                     <img
                       srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -482,308 +385,399 @@ const Packages = () => {
               </ImageList>
             </div>
           </div>
-          <div className="mt-20">
-            <h1 className="mb-12 md:text-left text-center w-3/4 m-auto font-semibold text-4xl">
-              <LocationOnIcon fontSize="large" sx={iconColors} />
-              NUWARA ELIYA
-            </h1>
-            <img
-              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
-              src={nuwara_eliya_2}
-              alt=""
-            />
-            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
-              In the central hills of the island rests the Nuwara Eliya city
-              which is fondly known as 'Little England' as it resembles England
-              in its cool climate and colonial-style bungalows. When you walk
-              around this calm city, you will not be able to believe that this
-              chilly climate is a part of tropical Sri Lanka and its sunny
-              beaches. Bath in the natural pools of mesmerizing waterfalls,
-              visit breezy tea estates, and explore the lush greenery that will
-              surround you! Have a lovely stay in this city of wonder and get a
-              chance to explore its hidden treasures!
-            </p>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl">
-                {" "}
-                <EventNoteIcon fontSize="large" sx={iconColors} />
-                Day 03 Program - Nuwara Eliya
-              </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-                <li>After breakfast at the hotel proceed to Nuwara Eliya</li>
-                <li>
-                  En route, near Ramboda village, visit Shri Bhakta Hanuman
-                  Hindu Temple
-                </li>
-                <li>
-                  Prepare your cameras. Next stop will be at beautiful Ramboda
-                  waterfall
-                </li>
-                <li>
-                  Visit the impressive Ramboda Waterfall, one of the highest
-                  waterfalls in Sri Lanka. Admire the cascading water and
-                  capture memorable photographs.
-                </li>
-                <li>Stop at Labukale tea garden on the way</li>
-                <li>
-                  Take a leisurely stroll through the charming streets of Nuwara
-                  Eliya, known as "Little England" due to its colonial
-                  architecture and cool climate. Admire the quaint cottages,
-                  well-manicured gardens, and beautiful parks
-                </li>
-                <li>
-                  Explore the quaint Seetha Amman Temple, believed to be the
-                  place where Sita, from the Hindu epic Ramayana, was held
-                  captive. Learn about the temple's significance and enjoy the
-                  peaceful surroundings.
-                </li>
-                <li>
-                  In the afternoon, visit a local strawberry farm and enjoy
-                  fresh strawberry juices/ shakes
-                </li>
-                <li>
-                  Take a serene walk through Gregory Park and watch the stunning
-                  sunset by the Lake Gregory
-                </li>
-                <li>
-                  Visit the picturesque Gregory Lake, where you can enjoy a
-                  leisurely boat ride or simply relax by the lakeside, taking in
-                  the tranquility of the surroundings.
-                </li>
-                <li>Check into the hotel in Nuwara Eliya and relax</li>
-              </ul>
-            </div>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
-                <StarIcon fontSize="large" sx={iconColors} />
-                Nuwara Eliya Highlights
-              </h1>
-              <ImageList sx={{ width: "100%", height: 450 }}>
-                {itemDataNuwaraEliya.map((item) => (
-                  <ImageListItem key={item.img}>
-                    <img
-                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                      src={`${item.img}?w=248&fit=crop&auto=format`}
-                      alt={item.title}
-                      loading="lazy"
-                    />
-                    <ImageListItemBar
-                      title={item.title}
-                      subtitle={<span>{item.author}</span>}
-                      position="below"
-                    />
-                  </ImageListItem>
-                ))}
-              </ImageList>
-            </div>
-          </div>
-          <div className="mt-20">
-            <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
-              <LocationOnIcon fontSize="large" sx={iconColors} />
-              YALA
-            </h1>
-            <img
-              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
-              src={yala_3}
-              alt=""
-            />
-            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
-              The Yala National Park is the most famous wildlife sanctuary in
-              Sri Lanka and this vast reserve is home to a multitude of
-              fascinating wildlife as well as plant life. Deer, peacocks, wild
-              boar, bears and herds of wild elephants are just some of the
-              creatures that live here. Yala is also known as one of the best
-              places to spot the ever illusive Sri Lankan leopard and is also
-              home to an amazing array of endemic birds. Explore this amazing
-              realm in a jeep safari escorted.
-            </p>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl">
-                {" "}
-                <EventNoteIcon fontSize="large" sx={iconColors} />
-                Day 04 Program - Yala
-              </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-                <li>
-                  After breakfast at the hotel proceed to Ella and enjoy
-                  attractions (If time permits)
-                </li>
-                <li>
-                  Hike Little Adam's Peak through a moderate hiking trail
-                  passing scenic tea plantations
-                </li>
-                <li>
-                  Ella is an ideal destination to spice up an adventure lover's
-                  holiday
-                </li>
-                <li>Visit the charming tea plantations in Ella</li>
-                <li>Stop at Labukale tea garden on the way</li>
-                <li>Take a refreshing dip in the foamy Ravana Falls</li>
-                <li>
-                  Once completed Proceed to Yala and enjoy Wildlife safari.
-                  (Optional)
-                </li>
-                <li>
-                  Explore the Yala national park on a 3-4 hours safari ride
-                  exploring the exotic wildlife at the park
-                </li>
-                <li>
-                  Watch out for crocodiles during the jungle safari. Don't
-                  forget to capture them on your camera
-                </li>
-                <li>
-                  Speak to an experienced trekker to learn about the park and
-                  its endemic and non-endemic animals and bird species
-                </li>
-                <li>
-                  Yala is also popular for its elephants. Be prepared to witness
-                  the giants on land, right next to your safari jeep
-                </li>
-                <li>
-                  Be always ready to capture a peacock dance with your camera
-                </li>
-                <li>
-                  Keep your eyes peeled to capture the glimpse of elusive
-                  leopards
-                </li>
-                <li>Check in to the hotel & Relax</li>
-              </ul>
-            </div>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
-                <StarIcon fontSize="large" sx={iconColors} />
-                Yala Highlights
-              </h1>
-              <div>
-                <ImageList sx={{ width: "100%", height: 450 }}>
-                  {itemDataYala.map((item) => (
-                    <ImageListItem key={item.img}>
-                      <img
-                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        src={`${item.img}?w=248&fit=crop&auto=format`}
-                        alt={item.title}
-                        loading="lazy"
-                      />
-                      <ImageListItemBar
-                        title={item.title}
-                        subtitle={<span>{item.author}</span>}
-                        position="below"
-                      />
-                    </ImageListItem>
-                  ))}
-                </ImageList>
-              </div>
-            </div>
-          </div>
-          <div className="mt-20">
-            <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
-              <LocationOnIcon fontSize="large" sx={iconColors} />
-              MIRISSA
-            </h1>
-            <img
-              className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
-              src={mirissa_1}
-              alt=""
-            />
-            <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
-              Mirissa has without doubt the best beach in the Deep South of Sri
-              Lanka. The ever smiling, mischievous dolphins will put on a show
-              while some of the oldest and the largest sea creatures, the
-              humpback and the blue whales, can be witness in this area making
-              the ideal locations for whale watching. Mirissa is the largest
-              fishing port on the south coast and is known for its tuna, mullet,
-              snapper and butterfish. Mirissa is good location for snorkeling,
-              diving and surfing. Mirissa consists of secluded crescent shaped
-              beaches and the shoreline is blanketed with a long line of coconut
-              trees. This destination has become the place of choice for
-              tourist.
-            </p>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl">
-                <EventNoteIcon fontSize="large" sx={iconColors} />
-                Day 05 Program - Mirissa
-              </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-                <li>After the breakfast at hotel proceed to Mirissa</li>
-                <li>
-                  Be a part of the most spectacular dolphin watching experience
-                  in Sri Lanka at Dolphin Beach where you will see dozens of
-                  dolphins in large pods. (Season is November to April)
-                </li>
-                <li>
-                  Mirissa is famous for water sports. Jet ski, banana & tube
-                  boating, diving, snorkeling, kite surfing, deep sea fishing
-                  are a few that are popular.
-                </li>
-                <li>
-                  Wanna have something unforgettable to memorize about your
-                  loving journey in Sri Lanka? Then don't forget to drop by
-                  Coconut tree hill with your camera
-                </li>
-                <li>
-                  Just a tiny little hidden beach with a bay area around the
-                  corner of the town has become one of the most visited places
-                  in Mirissa. Natives called it a
-                </li>
-                <li>
-                  Mirissa is an ideal spot to experience a few rare species of
-                  turtles. You are blessed enough to have a great opportunity to
-                  swim with them while feeding them your own, we called it
-                  "turtle snorkeling" (Optional)
-                </li>
-                <li>Why don't you take a few minutes to climb up</li>
-                <li>
-                  Better not to forget to enjoy an evening walk to nonsleeping
-                  Mirissa City, which will offer you hundreds of fabulous
-                  restaurants & cafe options all around the city. just feel the
-                  vibes!
-                </li>
-                <li>
-                  Experience surfing in one of the finest surfing destinations
-                  in the world.
-                </li>
-                <li>
-                  Take a stroll along the calming beach and enjoy the
-                  spectacular sunset.
-                </li>
-                <li>Check in to the hotel & Relax.</li>
-              </ul>
-            </div>
-            <div className="md:w-3/4 w-11/12 m-auto">
-              <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
-                <StarIcon fontSize="large" sx={iconColors} />
-                Mirissa Highlights
-              </h1>
-              <ImageList sx={{ width: "100%", height: 450 }}>
-                {itemDataMirissa.map((item) => (
-                  <ImageListItem key={item.img}>
-                    <img
-                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                      src={`${item.img}?w=248&fit=crop&auto=format`}
-                      alt={item.title}
-                      loading="lazy"
-                    />
-                    <ImageListItemBar
-                      title={item.title}
-                      subtitle={<span>{item.author}</span>}
-                      position="below"
-                    />
-                  </ImageListItem>
-                ))}
-              </ImageList>
-            </div>
-          </div>
+        </div>
+        <div className="mt-20">
+          <h1 className="mb-12 text-left w-3/4 m-auto  text-4xl   ">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            Kandy
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={thetempleoftooth}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
+            Explore the cultural capital of Sri Lanka and delve deep into the
+            essence of the island. With mind-blowing scenery and well-preserved
+            Sri Lankan culture and traditions, the city will surprise you at
+            every corner. The temple of the tooth being the main attraction,
+            Kandy has many interesting attractions, which include Udawaththa
+            Kele Sanctuary, Kandy lake,and Bahirawa Kanda temple. Get a glimpse
+            into the luxurious lives of the ancient king as you experience the
+            authentic Sri Lankan culture while pampering yourself with modern
+            luxuries and enjoying the cool climate and traditional values
+          </p>
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
               {" "}
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 06 Program - Mirissa
+              Day 02 Program - Kandy
             </h1>
-            <ul className="list-disc">
-              <li>After the breakfast at hotel proceed to Mirissa</li>
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
+              <li>After breakfast at the hotel enjoy Kandy city tour</li>
+              <li>
+                Experience the spice village tour and get to know about world
+                famous Ceylon spices
+              </li>
+              <li>
+                Wanna enjoy a bird's eye view over the Historic Kandy city
+                center? Yes, today
+              </li>
+              <li>
+                Explore the world-famous temple of the Tooth, the main
+                attraction in Kandy
+              </li>
+              <li>
+                Explore the Bahirawakanda Vihara Buddha Statue: Climb up to the
+                hilltop where the magnificent Bahirawakanda Vihara Buddha Statue
+                stands tall. Enjoy panoramic views of Kandy and pay your
+                respects to the impressive Buddha statue.
+              </li>
+              <li>
+                Take a Walk around Kandy Lake: This picturesque lake is located
+                in the heart of the city and offers a peaceful escape from the
+                bustling streets. Enjoy a leisurely walk, rent a paddleboat, or
+                simply relax and take in the scenic views.
+              </li>
+              <li>
+                Wander around the secluded nature of the Royal botanical garden
+                in Kandy (Optional)
+              </li>
+              <li>
+                Witness how Sri Lankan handicrafts and famous batiks are made
+              </li>
+              <li>Learn about the famous Ceylon Gems</li>
+              <li>
+                Watch a Cultural Performance: Experience the vibrant traditions
+                of Sri Lanka by attending a cultural performance in Kandy. Enjoy
+                traditional dance forms, mesmerizing drumming, and captivating
+                costumes that showcase the rich cultural heritage of the countr
+              </li>
             </ul>
           </div>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Kandy Highlights
+            </h1>
+            <ImageList sx={{ width: "100%", height: 450 }}>
+              {itemDataKandy.map((item) => (
+                <ImageListItem key={item.img}>
+                  <img
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    subtitle={<span>{item.author}</span>}
+                    position="below"
+                  />
+                </ImageListItem>
+              ))}
+            </ImageList>
+          </div>
         </div>
+        <div className="mt-20">
+          <h1 className="mb-12 md:text-left text-center w-3/4 m-auto font-semibold text-4xl">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            NUWARA ELIYA
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={nuwara_eliya_2}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
+            In the central hills of the island rests the Nuwara Eliya city which
+            is fondly known as 'Little England' as it resembles England in its
+            cool climate and colonial-style bungalows. When you walk around this
+            calm city, you will not be able to believe that this chilly climate
+            is a part of tropical Sri Lanka and its sunny beaches. Bath in the
+            natural pools of mesmerizing waterfalls, visit breezy tea estates,
+            and explore the lush greenery that will surround you! Have a lovely
+            stay in this city of wonder and get a chance to explore its hidden
+            treasures!
+          </p>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
+              {" "}
+              <EventNoteIcon fontSize="large" sx={iconColors} />
+              Day 03 Program - Nuwara Eliya
+            </h1>
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
+              <li>After breakfast at the hotel proceed to Nuwara Eliya</li>
+              <li>
+                En route, near Ramboda village, visit Shri Bhakta Hanuman Hindu
+                Temple
+              </li>
+              <li>
+                Prepare your cameras. Next stop will be at beautiful Ramboda
+                waterfall
+              </li>
+              <li>
+                Visit the impressive Ramboda Waterfall, one of the highest
+                waterfalls in Sri Lanka. Admire the cascading water and capture
+                memorable photographs.
+              </li>
+              <li>Stop at Labukale tea garden on the way</li>
+              <li>
+                Take a leisurely stroll through the charming streets of Nuwara
+                Eliya, known as "Little England" due to its colonial
+                architecture and cool climate. Admire the quaint cottages,
+                well-manicured gardens, and beautiful parks
+              </li>
+              <li>
+                Explore the quaint Seetha Amman Temple, believed to be the place
+                where Sita, from the Hindu epic Ramayana, was held captive.
+                Learn about the temple's significance and enjoy the peaceful
+                surroundings.
+              </li>
+              <li>
+                In the afternoon, visit a local strawberry farm and enjoy fresh
+                strawberry juices/ shakes
+              </li>
+              <li>
+                Take a serene walk through Gregory Park and watch the stunning
+                sunset by the Lake Gregory
+              </li>
+              <li>
+                Visit the picturesque Gregory Lake, where you can enjoy a
+                leisurely boat ride or simply relax by the lakeside, taking in
+                the tranquility of the surroundings.
+              </li>
+              <li>Check into the hotel in Nuwara Eliya and relax</li>
+            </ul>
+          </div>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Nuwara Eliya Highlights
+            </h1>
+            <ImageList sx={{ width: "100%", height: 450 }}>
+              {itemDataNuwaraEliya.map((item) => (
+                <ImageListItem key={item.img}>
+                  <img
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    subtitle={<span>{item.author}</span>}
+                    position="below"
+                  />
+                </ImageListItem>
+              ))}
+            </ImageList>
+          </div>
+        </div>
+        <div className="mt-20">
+          <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            YALA
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={yala_3}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
+            The Yala National Park is the most famous wildlife sanctuary in Sri
+            Lanka and this vast reserve is home to a multitude of fascinating
+            wildlife as well as plant life. Deer, peacocks, wild boar, bears and
+            herds of wild elephants are just some of the creatures that live
+            here. Yala is also known as one of the best places to spot the ever
+            illusive Sri Lankan leopard and is also home to an amazing array of
+            endemic birds. Explore this amazing realm in a jeep safari escorted.
+          </p>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
+              {" "}
+              <EventNoteIcon fontSize="large" sx={iconColors} />
+              Day 04 Program - Yala
+            </h1>
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
+              <li>
+                After breakfast at the hotel proceed to Ella and enjoy
+                attractions (If time permits)
+              </li>
+              <li>
+                Hike Little Adam's Peak through a moderate hiking trail passing
+                scenic tea plantations
+              </li>
+              <li>
+                Ella is an ideal destination to spice up an adventure lover's
+                holiday
+              </li>
+              <li>Visit the charming tea plantations in Ella</li>
+              <li>Stop at Labukale tea garden on the way</li>
+              <li>Take a refreshing dip in the foamy Ravana Falls</li>
+              <li>
+                Once completed Proceed to Yala and enjoy Wildlife safari.
+                (Optional)
+              </li>
+              <li>
+                Explore the Yala national park on a 3-4 hours safari ride
+                exploring the exotic wildlife at the park
+              </li>
+              <li>
+                Watch out for crocodiles during the jungle safari. Don't forget
+                to capture them on your camera
+              </li>
+              <li>
+                Speak to an experienced trekker to learn about the park and its
+                endemic and non-endemic animals and bird species
+              </li>
+              <li>
+                Yala is also popular for its elephants. Be prepared to witness
+                the giants on land, right next to your safari jeep
+              </li>
+              <li>
+                Be always ready to capture a peacock dance with your camera
+              </li>
+              <li>
+                Keep your eyes peeled to capture the glimpse of elusive leopards
+              </li>
+              <li>Check in to the hotel & Relax</li>
+            </ul>
+          </div>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Yala Highlights
+            </h1>
+            <div>
+              <ImageList sx={{ width: "100%", height: 450 }}>
+                {itemDataYala.map((item) => (
+                  <ImageListItem key={item.img}>
+                    <img
+                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                      src={`${item.img}?w=248&fit=crop&auto=format`}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar
+                      title={item.title}
+                      subtitle={<span>{item.author}</span>}
+                      position="below"
+                    />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            </div>
+          </div>
+        </div>
+        <div className="mt-20">
+          <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            MIRISSA
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={mirissa_1}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
+            Mirissa has without doubt the best beach in the Deep South of Sri
+            Lanka. The ever smiling, mischievous dolphins will put on a show
+            while some of the oldest and the largest sea creatures, the humpback
+            and the blue whales, can be witness in this area making the ideal
+            locations for whale watching. Mirissa is the largest fishing port on
+            the south coast and is known for its tuna, mullet, snapper and
+            butterfish. Mirissa is good location for snorkeling, diving and
+            surfing. Mirissa consists of secluded crescent shaped beaches and
+            the shoreline is blanketed with a long line of coconut trees. This
+            destination has become the place of choice for tourist.
+          </p>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
+              <EventNoteIcon fontSize="large" sx={iconColors} />
+              Day 05 Program - Mirissa
+            </h1>
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
+              <li>After the breakfast at hotel proceed to Mirissa</li>
+              <li>
+                Be a part of the most spectacular dolphin watching experience in
+                Sri Lanka at Dolphin Beach where you will see dozens of dolphins
+                in large pods. (Season is November to April)
+              </li>
+              <li>
+                Mirissa is famous for water sports. Jet ski, banana & tube
+                boating, diving, snorkeling, kite surfing, deep sea fishing are
+                a few that are popular.
+              </li>
+              <li>
+                Wanna have something unforgettable to memorize about your loving
+                journey in Sri Lanka? Then don't forget to drop by Coconut tree
+                hill with your camera
+              </li>
+              <li>
+                Just a tiny little hidden beach with a bay area around the
+                corner of the town has become one of the most visited places in
+                Mirissa. Natives called it a
+              </li>
+              <li>
+                Mirissa is an ideal spot to experience a few rare species of
+                turtles. You are blessed enough to have a great opportunity to
+                swim with them while feeding them your own, we called it "turtle
+                snorkeling" (Optional)
+              </li>
+              <li>Why don't you take a few minutes to climb up</li>
+              <li>
+                Better not to forget to enjoy an evening walk to nonsleeping
+                Mirissa City, which will offer you hundreds of fabulous
+                restaurants & cafe options all around the city. just feel the
+                vibes!
+              </li>
+              <li>
+                Experience surfing in one of the finest surfing destinations in
+                the world.
+              </li>
+              <li>
+                Take a stroll along the calming beach and enjoy the spectacular
+                sunset.
+              </li>
+              <li>Check in to the hotel & Relax.</li>
+            </ul>
+          </div>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Mirissa Highlights
+            </h1>
+            <ImageList sx={{ width: "100%", height: 450 }}>
+              {itemDataMirissa.map((item) => (
+                <ImageListItem key={item.img}>
+                  <img
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    subtitle={<span>{item.author}</span>}
+                    position="below"
+                  />
+                </ImageListItem>
+              ))}
+            </ImageList>
+          </div>
+        </div>
+        <div className="md:w-3/4 w-11/12 m-auto">
+          <h1 className="my-12 md:text-left text-center text-4xl">
+            {" "}
+            <EventNoteIcon fontSize="large" sx={iconColors} />
+            Day 06 Program - Mirissa
+          </h1>
+          <ul className="list-disc">
+            <li>After the breakfast at hotel proceed to Mirissa</li>
+          </ul>
+        </div>
+
         <div className="mt-20">
           <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
             <LocationOnIcon fontSize="large" sx={iconColors} />

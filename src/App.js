@@ -9,6 +9,7 @@ import Packages from "./components/Packages";
 import Reviews from "./components/Reviews";
 import ContactUs from "./components/ContactUs";
 import Create from "./components/Create";
+import FourDaysPackage from "./components/FourDaysPackage";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/About_us" element={<AboutUs />} />
           <Route path="/Create" element={<Create />} />
           <Route path="/SevenDaysPackage" element={<SevenDaysPackage />} />
+          <Route path="/FourDaysPackage" element={<FourDaysPackage />} />
         </Route>
       </Routes>
     </>
