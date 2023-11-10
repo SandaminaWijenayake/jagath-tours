@@ -174,8 +174,8 @@ const Packages = () => {
           Genius Lanka Tours packages
         </h1>
       </div>
-      <div className="w-11/12 m-auto  md:hidden">
-        <ul className="list-disc list-item marker:text-sky-500 text-xl pl-5">
+      <div className="w-11/12 m-auto md:hidden">
+        <ul className="list-disc marker:text-sky-500 text-xl pl-5">
           <li>day 01 - Sigiriya</li>
           <li>day 02 - kandy</li>
           <li>day 03 - Nuwara Eliya</li>
@@ -509,7 +509,7 @@ const Packages = () => {
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 03 Program - Nuwara Eliya
               </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside ">
+              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
                 <li>After breakfast at the hotel proceed to Nuwara Eliya</li>
                 <li>
                   En route, near Ramboda village, visit Shri Bhakta Hanuman
@@ -603,7 +603,7 @@ const Packages = () => {
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 04 Program - Yala
               </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside ">
+              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
                 <li>
                   After breakfast at the hotel proceed to Ella and enjoy
                   attractions (If time permits)
@@ -703,7 +703,7 @@ const Packages = () => {
                 <EventNoteIcon fontSize="large" sx={iconColors} />
                 Day 05 Program - Mirissa
               </h1>
-              <ul className="list-disc marker:text-sky-500 list-outside ">
+              <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
                 <li>After the breakfast at hotel proceed to Mirissa</li>
                 <li>
                   Be a part of the most spectacular dolphin watching experience
@@ -811,7 +811,7 @@ const Packages = () => {
               <EventNoteIcon fontSize="large" sx={iconColors} />
               Day 07 Program - Bentota
             </h1>
-            <ul className="list-disc marker:text-sky-500 list-outside ">
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>
                 After breakfast at the hotel proceed to Galle and enjoy city
                 tour
@@ -890,7 +890,7 @@ const Packages = () => {
               <EventNoteIcon fontSize="large" sx={iconColors} />
               Day 08 Program - Departure
             </h1>
-            <ul className="list-disc">
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>
                 After the breakfast at the hotel, proceed to Colombo and Enjoy
                 City Tour, Evening proceeds to Airport
