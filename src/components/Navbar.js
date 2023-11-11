@@ -8,6 +8,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { List } from "@mui/material";
 
+import logoBlack from "../images/genius-lanka-tours-high-resolution-logo-black-transparent.png";
+import logoWhite from "../images/genius-lanka-tours-high-resolution-logo-white-transparent.png";
+
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -37,14 +40,14 @@ const Navbar = () => {
 
   return (
     <div className="font-Roboto">
-      <div className="flex justify-between px-8 top-0 left-0 w-full  z-10 font-semibold fixed bg-white p-4 text-lg">
-        <div className="translate-y-0">
-          <Link to="/" className="hover:text-sky-500">
-            Genius Lanka Tours
+      <div className="flex justify-between px-8 top-0 left-0 w-full  z-10 font-normal fixed bg-white text-white shadow-md p-3 text-lg  bg-opacity-70 backdrop-blur-sm">
+        <div className="-translate-y-0 md:w-48 w-32 pl-4">
+          <Link to="/" className="">
+            <img src={logoBlack} alt="" />
           </Link>
         </div>
         <div className="hidden sm:inline-block">
-          <ul className="flex justify-around text-sm translate-y-1 sm:w-96">
+          <ul className="flex justify-around text-sm translate-y-3 sm:w-96 text-black">
             <Link to="/Packages" className="hover:text-sky-500">
               PACKAGES
             </Link>
@@ -73,6 +76,7 @@ const Navbar = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClick}
+                sx={{ color: "black" }}
               />
 
               <Menu

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import image from "../images/New folder/contact.png";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -11,6 +11,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import Button from "@mui/material/Button";
 import Lottie from "lottie-react";
 import animationData from "../images/svg/Animation - 1698642072236.json";
+//form
+import emailjs from "@emailjs/browser";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -21,9 +23,32 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const ContactUs = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_efkbr9o",
+        "template_hqtveuo",
+        form.current,
+        "iX2lOgrjJzkOvLK06"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <div className="font-Roboto">
-      <div className=" font-Roboto font-semibold mt-24 text-center">
+      <div className=" font-Roboto font-semibold mt-32 text-center">
         <p className="lg:text-6xl text-4xl font-light mb-0">
           LET'S KEEP IN TOUCH
         </p>
@@ -58,75 +83,80 @@ const ContactUs = () => {
           </div>
         </div>
         <div className="lg:w-1/2 lg:ml-10 w-11/12 m-auto">
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={4}>
-              <Grid item xs={12}>
-                <Box>
-                  <TextField
-                    id="outlined-basic"
-                    label="First name"
-                    variant="outlined"
-                    sx={{
-                      width: "100%",
-                    }}
-                  />
-                </Box>{" "}
+          <form ref={form} onSubmit={sendEmail}>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid container spacing={4}>
+                <Grid item xs={12}>
+                  <Box>
+                    <TextField
+                      id="outlined-basic"
+                      label="Name"
+                      variant="outlined"
+                      sx={{
+                        width: "100%",
+                      }}
+                      type="text"
+                      name="user_name"
+                      required
+                    />
+                  </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Box>
+                    <TextField
+                      id="outlined-basic"
+                      label="Email"
+                      variant="outlined"
+                      sx={{
+                        width: "100%",
+                      }}
+                      type="email"
+                      name="user_email"
+                      required
+                    />
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box>
+                    <TextField
+                      id="outlined-basic"
+                      label="Phone number"
+                      variant="outlined"
+                      sx={{
+                        width: "100%",
+                      }}
+                      type="number"
+                      name="phone_number"
+                      required
+                    />
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box>
+                    <TextField
+                      id="outlined-multiline-static"
+                      label="Message"
+                      multiline
+                      rows={4}
+                      defaultValue=""
+                      sx={{
+                        width: "100%",
+                      }}
+                      name="message"
+                      required
+                    />
+                  </Box>
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <Box>
-                  <TextField
-                    id="outlined-basic"
-                    label="Last name"
-                    variant="outlined"
-                    sx={{
-                      width: "100%",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid item xs={12}>
-                <Box component="form" noValidate autoComplete="off">
-                  <TextField
-                    id="outlined-basic"
-                    label="Email"
-                    variant="outlined"
-                    sx={{
-                      width: "100%",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid item xs={12}>
-                <Box component="form" noValidate autoComplete="off">
-                  <TextField
-                    id="outlined-basic"
-                    label="Phone number"
-                    variant="outlined"
-                    sx={{
-                      width: "100%",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid item xs={12}>
-                <Box>
-                  <TextField
-                    id="outlined-multiline-static"
-                    label="Message"
-                    multiline
-                    rows={4}
-                    defaultValue="Message"
-                    sx={{
-                      width: "100%",
-                    }}
-                  />
-                </Box>
-              </Grid>
-            </Grid>
-          </Box>
-          <div className="mt-5 flex justify-center lg:justify-end">
-            <Button variant="contained">send message</Button>
-          </div>
+            </Box>
+            <div className="mt-5 flex justify-center lg:justify-end">
+              <Button variant="contained" type="submit">
+                send message
+              </Button>
+            </div>
+          </form>
+
           <div>{/* <Lottie animationData={animationData} /> */}</div>
         </div>
       </div>
