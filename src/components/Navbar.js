@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,10 +8,12 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { List } from "@mui/material";
 
-import logoBlack from "../images/genius-lanka-tours-high-resolution-logo-black-transparent.png";
-import logoWhite from "../images/genius-lanka-tours-high-resolution-logo-white-transparent.png";
+import logoBlack from "../images/logoblack.png";
+import logoblue from "../images/logoblue.png";
 
 const Navbar = () => {
+  const [over, setOver] = useState(false);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -36,31 +38,45 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const planningToolHandler = () => {
+    navigate("/PlanningTool");
+    setAnchorEl(null);
+  };
+
   const navigate = useNavigate();
 
   return (
     <div className="font-Roboto">
-      <div className="flex justify-between px-8 top-0 left-0 w-full  z-10 font-normal fixed bg-white text-white shadow-md p-3 text-lg  bg-opacity-70 backdrop-blur-sm">
-        <div className="-translate-y-0 md:w-48 w-32 pl-4">
-          <Link to="/" className="">
-            <img src={logoBlack} alt="" />
-          </Link>
-        </div>
+      <div className="flex justify-between px-8 top-0 left-0 w-full  z-10 font-bold fixed bg-white text-white shadow-md p-3 text-lg  bg-opacity-70 backdrop-blur-sm">
+        <Link to="/" className="">
+          <div
+            className="-translate-y-0 md:w-64 p-3 w-48 pl-4 "
+            // style={{
+            //   backgroundSize: "cover",
+            //   backgroundImage: `url(${logoBlack})`,
+            //   "&:hover": { background: "white", transform: "scale(1.5)" },
+            // }}
+            onMouseOver={() => setOver(true)}
+            onMouseOut={() => setOver(false)}
+          >
+            <img src={over ? logoBlack : logoblue} alt="" className="" />
+          </div>
+        </Link>
         <div className="hidden sm:inline-block">
           <ul className="flex justify-around text-sm translate-y-3 sm:w-96 text-black">
-            <Link to="/Packages" className="hover:text-sky-500">
+            <Link to="/Packages" className="hover:text-sky-700">
               PACKAGES
             </Link>
             {/* <Link to="/Blogs" className="hover:text-sky-500">
               BLOGS
             </Link> */}
-            <Link to="/Reviews" className="hover:text-sky-500">
-              REVIEWS
+            <Link to="/PlanningTool" className="hover:text-sky-700">
+              PLAN YOUR TRIP
             </Link>
-            <Link to="/Contact_us" className="hover:text-sky-500">
+            <Link to="/Contact_us" className="hover:text-sky-700">
               CONTACT US
             </Link>
-            <Link to="/About_us" className="hover:text-sky-500">
+            <Link to="/About_us" className="hover:text-sky-700">
               ABOUT US
             </Link>
           </ul>
@@ -98,6 +114,16 @@ const Navbar = () => {
                   onClick={packagesHandler}
                 >
                   PACKAGES
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontSize: "12px",
+                    fontFamily: "inherit",
+                    fontWeight: "bold",
+                  }}
+                  onClick={planningToolHandler}
+                >
+                  PLANNIG TOOL
                 </MenuItem>
                 <MenuItem
                   sx={{

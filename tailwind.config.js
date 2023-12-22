@@ -7,6 +7,9 @@ module.exports = {
         manrope: ["Manrope"],
         Roboto: ["Roboto"],
       },
+      backgroundImage: {
+        blueLogo: "url('./images/logoblue.png')",
+      },
     },
   },
   plugins: [],

@@ -11,8 +11,18 @@ import EmailIcon from "@mui/icons-material/Email";
 import Button from "@mui/material/Button";
 import Lottie from "lottie-react";
 import animationData from "../images/svg/Animation - 1698642072236.json";
-//form
+
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 import emailjs from "@emailjs/browser";
+
+// snackbar
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+//form
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -23,6 +33,20 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const ContactUs = () => {
+  const [open, setOpen] = React.useState(false);
+
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -38,6 +62,7 @@ const ContactUs = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setOpen(true);
         },
         (error) => {
           console.log(error.text);
@@ -151,13 +176,27 @@ const ContactUs = () => {
               </Grid>
             </Box>
             <div className="mt-5 flex justify-center lg:justify-end">
-              <Button variant="contained" type="submit">
-                send message
-              </Button>
+              <Stack spacing={2} sx={{ width: "100%" }}>
+                <Button variant="contained" type="submit">
+                  send message
+                </Button>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={6000}
+                  onClose={handleClose}
+                >
+                  <Alert
+                    onClose={handleClose}
+                    severity="success"
+                    sx={{ width: "100%" }}
+                  >
+                    The message sent successfully.
+                  </Alert>
+                </Snackbar>
+              </Stack>
             </div>
           </form>
-
-          <div>{/* <Lottie animationData={animationData} /> */}</div>
+          ;<div>{/* <Lottie animationData={animationData} /> */}</div>
         </div>
       </div>
     </div>

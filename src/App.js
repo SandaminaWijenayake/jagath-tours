@@ -10,6 +10,8 @@ import Reviews from "./components/Reviews";
 import ContactUs from "./components/ContactUs";
 import Create from "./components/Create";
 import FourDaysPackage from "./components/FourDaysPackage";
+import Planning from "./components/Planning";
+import PlanningTool from "./components/PlanningTool";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="/Create" element={<Create />} />
           <Route path="/SevenDaysPackage" element={<SevenDaysPackage />} />
           <Route path="/FourDaysPackage" element={<FourDaysPackage />} />
+          <Route path="/Planning" element={<Planning />} />
+          <Route path="/PlanningTool" element={<PlanningTool />} />
         </Route>
       </Routes>
     </>
