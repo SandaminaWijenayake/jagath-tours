@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db, storage } from "../config/firebase";
 import CardPlaces from "../UI/CardPlaces";
 import { ref, getStorage } from "firebase/storage";
 import ChosonCardPlaces from "../UI/ChosonCardPlaces";
+import { useNavigate } from "react-router-dom";
 
 //dropdown import
 import { useTheme } from "@mui/material/styles";
@@ -21,6 +22,13 @@ import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
+import { GlobleContext } from "../globleState/GlobleState";
+
+//button
+import Button from "@mui/material/Button";
+import { color } from "framer-motion";
+
+//chip
 
 //MUI
 const ITEM_HEIGHT = 48;
@@ -37,7 +45,7 @@ const MenuProps = {
 //MUI lists
 // const WeatherList = ["Hot Weather", "Cold Weather"];
 const InterestList = ["adventure", "beach", "culture", "nature"];
-const ActivityList = ["hiking", "water sports", "shopping"];
+// const ActivityList = ["hiking", "water sports", "shopping"];
 const placesList = [
   { title: "Nuwara Eliya" },
   { title: "Mirissa" },
@@ -63,10 +71,22 @@ function getStyles(name, personName, theme) {
 
 const PlanningTool = () => {
   const [places, setPlaces] = useState([]);
-  const [select, setSelect] = useState([]);
+  // const [select, setSelect] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const chosenPlaces = useRef([]);
-  const [searchInput, setSearchInput] = useState("");
+  const [tempState, setTempState] = useState([]);
+  const [dropDownInterest, setDropDownInterest] = React.useState("");
+  const [dropDownWaether, setDropDownWaether] = React.useState("");
+  const [dropDownActivities, setDropDownActivities] = React.useState("");
+
+  const [IntrestOutPut, setInterestOutput] = useState([]);
+  const [activiyOutPut, setActivityOutput] = useState([]);
+  const [weatherOutPut, setWeatherOutPut] = useState([]);
+
+  const { select, setSelect, chosenPlaces } = useContext(GlobleContext);
+
+  const navigate = useNavigate();
+
+  // const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     const getPlaces = async () => {
@@ -74,82 +94,66 @@ const PlanningTool = () => {
 
       const docSnap = await getDocs(colRef);
       setPlaces(docSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setTempState(docSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getPlaces();
   }, []);
 
-  //dropdown
-  const theme = useTheme();
-  const [dropDownInterest, setDropDownInterest] = React.useState([]);
+  useEffect(() => {
+    let updatedList = [];
+    updatedList = tempState;
 
-  const InterestHandleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setDropDownInterest(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    if (dropDownInterest) {
+      updatedList = updatedList.filter(
+        (item) => item.Interests === dropDownInterest
+      );
+    }
+    if (dropDownActivities) {
+      updatedList = updatedList.filter(
+        (item) => item.Activities === dropDownActivities
+      );
+    }
+    if (dropDownWaether) {
+      updatedList = updatedList.filter(
+        (item) => item.Weather === dropDownWaether
+      );
+    }
+    setPlaces(updatedList);
+  }, [dropDownInterest, dropDownActivities, dropDownWaether]);
 
-    const arraytwo = event.target.value;
-    const test = places.filter((data) => {
-      return arraytwo.every((item) => data.Interests.includes(item));
-    });
-    console.log(arraytwo);
-    console.log(test);
-    setFiltered(test);
-    // console.log(places.filter((data) => data.Interests.includes(["beach"])));
+  const buttonClickHandler = () => {
+    console.log("button");
+    navigate("/Result");
   };
 
-  const [dropDownActivities, setDropDownActivities] = React.useState([]);
+  //dropdown
+  const theme = useTheme();
+
+  const InterestHandleChange = (event) => {
+    setDropDownInterest(event.target.value);
+  };
 
   const ActivityHandleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setDropDownActivities(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-    // const currentActivities = event.taget.value;
-
-    const arraythree = event.target.value;
-    const test1 = places.filter((data) => {
-      return arraythree.every((item) => data.Activities.includes(item));
-    });
-    console.log(test1);
-    console.log(arraythree);
-    setFiltered(test1);
+    setDropDownActivities(event.target.value);
   };
 
   // weather
-  const [dropDownWaether, setDropDownWaether] = React.useState("");
 
   const WeatherHandleChange = (event) => {
     setDropDownWaether(event.target.value);
-
-    const currentWeather = event.target.value;
-    if (currentWeather === "none") {
-      return setFiltered(places);
-    } else {
-      const weatherOutPut = places.filter(
-        (data) => data.Weather === currentWeather
-      );
-      setFiltered(weatherOutPut);
-    }
-    console.log(currentWeather);
   };
 
-  const searchOutPut = places.filter((items) =>
-    items.Name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
-  );
-
   const choosePlacesHandler = (id) => {
-    chosenPlaces.current = [...chosenPlaces.current, id];
-
-    // console.log("hello : " + chosenPlaces.current);
+    console.log(chosenPlaces.current.includes(id));
+    if (chosenPlaces.current.includes(id)) {
+      chosenPlaces.current = chosenPlaces.current.filter((item) => item !== id);
+      console.log("worked");
+    } else {
+      chosenPlaces.current = [...chosenPlaces.current, id];
+    }
+    console.log("hello : " + chosenPlaces.current);
     setSelect(places.filter((data) => chosenPlaces.current.includes(data.id)));
-    // console.log(filtered);
+    console.log("selected ", select);
   };
 
   const deleteHandler = (id) => {
@@ -160,121 +164,81 @@ const PlanningTool = () => {
     console.log("chosenPlaces.current : " + chosenPlaces.current);
     console.log("id : " + id);
     console.log("newArray: " + newArray);
+    console.log("select ", select);
   };
 
   const storageRef = ref(storage);
   const pathReference = ref(storage, "images/");
 
-  // const searchInputHandler = (i) => {
-  //   const filteredSearch = places.filter((data) => data.Name === i);
-  //   // set(filteredSearch);
-  // };
+  //chlip
+  const handleClick = () => {
+    console.info("You clicked the Chip.");
+  };
+
+  const handleDelete = () => {
+    console.info("You clicked the delete icon.");
+  };
 
   return (
-    <div className="w-11/12 m-auto pt-44 lg:flex lg:gap-10">
-      <div className="lg:w-7/12">
+    <div className="w-11/12 m-auto pt-20 lg:flex lg:gap-10">
+      <div className="lg:w-9/12 m-auto">
         <div>
           <div>
-            <h1 className="text-4xl font-semibold my-5 font-Roboto">
+            <h1 className="text-3xl sm:text-4xl font-semibold my-5 font-Roboto">
               Choose places that you want to visit
             </h1>
           </div>
-          <div>
-            <Stack spacing={2} sx={{ width: "100%" }}>
-              <Autocomplete
-                value={searchInput}
-                onInputChange={(e, i) => setSearchInput(i)}
-                freeSolo
-                id="free-solo-2-demo"
-                disableClearable
-                options={placesList.map((option) => option.title)}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Search input"
-                    InputProps={{
-                      ...params.InputProps,
-                      type: "search",
-                    }}
-                  />
-                )}
-              />
-            </Stack>
-          </div>
-          <div className="flex w-full">
-            <div className="w-1/3">
-              <FormControl sx={{ mt: 1, width: "100%" }}>
-                <InputLabel id="demo-multiple-chip-label">Interest</InputLabel>
-                <Select
-                  labelId="demo-multiple-chip-label"
-                  id="demo-multiple-chip"
-                  multiple
-                  value={dropDownInterest}
-                  onChange={InterestHandleChange}
-                  input={
-                    <OutlinedInput id="select-multiple-chip" label="Interest" />
-                  }
-                  renderValue={(selected) => (
-                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                      {selected.map((value) => (
-                        <Chip key={value} label={value} />
-                      ))}
-                    </Box>
-                  )}
-                  MenuProps={MenuProps}
-                >
-                  {InterestList.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={getStyles(name, dropDownInterest, theme)}
-                    >
-                      {name}
+
+          <div className="sm:flex w-full">
+            <div className="sm:w-1/3">
+              <Box sx={{ minWidth: "100%", mt: 1 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Interets
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={dropDownInterest}
+                    label="Weather"
+                    onChange={InterestHandleChange}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
                     </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                    <MenuItem value={"adventure"}>adventure</MenuItem>
+                    <MenuItem value={"beach"}>beach</MenuItem>
+                    <MenuItem value={"culture"}>culture</MenuItem>
+                    <MenuItem value={"nature"}>nature</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </div>
-            <div className="w-1/3 ml-5">
-              {" "}
-              <FormControl sx={{ mt: 1, width: "100%" }}>
-                <InputLabel id="demo-multiple-chip-label">
-                  Activities
-                </InputLabel>
-                <Select
-                  labelId="demo-multiple-chip-label"
-                  id="demo-multiple-chip"
-                  multiple
-                  value={dropDownActivities}
-                  onChange={ActivityHandleChange}
-                  input={
-                    <OutlinedInput
-                      id="select-multiple-chip"
-                      label="Activities"
-                    />
-                  }
-                  renderValue={(selected) => (
-                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                      {selected.map((value) => (
-                        <Chip key={value} label={value} />
-                      ))}
-                    </Box>
-                  )}
-                  MenuProps={MenuProps}
-                >
-                  {ActivityList.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={getStyles(name, dropDownActivities, theme)}
-                    >
-                      {name}
+            <div className="sm:w-1/3 sm:ml-5">
+              <Box sx={{ minWidth: "100%", mt: 1 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Activities
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={dropDownActivities}
+                    label="Weather"
+                    onChange={ActivityHandleChange}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
                     </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                    <MenuItem value={"hiking"}>Hiking</MenuItem>
+                    <MenuItem value={"water sports"}>Water sports</MenuItem>
+                    <MenuItem value={"shopping"}>Shopping</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </div>
-            <div className="w-1/3 ml-5">
+
+            <div className="sm:w-1/3 sm:ml-5">
               <Box sx={{ minWidth: "100%", mt: 1 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Weather</InputLabel>
@@ -285,7 +249,7 @@ const PlanningTool = () => {
                     label="Weather"
                     onChange={WeatherHandleChange}
                   >
-                    <MenuItem value="none">
+                    <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
                     <MenuItem value={"Tropical"}>Tropical Weather</MenuItem>
@@ -295,11 +259,34 @@ const PlanningTool = () => {
                 </FormControl>
               </Box>
             </div>
+            <div className="sm:ml-5">
+              <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
+                <Button
+                  variant="contained"
+                  onClick={buttonClickHandler}
+                  sx={{ paddingX: "30px" }}
+                >
+                  select
+                </Button>
+              </Stack>
+            </div>
           </div>
         </div>
+        {/* <div className="pt-10 sticky top-10">
+          <Stack sx={{ direction: { xs: "colunm", lg: "row" } }} spacing={1}>
+            {select.map((data) => (
+              <Chip
+                variant="outlined"
+                label={data.Name}
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+            ))}
+          </Stack>
+        </div> */}
 
-        <div className="lg:grid lg:grid-cols-3 mt-5 gap-4">
-          {filtered.map((data) => {
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-10 gap-20">
+          {places.map((data) => {
             return (
               <CardPlaces
                 key={data.id}
@@ -315,11 +302,11 @@ const PlanningTool = () => {
           })}
         </div>
       </div>
-      <div className="lg:w-5/12">
+      {/* <div className="lg:w-5/12">
         <h1 className="text-4xl font-semibold my-5 font-Roboto">
           Chosen places
         </h1>
-        {/* {places.map((data) => {
+        {places.map((data) => {
           return (
             <ChosonCardPlaces
               name={data.Name}
@@ -327,7 +314,7 @@ const PlanningTool = () => {
               imageURL={data.imageURL}
             />
           );
-        })} */}
+        })}
 
         {select.map((data) => {
           return (
@@ -341,7 +328,7 @@ const PlanningTool = () => {
             />
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,6 +1,10 @@
 import React from "react";
 import "./packages.css";
 
+//mui
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
+
 //sigiriya
 import sigiriya from "../images/photosgeniuslankatours/sigiriya/sigiriya_rock_2.jpg";
 import sigiriya_1 from "../images/photosgeniuslankatours/sigiriya/sigiriya-1.png";
@@ -53,6 +57,28 @@ import StarIcon from "@mui/icons-material/Star";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
+
+// colombo
+import colombo_1 from "../images/photosgeniuslankatours/colombo/colombo-1.jpg";
+import colombo_2 from "../images/photosgeniuslankatours/colombo/colombo-2.jpg";
+import colombo_3 from "../images/photosgeniuslankatours/colombo/colombo-3.avif";
+import colombo_4 from "../images/photosgeniuslankatours/colombo/colombo-4.jpg";
+import colombo_5 from "../images/photosgeniuslankatours/colombo/colombo-5.jpg";
+
+const colomboData = [
+  {
+    img: colombo_1,
+  },
+  {
+    img: colombo_2,
+  },
+  {
+    img: colombo_3,
+  },
+  {
+    img: colombo_5,
+  },
+];
 
 const itemData = [
   {
@@ -170,23 +196,26 @@ const Packages = () => {
   return (
     <div className="font-Roboto">
       <div className="py-14 w-3/4 m-auto">
-        <h1 className="sm:text-6xl text-4xl font-bold font-manrope lg:mt-20 mt-16 lg:text-left text-center">
+        <h1 className="sm:text-6xl text-4xl font-bold font-Roboto lg:mt-20 mt-16 lg:text-left text-center">
           Genius Lanka Tours packages
         </h1>
       </div>
       <div className="w-11/12 m-auto md:hidden">
-        <ul className="list-disc marker:text-sky-500 text-xl pl-5">
-          <li>day 01 - Sigiriya</li>
-          <li>day 02 - kandy</li>
-          <li>day 03 - Nuwara Eliya</li>
-          <li>day 04 - Yala</li>
-          <li>day 05 and 06 - Mirissa</li>
-          <li>day 07 - Bentota</li>
+        <ul className="list-disc marker:text-sky-500 text-lg pl-5">
+          <li>day 01 - Colombo</li>
+          <li>day 02 - Sigiriya</li>
+          <li>day 03 - kandy</li>
+          <li>day 04 - Nuwara Eliya</li>
+          <li>day 05 - Yala</li>
+          <li>day 06 - Mirissa</li>
+          <li>
+            day 07-14 - Beach staying: Galle, Hikkaduwa, Bentota, Beruwala
+          </li>
         </ul>
       </div>
       <div className="w-3/4 m-auto hidden md:block">
-        <h1 className="my-10 md:text-left font-manrope m-auto text-2xl text-center sm:text-4xl border-b-2">
-          Tour Package 7 Days (6 Nights Tour Packages)
+        <h1 className="my-10 md:text-left font-Roboto m-auto text-2xl text-center sm:text-4xl border-b-2">
+          Tour Package 14 Days (Including beach staying)
         </h1>
         <table id="packageTable">
           <tr className="font-semibold">
@@ -200,6 +229,25 @@ const Packages = () => {
               Day 1
             </td>
             <td className="text-sm font-bold text-black text-center">
+              Colombo
+            </td>
+            <td>
+              <ul className="px-5 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+                <li>Night life</li>
+              </ul>
+            </td>
+            <td>
+              <ul className="px-5 grid lg:grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+                <li>Shoping</li>
+                <li>Cashino</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td className="text-center text-sky-700 text-sm font-bold">
+              Day 2
+            </td>
+            <td className="text-sm font-bold text-black text-center">
               Sigiriya
             </td>
             <td>
@@ -209,15 +257,15 @@ const Packages = () => {
               </ul>
             </td>
             <td>
-              <ul className="px-5 grid grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
-                <li>Temple of the Tooth Relic</li>
+              <ul className="px-5 grid lg:grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+                <li>Climbing the Sigiriya rock</li>
               </ul>
             </td>
           </tr>
           <tr>
             <td className="text-center text-sky-700 text-sm font-bold">
               {" "}
-              Day 2
+              Day 3
             </td>
             <td className="text-sm font-bold text-center">Kandy</td>
             <td>
@@ -227,7 +275,7 @@ const Packages = () => {
               </ul>
             </td>
             <td>
-              <ul className="px-5 grid grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+              <ul className="px-5 grid lg:grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
                 <li>Visit the Temple of the Tooth (Sri Dalada Maligawa)</li>
                 <li>Spice village tour</li>
               </ul>
@@ -235,7 +283,7 @@ const Packages = () => {
           </tr>
           <tr>
             <td className="text-center text-sky-700 text-sm font-bold">
-              Day 3
+              Day 4
             </td>
             <td className="text-sm font-bold text-center">Nuwara Eliya</td>
             <td>
@@ -250,7 +298,7 @@ const Packages = () => {
           </tr>
           <tr>
             <td className="text-center text-sky-700 text-sm font-bold">
-              Day 4
+              Day 5
             </td>
             <td className="text-sm font-bold text-center">Yala</td>
             <td>
@@ -260,7 +308,7 @@ const Packages = () => {
               </ul>
             </td>
             <td>
-              <ul className="px-5 grid grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+              <ul className="px-5 grid lg:grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
                 <li>Capture the Leopards</li>
                 <li>Yala National Park Safari</li>
                 <li>Birds watching</li>
@@ -269,7 +317,7 @@ const Packages = () => {
           </tr>
           <tr>
             <td className="text-center text-sky-700 text-sm font-bold">
-              Day 5 - 6
+              Day 6
             </td>
             <td className="text-sm font-bold text-center">Mirissa</td>
             <td>
@@ -279,13 +327,13 @@ const Packages = () => {
               </ul>
             </td>
             <td>
-              <ul className="px-5 grid grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+              <ul className="px-5 grid lg:grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
                 <li>Coconut Tree hill </li>
                 <li>Dolphin watching</li>
               </ul>
             </td>
           </tr>
-          <tr>
+          {/* <tr>
             <td className="text-center text-sky-700 text-sm font-bold">
               Day 7
             </td>
@@ -304,8 +352,43 @@ const Packages = () => {
                 <li>Boat ride in Madu River</li>
               </ul>
             </td>
+          </tr> */}
+          <tr>
+            <td className="text-center text-sky-700 text-sm font-bold">
+              Day 7 - 14
+            </td>
+            <td className="text-sm font-bold text-center">Beach staying</td>
+            <td>
+              <ul className="px-5 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+                <li>Beach</li>
+                <li>Sunbathing</li>
+              </ul>
+            </td>
+            <td>
+              <ul className="px-5 grid lg:grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
+                <li>Galle</li>
+                <li>Hikkaduwa</li>
+                <li>Bentota</li>
+                <li>Beruwala</li>
+              </ul>
+            </td>
           </tr>
         </table>
+      </div>
+      <div className="md:w-3/4 w-11/12 m-auto mt-10">
+        {" "}
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert variant="outlined" severity="error">
+            <ul className="list-disc  md:mx-5 mx-4 text-xs md:text-sm">
+              <li>
+                If you choose to depart in 7 days, your exploration begins with
+                Sigiriya and continues accordingly. We assistant at the airport
+                and Proceed to Sigiriya. On the 7th day, you can depart.
+              </li>
+              <li>The last 7 days out of 14 days are beach staying</li>
+            </ul>
+          </Alert>
+        </Stack>
       </div>
       <div>
         <div className="md:mt-20 mt-16">
@@ -314,6 +397,86 @@ const Packages = () => {
           </h1>
         </div>
         <div>
+          <h1 className="mb-12 text-left w-3/4 m-auto text-4xl  font-semibold">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            Colombo
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            src={colombo_4}
+            alt=""
+          />
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
+            Welcome to Colombo, the beating heart of Sri Lanka! This vibrant
+            capital city beckons travelers with its intoxicating blend of rich
+            history, diverse culture, and modern urban charm. Explore the
+            bustling streets, where colonial-era architecture stands in harmony
+            with sleek skyscrapers, telling tales of a bygone era alongside the
+            promise of a dynamic future. Dive into the sensory delights of
+            Pettah Market, where the air is alive with the aromas of spices and
+            the chatter of vendors. Discover the city's cultural treasures at
+            the National Museum or immerse yourself in the thriving arts scene
+            at local galleries and theaters. Indulge your palate with an array
+            of culinary delights, from mouthwatering street food to elegant fine
+            dining experiences. And don't miss the opportunity to unwind at
+            Galle Face Green, where you can watch the sunset over the Indian
+            Ocean amidst a backdrop of laughter and joy. With its warmth,
+            energy, and endless possibilities, Colombo invites you to embark on
+            an unforgettable journey of discovery and delight.
+          </p>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
+              <EventNoteIcon fontSize="large" sx={iconColors} />
+              Day 01 Program - Colombo
+            </h1>
+            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
+              <li>Arrival and assistant at the airport Proceed to Sigiriya</li>
+              <li>
+                Visit the Pinnawala Elephant orphanage to make friends with
+                elephants
+              </li>
+              <li>
+                Sri Lanka is one of the few destinations where you get to spend
+                time with the majestic beast the elephant, bathing and feeding
+                them are some of the few activities you will get to do
+              </li>
+              <li>Get to know about elephant dung products</li>
+              <li>Once completed proceeds to Sigiriya</li>
+              <li>
+                Later in the afternoon, head to Pidurangala Rock, which offers
+                stunning views of Sigiriya. Hike to the top and enjoy the
+                panoramic vistas of the surrounding countryside.
+              </li>
+              <li>Check in to hotel in Sigiriya and stay relax.</li>
+            </ul>
+          </div>
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Colombo Highlights
+            </h1>
+            <div>
+              <ImageList sx={{ width: "100%", height: 450 }}>
+                {colomboData.map((item) => (
+                  <ImageListItem key={item.img}>
+                    <img
+                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                      src={`${item.img}?w=248&fit=crop&auto=format`}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar
+                      title={item.title}
+                      subtitle={<span>{item.author}</span>}
+                      position="below"
+                    />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            </div>
+          </div>
+        </div>
+        <div className="mt-20">
           <h1 className="mb-12 text-left w-3/4 m-auto text-4xl  font-semibold">
             <LocationOnIcon fontSize="large" sx={iconColors} />
             Sigiriya
@@ -337,7 +500,7 @@ const Packages = () => {
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 01 Program - Sigiriya
+              Day 02 Program - Sigiriya
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>Arrival and assistant at the airport Proceed to Sigiriya</li>
@@ -411,7 +574,7 @@ const Packages = () => {
             <h1 className="my-12 md:text-left text-center text-4xl">
               {" "}
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 02 Program - Kandy
+              Day 03 Program - Kandy
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>After breakfast at the hotel enjoy Kandy city tour</li>
@@ -504,7 +667,7 @@ const Packages = () => {
             <h1 className="my-12 md:text-left text-center text-4xl">
               {" "}
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 03 Program - Nuwara Eliya
+              Day 04 Program - Nuwara Eliya
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>After breakfast at the hotel proceed to Nuwara Eliya</li>
@@ -597,7 +760,7 @@ const Packages = () => {
             <h1 className="my-12 md:text-left text-center text-4xl">
               {" "}
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 04 Program - Yala
+              Day 05 Program - Yala
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>
@@ -695,7 +858,7 @@ const Packages = () => {
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 05 Program - Mirissa
+              Day 06 Program - Mirissa
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>After the breakfast at hotel proceed to Mirissa</li>
@@ -767,18 +930,18 @@ const Packages = () => {
             </ImageList>
           </div>
         </div>
-        <div className="md:w-3/4 w-11/12 m-auto">
+        {/* <div className="md:w-3/4 w-11/12 m-auto">
           <h1 className="my-12 md:text-left text-center text-4xl">
             {" "}
             <EventNoteIcon fontSize="large" sx={iconColors} />
-            Day 06 Program - Mirissa
+            Day 07 Program - Mirissa
           </h1>
           <ul className="list-disc">
             <li>After the breakfast at hotel proceed to Mirissa</li>
           </ul>
-        </div>
+        </div> */}
 
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
             <LocationOnIcon fontSize="large" sx={iconColors} />
             BENTOTA
@@ -873,6 +1036,47 @@ const Packages = () => {
               ))}
             </ImageList>
           </div>
+        </div> */}
+        <div className="mt-20">
+          <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
+            <LocationOnIcon fontSize="large" sx={iconColors} />
+            Beach Staying
+          </h1>
+          <img
+            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
+            // src={mirissa_1}
+            alt=""
+          />
+          <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl">
+              <EventNoteIcon fontSize="large" sx={iconColors} />
+              Day 07 to day 13 Program
+            </h1>
+          </div>
+
+          {/* <div className="md:w-3/4 w-11/12 m-auto">
+            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
+              <StarIcon fontSize="large" sx={iconColors} />
+              Mirissa Highlights
+            </h1>
+            <ImageList sx={{ width: "100%", height: 450 }}>
+              {itemDataMirissa.map((item) => (
+                <ImageListItem key={item.img}>
+                  <img
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    subtitle={<span>{item.author}</span>}
+                    position="below"
+                  />
+                </ImageListItem>
+              ))}
+            </ImageList>
+          </div> */}
         </div>
         <div className="mt-20">
           <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
@@ -882,7 +1086,7 @@ const Packages = () => {
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-3xl md:text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 08 Program - Departure
+              Day 14 Program - Departure
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>

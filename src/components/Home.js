@@ -6,6 +6,7 @@ import Section2 from "./Section2";
 import Accodion from "./Accodion";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import OurServices from "./OurServices";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <Section1 />
       <SriLanka />
+      <OurServices />
       <Blogs />
       <Section2 />
       {/* <Accodion /> */}

@@ -12,10 +12,17 @@ import Create from "./components/Create";
 import FourDaysPackage from "./components/FourDaysPackage";
 import Planning from "./components/Planning";
 import PlanningTool from "./components/PlanningTool";
+import BeachStaying from "./components/BeachStaying";
+import { GlobleContext } from "./globleState/GlobleState";
+import { useState, useRef } from "react";
+import Result from "./components/Result";
 
 const App = () => {
+  const [select, setSelect] = useState([]);
+  const chosenPlaces = useRef([]);
+
   return (
-    <>
+    <GlobleContext.Provider value={{ select, setSelect, chosenPlaces }}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -27,11 +34,13 @@ const App = () => {
           <Route path="/Create" element={<Create />} />
           <Route path="/SevenDaysPackage" element={<SevenDaysPackage />} />
           <Route path="/FourDaysPackage" element={<FourDaysPackage />} />
+          <Route path="/BeachStaying" element={<BeachStaying />} />
           <Route path="/Planning" element={<Planning />} />
           <Route path="/PlanningTool" element={<PlanningTool />} />
+          <Route path="/Result" element={<Result />} />
         </Route>
       </Routes>
-    </>
+    </GlobleContext.Provider>
   );
 };
 

@@ -1,8 +1,13 @@
 import React from "react";
 import image from "../images/beach-3.jpg";
-import image1 from "../images/How-long-to-spend-in-Sri-Lanka-2.jpg";
+import image1 from "../images/photosgeniuslankatours/kandy/the-temple-of-tooth.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+//mui
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Hero = () => {
   return (
@@ -33,7 +38,7 @@ const Hero = () => {
           Genius lanka tours has open doors to warmly welcome you to its
           countless and remarkable experience in the pearl of indian ocean
         </motion.div>
-        <Link to="/Planning">
+        <Link to="/PlanningTool">
           <motion.button
             variants={{
               hidden: { opacity: 0 },
@@ -42,24 +47,16 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 1 }}
-            className="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="mt-2"
           >
-            Choose plan
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
+            <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
+              <Button
+                variant="contained"
+                sx={{ padding: "10px", paddingLeft: "20px" }}
+              >
+                Start planning <ArrowForwardIosIcon />
+              </Button>
+            </Stack>
           </motion.button>
         </Link>
       </div>

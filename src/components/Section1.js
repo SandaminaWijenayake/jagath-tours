@@ -7,6 +7,8 @@ import Card from "../UI/Card";
 import Lottie from "lottie-react";
 import animationData from "../images/svg/planYourTrip.json";
 import packagesMap from "../images/svg/packagesMap.json";
+import { Button } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const Section1 = () => {
   return (
@@ -17,8 +19,8 @@ const Section1 = () => {
         unique experiences this island treasure has to offer.
       </p>
       <div className="">
-        <div className="lg:flex justify-center mt-20">
-          <div className="lg:w-1/2">
+        <div className="mt-20">
+          {/* <div className="lg:w-1/2 lg:m-auto">
             <img
               src={image1}
               alt=""
@@ -27,32 +29,32 @@ const Section1 = () => {
             <p className="text-center text-xl mt-4 font-medium">
               Hotels to stay
             </p>
+            <p className="text-center text-sm mt-4 font-medium">
+              We find all kinds of hotels for you. Whether you're looking for
+              something affordable (budget) or luxurious, we've got you covered.
+              Our network includes top hotels from all over the country.
+            </p>
+          </div> */}
 
-            {/* <Card
-              className="sm:w-11/12 m-auto rounded-xl object-cover"
-              heading="Planning Tool"
-              paragraph="Create a personalized trip itinerary in a fun and effortless way supported by in-depth & unique local heroes knowledge."
-            >
-              <Lottie animationData={animationData} />
-            </Card> */}
-          </div>
-
-          <div className="lg:w-1/2 mt-5 lg:mt-0">
-            <Link to="/Packages">
-              <img
-                src={image3}
-                alt=""
-                className="h-80 sm:w-11/12 m-auto rounded-xl object-cover"
-              />
-              <p className="text-center text-xl mt-4 font-medium">Book trips</p>
-              {/* <Card
-                className="sm:w-11/12 m-auto rounded-xl object-cover"
-                heading="Choose one of our Curated Trip Packages"
-                paragraph="Choose this if you’d like to save time and start from the best-in-class trips composed by us."
-              >
-                <Lottie animationData={packagesMap} />
-              </Card> */}
-            </Link>
+          <div className="lg:w-1/2 mt-5 lg:mt-20 lg:m-auto">
+            <img
+              src={image3}
+              alt=""
+              className="h-80 sm:w-11/12 m-auto rounded-xl object-cover"
+            />
+            <p className="text-center text-xl mt-4 font-medium">Book trips</p>
+            <p className="text-center text-sm mt-4 font-medium">
+              You have the flexibility to select from our pre-planned tour
+              packages or craft your own personalized journey according to your
+              preferences.
+            </p>
+            <div className="text-center mt-4">
+              <Link to="/Packages">
+                <Button variant="outlined">
+                  Tour packages <ArrowForwardIcon />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

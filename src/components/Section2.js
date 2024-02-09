@@ -2,8 +2,12 @@ import React from "react";
 import bycicle from "../images/section2_images/bicycle-transformed.jpeg";
 import girl from "../images/section2_images/girl-transformed.jpeg";
 import travel from "../images/section2_images/travel_guy-transformed.jpeg";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const Section2 = () => {
+  const navigate = useNavigate();
   return (
     <div className="mt-20 text-center">
       <div className="font-Roboto">3 STEPS TO THE PERFECT TRIP</div>
@@ -27,9 +31,15 @@ const Section2 = () => {
           <img src={travel} alt="" className="w-56" />
         </div>
       </div>
-      <button className="bg-blue-400 w-52 h-11 align-middle text-center text-white rounded-md mt-5">
-        LETS PLAN YOUR TRIP
-      </button>
+
+      <Button
+        variant="outlined"
+        onClick={() => {
+          navigate("/PlanningTool");
+        }}
+      >
+        LETS PLAN YOUR TRIP <ArrowForwardIcon />
+      </Button>
     </div>
   );
 };

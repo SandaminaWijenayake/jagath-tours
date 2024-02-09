@@ -95,15 +95,23 @@ const ContactUs = () => {
           <div className="mt-10">
             <div className="flex my-5">
               <ApartmentIcon fontSize="large" />
-              <p className="ml-5 translate-y-1">545, Kaluwamodara, Aluthgama</p>
+              <p className="ml-5 translate-y-1">
+                268/2, Jayasuriya Building, Galle Road, Bentota, Sri Lanka
+              </p>
             </div>
             <div className="flex my-5">
               <LocalPhoneIcon fontSize="large" />{" "}
-              <p className="ml-5 translate-y-1">+94 77 902 7052</p>
+              <p className="ml-5 translate-y-1">Whatsapp : +94 77 902 7052</p>
+            </div>
+            <div className="flex my-5">
+              <LocalPhoneIcon fontSize="large" />{" "}
+              <p className="ml-5 translate-y-1">HotLine : +94 76 663 9599</p>
             </div>
             <div className="flex my-5">
               <EmailIcon fontSize="large" />
-              <p className="ml-5 translate-y-1">geniuslankatours@gmail.com </p>
+              <p className="ml-2 text-sm md:text-lg sm:ml-5 translate-y-1">
+                geniuslankatours@gmail.com{" "}
+              </p>
             </div>
           </div>
         </div>
@@ -196,7 +204,7 @@ const ContactUs = () => {
               </Stack>
             </div>
           </form>
-          ;<div>{/* <Lottie animationData={animationData} /> */}</div>
+          <div>{/* <Lottie animationData={animationData} /> */}</div>
         </div>
       </div>
     </div>
