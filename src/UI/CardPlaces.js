@@ -15,9 +15,9 @@ const CardPlaces = ({
   let color = chosenPlaces.current.includes(id) ? " bg-blue-300" : null;
 
   return (
-    <div className="rounded-lg shadow-2xl hover:shadow-md transition-transform hover:-translate-y-1  ease-in">
+    <div className="rounded-lg shadow-2xl hover:shadow-md transition-transform hover:-translate-y-1 border dark:bg-gray-100 ease-in ">
       <div
-        className={`max-w-sm  border border-gray-200 rounded-lg  dark:bg-gray-100 ${color}`}
+        className={`   rounded-lg  dark:bg-gray-100 ${color}`}
         onClick={(e) => {
           choosePlacesHandler(id);
         }}
@@ -27,12 +27,14 @@ const CardPlaces = ({
           src={imageURL}
         />
 
-        <div className={`p-5 h-full cursor-pointer ${color}  rounded-b-lg`}>
+        <div
+          className={`p-5 h-full cursor-pointer ${color}  rounded-b-lg h-auto`}
+        >
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700 dark:text-700 line-clamp-1">
             {name}
           </h5>
 
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-600 line-clamp-3 cursor-pointer text-sm -webkit-line-clamp-3">
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-600 line-clamp-3 cursor-pointer text-sm min-h-[3.6em]">
             {place}
           </p>
           {/* <Button
