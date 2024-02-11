@@ -32,10 +32,10 @@ const CardPlaces = ({
             {name}
           </h5>
 
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-600 line-clamp-3 cursor-pointer text-sm">
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-600 line-clamp-3 cursor-pointer text-sm -webkit-line-clamp-3">
             {place}
           </p>
-          <Button
+          {/* <Button
             variant="contained"
             sx={{ fontSize: "15px" }}
             onClick={(e) => {
@@ -44,7 +44,7 @@ const CardPlaces = ({
             }}
           >
             Read more
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>
