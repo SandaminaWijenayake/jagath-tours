@@ -1050,7 +1050,7 @@ const Packages = () => {
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 07 to day 13 Program
+              Day 07 to day 14 Program
             </h1>
           </div>
 

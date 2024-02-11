@@ -1,7 +1,7 @@
 import React from "react";
 import image from "../images/beach-3.jpg";
 import image1 from "../images/photosgeniuslankatours/kandy/the-temple-of-tooth.jpg";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 //mui
@@ -38,27 +38,56 @@ const Hero = () => {
           Genius lanka tours has open doors to warmly welcome you to its
           countless and remarkable experience in the pearl of indian ocean
         </motion.div>
-        <Link to="/PlanningTool">
-          <motion.button
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1 },
-            }}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.5, delay: 1 }}
-            className="mt-2"
-          >
-            <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
+
+        <motion.button
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.5, delay: 1 }}
+          className="mt-2"
+        >
+          <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
+            <Link to="/PlanningTool">
               <Button
                 variant="contained"
                 sx={{ padding: "10px", paddingLeft: "20px" }}
               >
                 Start planning <ArrowForwardIosIcon />
               </Button>
-            </Stack>
-          </motion.button>
-        </Link>
+            </Link>
+          </Stack>
+        </motion.button>
+        <motion.button
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.5, delay: 1 }}
+          className="mt-2"
+        >
+          <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
+            <Link to="/PlanningTool">
+              <Button
+                variant="contained"
+                sx={{
+                  padding: "10px",
+                  paddingLeft: "20px",
+                  marginLeft: "10px",
+                  color: "#2A76D2",
+                  bgcolor: "white",
+                  ":hover": { color: "white" },
+                }}
+              >
+                TOUR PACKAGES <ArrowForwardIosIcon />
+              </Button>
+            </Link>
+          </Stack>
+        </motion.button>
       </div>
 
       <div

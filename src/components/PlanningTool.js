@@ -28,6 +28,9 @@ import { GlobleContext } from "../globleState/GlobleState";
 import Button from "@mui/material/Button";
 import { color } from "framer-motion";
 
+// loading
+import CircularProgress from "@mui/material/CircularProgress";
+
 //chip
 
 //MUI
@@ -82,6 +85,8 @@ const PlanningTool = () => {
   const [activiyOutPut, setActivityOutput] = useState([]);
   const [weatherOutPut, setWeatherOutPut] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const { select, setSelect, chosenPlaces } = useContext(GlobleContext);
 
   const navigate = useNavigate();
@@ -89,12 +94,14 @@ const PlanningTool = () => {
   // const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getPlaces = async () => {
       const colRef = collection(db, "places");
 
       const docSnap = await getDocs(colRef);
       setPlaces(docSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setTempState(docSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setIsLoading(false);
     };
     getPlaces();
   }, []);
@@ -285,22 +292,30 @@ const PlanningTool = () => {
           </Stack>
         </div> */}
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-10 gap-20">
-          {places.map((data) => {
-            return (
-              <CardPlaces
-                key={data.id}
-                name={data.Name}
-                place={data.Description}
-                imageURL={data.imageURL}
-                id={data.id}
-                Weather={data.Weather}
-                Activities={data.Activities}
-                choosePlacesHandler={choosePlacesHandler}
-              />
-            );
-          })}
-        </div>
+        {isLoading ? (
+          <div className="min-h-screen flex justify-center mt-52">
+            <Box sx={{ display: "flex" }}>
+              <CircularProgress size="60px" />
+            </Box>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-10 gap-20">
+            {places.map((data) => {
+              return (
+                <CardPlaces
+                  key={data.id}
+                  name={data.Name}
+                  place={data.Description}
+                  imageURL={data.imageURL}
+                  id={data.id}
+                  Weather={data.Weather}
+                  Activities={data.Activities}
+                  choosePlacesHandler={choosePlacesHandler}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
       {/* <div className="lg:w-5/12">
         <h1 className="text-4xl font-semibold my-5 font-Roboto">

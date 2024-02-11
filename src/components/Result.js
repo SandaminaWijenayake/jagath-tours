@@ -76,23 +76,29 @@ const Result = () => {
     <div className="w-4/5 m-auto font-Roboto lg:py-36 py-20">
       <div className="md:flex">
         <div className="md:w-1/2">
-          <h1 className="text-4xl font-semibold my-5  md:mb-5 font-Roboto">
+          <h1 className="text-3xl md:text-4xl font-semibold my-5  md:mb-5 font-Roboto">
             Chosen places
           </h1>
-          {select.map((data) => {
-            return (
-              <div className="py-2 md:mr-16">
-                <ChosonCardPlaces
-                  key={data.id}
-                  name={data.Name}
-                  place={data.Description}
-                  imageURL={data.imageURL}
-                  deleteHandler={deleteHandler}
-                  id={data.id}
-                />
-              </div>
-            );
-          })}
+          {chosenPlaces.current.length == 0 ? (
+            <h1 className="my-10">You haven't choose any places</h1>
+          ) : (
+            <div>
+              {select.map((data) => {
+                return (
+                  <div className="py-2 md:mr-16">
+                    <ChosonCardPlaces
+                      key={data.id}
+                      name={data.Name}
+                      place={data.Description}
+                      imageURL={data.imageURL}
+                      deleteHandler={deleteHandler}
+                      id={data.id}
+                    />
+                  </div>
+                );
+              })}{" "}
+            </div>
+          )}
         </div>
         <div className="md:w-1/2">
           <h1 className="lg:text-4xl text-3xl font-bold lg:my-5 md:mt-20">

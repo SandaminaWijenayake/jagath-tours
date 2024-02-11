@@ -3,6 +3,7 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Link } from "react-router-dom";
 
 const onHover = {
   ":hover": { color: "white" },
@@ -15,10 +16,18 @@ const Footer = () => {
         <div className="w-2/6 m-auto  font-light text-center">
           <ul className="text-center">
             <li className="font-bold">Links</li>
-            <li className="hover:text-sky-300">Packages</li>
-            <li className="hover:text-sky-300">Contact us </li>
-            <li className="hover:text-sky-300">About us</li>
-            <li className="hover:text-sky-300">Reviews</li>
+            <Link to="/Packages">
+              <li className="hover:text-sky-300">Packages</li>
+            </Link>
+            <Link to="/PlanningTool">
+              <li className="hover:text-sky-300">Plan your trip</li>
+            </Link>
+            <Link to="/Contact_Us">
+              <li className="hover:text-sky-300">Contact us </li>
+            </Link>
+            <Link to="/About_us">
+              <li className="hover:text-sky-300">About us</li>
+            </Link>
           </ul>
         </div>
         <div className="w-2/6 hidden sm:block">
@@ -39,10 +48,12 @@ const Footer = () => {
         <div className="sm:w-2/6 font-light m-auto text-center mt-9 sm:mt-0">
           <ul className="text-center">
             <li className="font-bold">Destinations</li>
-            <li className="hover:text-sky-300">7 days tour package</li>
-            <li className="hover:text-sky-300">4 days tour package</li>
-            <li className="hover:text-sky-300">3 days tour package</li>
-            <li className="hover:text-sky-300">Plan your own trip</li>
+            <Link to="/SevenDaysPackage">
+              <li className="hover:text-sky-300">14 days tour package</li>
+            </Link>
+            <Link to="/BeachStaying">
+              <li className="hover:text-sky-300">Beach staying tour package</li>
+            </Link>
           </ul>
         </div>
         <div className="sm:w-2/6 m-auto sm:hidden mt-9 sm:mt-0">

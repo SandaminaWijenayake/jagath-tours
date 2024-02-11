@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Section1 from "./Section1";
 import SriLanka from "./SriLanka";
 import Blogs from "./Blogs";
@@ -9,10 +9,13 @@ import Hero from "./Hero";
 import OurServices from "./OurServices";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Hero />
-      <Section1 />
+      {/* <Section1 /> */}
       <SriLanka />
       <OurServices />
       <Blogs />

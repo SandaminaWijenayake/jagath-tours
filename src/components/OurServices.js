@@ -169,10 +169,10 @@ const OurServices = () => {
             Maldives, India or any other destination.
           </p>
         </div>
-      </div>
-      <div className="mt-5 md:mt-10 font-Roboto">
-        {" "}
-        Please note that all rates are negotiable
+        <div className="mt-5 md:mt-10 font-Roboto">
+          {" "}
+          Please note that all rates are negotiable
+        </div>
       </div>
     </div>
   );

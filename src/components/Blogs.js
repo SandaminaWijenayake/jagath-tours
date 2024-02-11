@@ -15,7 +15,7 @@ const Blogs = () => {
       <h1 className="text-3xl font-Roboto font-semibold text-center my-5">
         POPULAR DESTINATIONS TO GO
       </h1>
-      <p className=" text-center font-manrope">
+      <p className=" text-center font-Roboto">
         You are the type of person who wants to take amazing unique
         vacations-the kink where luxury meets authentic, and each experience
         above all else and are differentiated by serving their needs first - we

@@ -29,7 +29,7 @@ const SriLanka = () => {
           <h1 className="xl:text-4xl text-4xl my-5 font-semibold font-Roboto">
             What is Sri Lanka?
           </h1>
-          <p className="text-xl mt-10 sm:text-justify">
+          <p className="md:text-lg mt-10 sm:text-justify">
             Sri Lanka officially, the democratic socialist republic of Sri Lanka
             is an island country located to the southeast of India. Being a
             democracy Free elections are held every five years to choose a
@@ -44,7 +44,7 @@ const SriLanka = () => {
             className="rounded-md my-5 w-full xl:hidden"
           />
 
-          <p className="text-xl mt-10 sm:text-justify">
+          <p className="md:text-lg mt-10 sm:text-justify">
             <h1 className="text-4xl font-semibold my-5 font-Roboto">
               Demograpy
             </h1>
@@ -56,7 +56,7 @@ const SriLanka = () => {
             Sri Lanka a truly multi-religious, multilingual, and multi-ethnic
             country with a population of more than 20 million.
           </p>
-          <p className="text-xl mt-10 sm:text-justify">
+          <p className="md:text-lg mt-10 sm:text-justify">
             <h1 className="text-4xl font-semibold my-5 font-Roboto">
               Geography
             </h1>
@@ -79,14 +79,14 @@ const SriLanka = () => {
         The main export crops are tea, rubber and coconut. Being close to the
         equator, it has a hot, wet climate.
       </p> */}
-      <p className="text-xl mt-10 sm:text-justify">
+      <p className="md:text-lg mt-10 sm:text-justify">
         <h1 className="text-4xl font-semibold my-5 font-Roboto">History</h1>
         Sri Lanka was ruled by Kings from ancient times as far back as the 3rd
         century B.C spanning over 2.500 years as recorded history depicts.
         Recent excavations show that even during the Neolithic Age, there were
         food gatherers and rice cultivators in Sri Lanka.
       </p>
-      <p className="text-xl mt-5 sm:text-justify">
+      <p className="md:text-lg mt-5 sm:text-justify">
         The Mahavansa relates that the island was conquered in 504 BC by Vijaya,
         a hindu prince from Northeast India. After subjugating the aboriginal
         inhabitants, a people now know as Veddas, vijaya married a native
@@ -106,7 +106,7 @@ const SriLanka = () => {
         Northeast plain and polonnaruwa near the Mahaweli River to the
         southeast. both in succession became capitals of the Sinhalese kingdom.
       </p>
-      <p className="text-xl mt-10 sm:text-justify">
+      <p className="md:text-lg mt-10 sm:text-justify">
         <h1 className="text-4xl font-semibold my-5 font-Roboto">Wildlife</h1>
         Sri Lanka is the Best for Big Game Safaris outside Africa. Its Big Five
         are the Elephant, Leopard, Sloth Bear, Blue and Sperm Whale. Few
@@ -115,7 +115,7 @@ const SriLanka = () => {
         Island Safari. Sri Lanka offers with six most recommended wildlife
         safari Udawalwawe, Yala, Wilpattu, Minneriya national parks, Kaudulla
         and Eco park.
-        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0 text-lg sm:text-xl">
+        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-5 lg:mx-0 md:text-lg">
           <li>Udawalawa National Park</li>
           <li>Yala National Park</li>
           <li>Wilpattu National Park</li>
@@ -148,7 +148,7 @@ const SriLanka = () => {
           <p className="text-center  mt-4 font-medium"></p>
         </div>
       </div>
-      <p className="text-xl mt-10 sm:text-justify">
+      <p className="md:text-lg mt-10 sm:text-justify">
         <h1 className="text-4xl font-semibold my-5 font-Roboto">Activities</h1>
         There's good swimming at any number of beaches along the south western
         coast with excellent scuba diving, snorkelling and surfing found at
@@ -163,7 +163,7 @@ const SriLanka = () => {
         Samanala Kanda (butterfly mountain). Climbing Sigiriya or Sinhagiri is
         an ancient rock fortress located in the northern Matale District near
         the town of Dambulla in the Central Province, Sri Lanka.
-        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-10 lg:mx-0  text-lg sm:text-xl">
+        <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-5 lg:mx-0  md:text-lg">
           <li>Water rafting- kithulgala </li>
           <li>Ella rock climbing </li>
           <li>Flying ravana</li>
@@ -186,7 +186,7 @@ const SriLanka = () => {
         />
         <img src={activity_1} alt="" className="rounded-md object-cover mt-2" />
       </div>
-      <p className="text-xl mt-10 sm:text-justify">
+      <p className="md:text-lg mt-10 sm:text-justify">
         <h1 className="text-4xl font-semibold my-5">Economy</h1>
         The currency in use is the Sri Lankan rupee. Sri Lanka, being a
         developing country, has initiated many development projects. The road
@@ -198,7 +198,7 @@ const SriLanka = () => {
         Lanka has many banks, both local and international, that serve its
         customers with many banking cards and foreign currency.
       </p>
-      <p className="text-xl mt-10 sm:text-justify">
+      <p className="md:text-lg mt-10 sm:text-justify">
         Sri Lanka has one of the highest literacy rates in the world. The health
         care system is also on par with the developed world. Sri Lanka provides
         free education and health care to all its citizens. However, there are
@@ -207,7 +207,7 @@ const SriLanka = () => {
         country. In areas where this facility is not available, people use water
         from filtered wells for their own consumption.
       </p>
-      <p className="text-xl mt-10 sm:text-justify">
+      <p className="md:text-lg mt-10 sm:text-justify">
         <h1 className="text-3xl sm:text-4xl font-semibold my-5">
           Sri Lankan Cuisines
         </h1>
@@ -242,12 +242,12 @@ const SriLanka = () => {
           className="rounded-md h-full object-cover"
         />
       </div>
-      <p className="text-xl mt-5 sm:text-justify">
+      <p className="md:text-lg mt-5 sm:text-justify">
         Boiled or steamed rice, served with a curry of fish or meat, along with
         other curries made with vegetables, lentils, or fruits. Dishes are
         accompanied by pickled fruits or vegetables, chutneys, and sambols.
       </p>
-      <p className="text-xl mt-5 sm:text-justify">
+      <p className="md:text-lg mt-5 sm:text-justify">
         A variety of cuisines are available, which include both eastern and
         western Chinese and local dishes.
       </p>
@@ -255,7 +255,7 @@ const SriLanka = () => {
         <div className="lg:w-1/3 lg:block hidden lg:mt-10">
           <Lottie animationData={animationData2} />
         </div>
-        <p className="text-xl mt-10 sm:text-justify lg:w-2/3 lg:ml-10">
+        <p className="md:text-lg mt-10 sm:text-justify lg:w-2/3 lg:ml-10">
           <h1 className="text-4xl font-semibold my-5">Travel Guides</h1>
           Our Sri Lanka Travel Guides will tell you all you need to know about
           visiting the wonderful island of Sri Lanka. Tourist guides provides

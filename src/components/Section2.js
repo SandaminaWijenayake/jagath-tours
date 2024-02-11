@@ -10,11 +10,11 @@ const Section2 = () => {
   const navigate = useNavigate();
   return (
     <div className="mt-20 text-center">
-      <div className="font-Roboto">3 STEPS TO THE PERFECT TRIP</div>
+      {/* <div className="font-Roboto">3 STEPS TO THE PERFECT TRIP</div> */}
       <h1 className="text-4xl lg:w-2/5 m-auto my-5 font-Roboto font-semibold text-center">
         FIND TRAVEL PERFECTION WITH THE WISDOM OF EXPERTS
       </h1>
-      <p className="w-2/3 m-auto font-manrope">
+      <p className="w-2/3 m-auto font-Roboto">
         Naturally head of the class when is comes to luxury travel planning.
         because we do more work then anyone else, with a few lettle sweeteners
         thrown in! travel to four corners of the Sri lanka without going around
@@ -33,6 +33,7 @@ const Section2 = () => {
       </div>
 
       <Button
+        sx={{ marginTop: "15px" }}
         variant="outlined"
         onClick={() => {
           navigate("/PlanningTool");

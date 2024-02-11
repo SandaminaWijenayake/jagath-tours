@@ -10,6 +10,9 @@ const sxStyle = {
 };
 
 const BlogContent = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="w-4/5 m-auto font-Roboto ">
       <div className="py-14 text-center"></div>

@@ -110,7 +110,7 @@ const ContactUs = () => {
             <div className="flex my-5">
               <EmailIcon fontSize="large" />
               <p className="ml-2 text-sm md:text-lg sm:ml-5 translate-y-1">
-                geniuslankatours@gmail.com{" "}
+                geniuslankatours01@gmail.com{" "}
               </p>
             </div>
           </div>
