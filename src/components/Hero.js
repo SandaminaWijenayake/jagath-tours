@@ -21,7 +21,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-4xl md:text-7xl mb-0 font-bold font-serif"
+          className="text-4xl md:text-6xl mb-0 font-bold font-serif"
         >
           Sri Lanka
         </motion.p>
@@ -33,7 +33,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.5, delay: 1 }}
-          className="text-base lg:text-2xl font-Roboto"
+          className="text-base  font-Roboto"
         >
           Genius lanka tours has open doors to warmly welcome you to its
           countless and remarkable experience in the pearl of indian ocean

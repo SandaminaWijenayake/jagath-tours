@@ -8,6 +8,7 @@ import StarHalfIcon from "@mui/icons-material/StarHalf";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import StarsIcon from "@mui/icons-material/Stars";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
+import { Alert, Stack } from "@mui/material";
 
 const heights = [
   150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80,
@@ -23,9 +24,9 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const OurServices = () => {
   return (
-    <div className="xl:w-4/5 m-auto mt-20 font-Roboto w-11/12">
+    <div className="xl:w-5/6 m-auto mt-20 font-Roboto w-11/12">
       {" "}
-      <h1 className="text-4xl lg:w-2/5  mt-5 font-Roboto font-semibold">
+      <h1 className="text-4xl lg:w-3/5 mt-5 font-Roboto font-semibold">
         OUR SERVICES
       </h1>
       <p className="w-full mb-10">
@@ -35,7 +36,7 @@ const OurServices = () => {
         <span className="text-2xl sm:text-3xl font-bold my-5">
           <StarHalfIcon /> All transport facilities
         </span>
-        <span className="text-base ml-2">
+        <span className="ml-2">
           : Transport arrangements to and from the airport. All of our vehicles
           and passengers are fully insured. Our drivers converse in different
           languages.
@@ -45,7 +46,7 @@ const OurServices = () => {
         <span className="text-2xl sm:text-3xl font-bold my-5">
           <StarHalfIcon /> accommodations
         </span>
-        <span className="text-base ml-2">
+        <span className="ml-2">
           : We arrange accommodations at bungalows, homestays, annexes, guest
           houses, villas, and all-star-class hotels in all locations of the
           country.
@@ -55,7 +56,7 @@ const OurServices = () => {
         <span className="text-2xl sm:text-3xl font-bold my-5">
           <StarHalfIcon /> Arranging tours and travels
         </span>
-        <span className="text-base ml-2">
+        <span className="ml-2">
           : From your arrival in Sri Lanka to the time of departure we undertake
           all your travel requirements. These include,
         </span>
@@ -169,10 +170,27 @@ const OurServices = () => {
             Maldives, India or any other destination.
           </p>
         </div>
-        <div className="mt-5 md:mt-10 font-Roboto">
-          {" "}
-          Please note that all rates are negotiable
+        <div className="mt-5 font-Roboto">
+          <div className="md:w-3/4 w-11/12 m-auto mt-10">
+            {" "}
+            <Stack sx={{ width: "100%" }} spacing={2}>
+              <Alert severity="info">
+                Please note that all rates are negotiable
+              </Alert>
+            </Stack>
+          </div>
         </div>
+      </div>
+      <div className="mt-20">
+        <h1 className="text-4xl lg:w-3/5  font-Roboto font-semibold">
+          HOTELS TO STAY
+        </h1>
+        <p className="my-10 w-4/6">
+          {" "}
+          We find all kinds of hotels for you. Whether you're looking for
+          something affordable (budget) or luxurious, we've got you covered. Our
+          network includes top hotels from all over the country.
+        </p>
       </div>
     </div>
   );

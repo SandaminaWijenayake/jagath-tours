@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //Tangalla
 import Tangalla from "../images/photosgeniuslankatours/Tangalla/Tangalle-Beach-scaled.png";
@@ -29,8 +29,6 @@ import Hikkaduwa_2 from "../images/photosgeniuslankatours/Hikkaduwa/P1130084.jpg
 import Hikkaduwa_3 from "../images/photosgeniuslankatours/Hikkaduwa/5f873fa6485e2a69282b349417a606b6.jpg";
 import Hikkaduwa_4 from "../images/photosgeniuslankatours/Hikkaduwa/122-1024x679-1.jpg";
 import Hikkaduwa_5 from "../images/photosgeniuslankatours/Hikkaduwa/what-to-do-in-hikkaduwa-hero.jpg";
-
-
 
 //bentota
 import bentota_1 from "../images/photosgeniuslankatours/Bentota/bentota_1.jpg";
@@ -95,7 +93,6 @@ const itemDataNuwaraEliya = [
   },
 ];
 
-
 const itemDataHikkaduwa = [
   {
     img: Hikkaduwa_1,
@@ -136,14 +133,17 @@ const iconColors = {
 };
 
 const BeachStaying = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="font-Roboto">
       <div className="py-14 w-3/4 m-auto">
-        <h1 className="sm:text-6xl text-4xl font-bold font-manrope lg:mt-20 mt-16 lg:text-left text-center">
-          Genius Lanka Tours packages
+        <h1 className="sm:text-5xl text-4xl font-bold  lg:mt-20 mt-16 lg:text-left text-center">
+          Genius Lanka tours packages
         </h1>
       </div>
-      <h1 className="my-10 md:text-left font-manrope m-auto text-2xl text-center sm:text-4xl border-b-2 w-3/4">
+      <h1 className="w-3/4 hidden md:block my-10 md:text-left m-auto text-2xl font-Roboto font-bold text-center sm:text-3xl border-b-2">
         Tour Package Beach Staying
       </h1>
       <div className="w-11/12 m-auto md:hidden">
@@ -327,17 +327,18 @@ const BeachStaying = () => {
             Lanka, known for its vibrant beach culture and beautiful stretches
             of golden sand. This popular tourist destination offers a blend of
             relaxation and entertainment, with a long palm-fringed beach that
-            attracts sun-seekers, surfers, and snorkelers alike. 
+            attracts sun-seekers, surfers, and snorkelers alike.
           </p>
-          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-b-2">The town is
-            renowned for its coral reefs, making it a hotspot for snorkeling and
-            diving enthusiasts who come to explore the diverse marine life.
-            Hikkaduwa also boasts a bustling beachfront with restaurants, bars,
-            and shops, creating a lively atmosphere especially during the peak
-            tourist seasons. The town's nightlife offers a mix of beach parties
-            and laid-back bars where travelers can unwind after a day of beach
-            activities.</p>
-         
+          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-b-2">
+            The town is renowned for its coral reefs, making it a hotspot for
+            snorkeling and diving enthusiasts who come to explore the diverse
+            marine life. Hikkaduwa also boasts a bustling beachfront with
+            restaurants, bars, and shops, creating a lively atmosphere
+            especially during the peak tourist seasons. The town's nightlife
+            offers a mix of beach parties and laid-back bars where travelers can
+            unwind after a day of beach activities.
+          </p>
+
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
               <StarIcon fontSize="large" sx={iconColors} />
@@ -385,7 +386,7 @@ const BeachStaying = () => {
             itinerary as you will experience the gifts of nature every minute of
             your stay!
           </p>
-         
+
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
               <StarIcon fontSize="large" sx={iconColors} />
@@ -416,7 +417,7 @@ const BeachStaying = () => {
             Departure
           </h1>
           <div className="md:w-3/4 w-11/12 m-auto">
-                {/* <h1 className="my-12 md:text-left text-center text-3xl md:text-4xl">
+            {/* <h1 className="my-12 md:text-left text-center text-3xl md:text-4xl">
                   <EventNoteIcon fontSize="large" sx={iconColors} />
                   Day 08 Program - Departure
                 </h1> */}

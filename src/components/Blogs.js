@@ -12,7 +12,7 @@ const Blogs = () => {
   return (
     <div className="w-4/5 m-auto mt-32 ">
       <div className="text-center"></div>
-      <h1 className="text-3xl font-Roboto font-semibold text-center my-5">
+      <h1 className="md:text-4xl font-Roboto font-semibold text-center my-10">
         POPULAR DESTINATIONS TO GO
       </h1>
       <p className=" text-center font-Roboto">
@@ -22,7 +22,7 @@ const Blogs = () => {
         want to make their hectic and stressful lives easier by enabling them to
         forcus on enjoying their vacation and ensuring they get the most.
       </p>
-      <div className="lg:grid lg:grid-flow-row grid-cols-3 lg:gap-5 mt-10">
+      <div className="lg:grid lg:grid-flow-row grid-cols-3 lg:gap-5 mt-16">
         <div className="col-span-2 row-span-2 relative ">
           <img src={beach_3} alt="" className="h-full rounded-md block " />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">

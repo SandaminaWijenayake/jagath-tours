@@ -15,12 +15,29 @@ import Box from "@mui/material/Box";
 // emailJs
 import emailjs from "@emailjs/browser";
 
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+import { Alert } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
+// snackbar
+
 const Result = () => {
   const { select, setSelect, chosenPlaces } = useContext(GlobleContext);
   const [places, setPlaces] = useState([]);
   const form = useRef();
   const [name, setName] = useState("");
 
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+    navigate("/");
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const navigate = useNavigate();
   // useEffect(() => {
   //   select.forEach((data) => {
   //     setName(data.Name);
@@ -29,7 +46,7 @@ const Result = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    handleOpen();
     emailjs
       .sendForm(
         "service_efkbr9o",
@@ -49,6 +66,7 @@ const Result = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getPlaces = async () => {
       const colRef = collection(db, "places");
 
@@ -79,7 +97,7 @@ const Result = () => {
           <h1 className="text-3xl md:text-4xl font-semibold my-5  md:mb-5 font-Roboto">
             Chosen places
           </h1>
-          {chosenPlaces.current.length == 0 ? (
+          {chosenPlaces.current.length === 0 ? (
             <h1 className="my-10">You haven't choose any places</h1>
           ) : (
             <div>
@@ -101,15 +119,11 @@ const Result = () => {
           )}
         </div>
         <div className="md:w-1/2">
-          <h1 className="lg:text-4xl text-3xl font-bold lg:my-5 md:mt-20">
-            How everything started
-          </h1>
           <p className="pt-4">
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-            autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-            nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-            voluptas nulla pariatur.
+            Thank you for expressing interest in exploring new destinations!
+            Please provide us with your preferred locations, and any additional
+            details you'd like to share. We'll promptly reach out to you via
+            email to assist you further in planning your dream trip.
           </p>
           <p className="py-5">
             {" "}
@@ -155,7 +169,7 @@ const Result = () => {
                     <Box>
                       <TextField
                         id="outlined-basic"
-                        label="Email"
+                        label="Your Email"
                         variant="outlined"
                         sx={{
                           width: "100%",
@@ -185,7 +199,7 @@ const Result = () => {
                     <Box>
                       <TextField
                         id="outlined-multiline-static"
-                        label="Message"
+                        label="Additional Details"
                         multiline
                         rows={4}
                         defaultValue=""
@@ -208,6 +222,23 @@ const Result = () => {
                 >
                   send an email
                 </Button>
+                <div>
+                  <Backdrop
+                    sx={{
+                      color: "#fff",
+                      zIndex: (theme) => theme.zIndex.drawer + 1,
+                    }}
+                    open={open}
+                    onClick={handleClose}
+                  >
+                    <Alert severity="success" sx={{ width: "50%" }}>
+                      {" "}
+                      Thank you for sharing your desired destinations with us!
+                      I'll get back to you via email as soon as possible to
+                      discuss your travel plans further. Your adventure awaits!
+                    </Alert>
+                  </Backdrop>
+                </div>
               </Stack>
             </form>
             {/* <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
@@ -218,7 +249,7 @@ const Result = () => {
               >
                 send an email
               </Button>
-            </Stack> */}
+            </Stack>  */}
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         manrope: ["Manrope"],
         Roboto: ["Roboto"],
+        Lato: ["Lato"],
       },
       backgroundImage: {
         blueLogo: "url('./images/logoblue.png')",

@@ -9,7 +9,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const Section2 = () => {
   const navigate = useNavigate();
   return (
-    <div className="mt-20 text-center">
+    <div className="my-40 text-center">
       {/* <div className="font-Roboto">3 STEPS TO THE PERFECT TRIP</div> */}
       <h1 className="text-4xl lg:w-2/5 m-auto my-5 font-Roboto font-semibold text-center">
         FIND TRAVEL PERFECTION WITH THE WISDOM OF EXPERTS

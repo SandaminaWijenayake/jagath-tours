@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const AboutUs = () => {
   return (
     <>
-      <div className="w-11/12 m-auto font-Roboto">
+      <div className="w-11/12 lg:w-8/12 m-auto font-Roboto">
         <h1 className="sm:text-6xl text-5xl font-bold mt-28 lg:text-left text-center">
           Who We Are
         </h1>
@@ -61,14 +61,14 @@ const AboutUs = () => {
               (Scandinavian), Vingresor, Scan Tours, Tiaereborg, Ving Tours, My
               Travel, Always Fritidsresor, Arurinko Matkat, Tui Nordic, Tui, and
               Start Tour. I handled these travel operations under my travel
-              company, Genius Lanka Tours. With the industry in Sri Lanka, I
-              opened a seafood restaurant named Sunset Restaurant in Bentota
-              14-room hotel Southern Palm Villa. In addition, I have a
-              money-changing business catering to tourists. I have been in the
-              travel trade for 30 years and have wide experience in this field.
-              I am committed to maintaining the same high standards for all
-              tourists who wish to make use of my service. We assure you of your
-              security and safety at all times during your stay in Sri Lanka.
+              company, Jagath travels (Now new name Genius Lanka Tours). With
+              the industry in Sri Lanka, I opened a seafood restaurant named
+              Sunset Restaurant in Bentota 14-room hotel Southern Palm Villa. I
+              have been in the travel trade for 30 years and have wide
+              experience in this field. I am committed to maintaining the same
+              high standards for all tourists who wish to make use of my
+              service. We assure you of your security and safety at all times
+              during your stay in Sri Lanka.
             </p>
           </div>
           <div className="w-1/2 h-32 lg:mt-36">
@@ -91,7 +91,7 @@ const AboutUs = () => {
               an adventure.
             </p>
           </div>
-          <div className="flex sm:w-1/2 h-96 mb-96 pb-10 pt-10 md:pt-0">
+          <div className="flex sm:w-1/2 h-96 mb-52 lg:mb-96 pb-10 pt-10 md:pt-0">
             <div className="w-1/3 mx-2 mt-80 h-full ">
               <img className="rounded-lg" src={about1} alt="" />
             </div>
@@ -105,9 +105,9 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className=" md:mt-40 pb-32">
+        <div className=" md:mt-32 pb-32">
           <div className="xl:w-1/2 mb-16">
-            <h1 className="text-5xl mt-16 font-bold mb-10">
+            <h1 className="text-5xl mt-7 lg:mt-16 font-bold mb-10">
               Why Choose Genius Lanka Tours?
             </h1>
             <p className="text-xl  sm:w-5/6 text-gray-700">

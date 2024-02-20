@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./packages.css";
 
 //mui
@@ -53,6 +53,7 @@ import bentota_5 from "../images/photosgeniuslankatours/Bentota/bentota_5.png";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import StarIcon from "@mui/icons-material/Star";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -64,6 +65,8 @@ import colombo_2 from "../images/photosgeniuslankatours/colombo/colombo-2.jpg";
 import colombo_3 from "../images/photosgeniuslankatours/colombo/colombo-3.avif";
 import colombo_4 from "../images/photosgeniuslankatours/colombo/colombo-4.jpg";
 import colombo_5 from "../images/photosgeniuslankatours/colombo/colombo-5.jpg";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const colomboData = [
   {
@@ -193,16 +196,21 @@ const iconColors = {
 };
 
 const Packages = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const navigate = useNavigate();
   return (
     <div className="font-Roboto">
       <div className="py-14 w-3/4 m-auto">
-        <h1 className="sm:text-6xl text-4xl font-bold font-Roboto lg:mt-20 mt-16 lg:text-left text-center">
-          Genius Lanka Tours packages
+        <h1 className="sm:text-5xl text-4xl font-bold  lg:mt-20 mt-16 lg:text-left text-center">
+          Genius Lanka tours packages
         </h1>
       </div>
       <div className="w-11/12 m-auto md:hidden">
         <ul className="list-disc marker:text-sky-500 text-lg pl-5">
-          <li>day 01 - Colombo</li>
+          <li>day 01 - Colombo/Nigombo</li>
           <li>day 02 - Sigiriya</li>
           <li>day 03 - kandy</li>
           <li>day 04 - Nuwara Eliya</li>
@@ -214,8 +222,8 @@ const Packages = () => {
         </ul>
       </div>
       <div className="w-3/4 m-auto hidden md:block">
-        <h1 className="my-10 md:text-left font-Roboto m-auto text-2xl text-center sm:text-4xl border-b-2">
-          Tour Package 14 Days (Including beach staying)
+        <h1 className="my-10 md:text-left m-auto text-2xl font-Roboto font-bold text-center sm:text-3xl border-b-2">
+          Tour package 14 days (including beach staying)
         </h1>
         <table id="packageTable">
           <tr className="font-semibold">
@@ -229,7 +237,7 @@ const Packages = () => {
               Day 1
             </td>
             <td className="text-sm font-bold text-black text-center">
-              Colombo
+              Colombo/Nigombo
             </td>
             <td>
               <ul className="px-5 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
@@ -378,21 +386,21 @@ const Packages = () => {
       <div className="md:w-3/4 w-11/12 m-auto mt-10">
         {" "}
         <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert variant="outlined" severity="error">
+          <Alert severity="info">
             <ul className="list-disc  md:mx-5 mx-4 text-xs md:text-sm">
               <li>
                 If you choose to depart in 7 days, your exploration begins with
                 Sigiriya and continues accordingly. We assistant at the airport
                 and Proceed to Sigiriya. On the 7th day, you can depart.
               </li>
-              <li>The last 7 days out of 14 days are beach staying</li>
+              {/* <li>The last 7 days out of 14 days are beach staying</li> */}
             </ul>
           </Alert>
         </Stack>
       </div>
       <div>
         <div className="md:mt-20 mt-16">
-          <h1 className="my-12 md:text-left md:w-3/4 w-11/12 m-auto text-center  text-4xl font-semibold border-b-2">
+          <h1 className="my-12 md:text-left md:w-3/4 w-11/12 m-auto text-center font-Lato  text-4xl font-semibold border-b-2">
             Detailed Itinerary
           </h1>
         </div>
@@ -427,27 +435,13 @@ const Packages = () => {
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 01 Program - Colombo
+              Day 01 Program - Colombo? Nigambo
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-              <li>Arrival and assistant at the airport Proceed to Sigiriya</li>
               <li>
-                Visit the Pinnawala Elephant orphanage to make friends with
-                elephants
+                We will welcome you from Katunayake airport and take you to the
+                hotel to spend the night in Colombo or Negombo
               </li>
-              <li>
-                Sri Lanka is one of the few destinations where you get to spend
-                time with the majestic beast the elephant, bathing and feeding
-                them are some of the few activities you will get to do
-              </li>
-              <li>Get to know about elephant dung products</li>
-              <li>Once completed proceeds to Sigiriya</li>
-              <li>
-                Later in the afternoon, head to Pidurangala Rock, which offers
-                stunning views of Sigiriya. Hike to the top and enjoy the
-                panoramic vistas of the surrounding countryside.
-              </li>
-              <li>Check in to hotel in Sigiriya and stay relax.</li>
             </ul>
           </div>
           <div className="md:w-3/4 w-11/12 m-auto">
@@ -1042,15 +1036,40 @@ const Packages = () => {
             <LocationOnIcon fontSize="large" sx={iconColors} />
             Beach Staying
           </h1>
-          <img
+
+          <div className="md:w-3/4 w-11/12 m-auto mt-10">
+            {" "}
+            <Stack sx={{ width: "100%" }} spacing={2}>
+              <Alert severity="info">
+                <ul className="list-disc  md:mx-5 mx-4 text-xs md:text-sm">
+                  <li>
+                    For the rest of the seven days out of fourteen days, you'll
+                    be staying at the beaches in Sri Lanka, where you can choose
+                    which ones you'd like to relax at
+                  </li>
+                  <li>
+                    To get a fully understanding about the beaches in Sri Lanka,
+                    you can check the link below
+                  </li>
+                </ul>
+              </Alert>
+            </Stack>
+          </div>
+          {/* <img
             className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
             // src={mirissa_1}
             alt=""
-          />
+          /> */}
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
-              <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 07 to day 14 Program
+              <Button
+                size="medium"
+                onClick={() => {
+                  navigate("/BeachStaying");
+                }}
+              >
+                Beaches in Sri Lanka <KeyboardArrowRightIcon />
+              </Button>
             </h1>
           </div>
 

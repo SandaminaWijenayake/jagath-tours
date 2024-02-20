@@ -87,29 +87,31 @@ const ContactUs = () => {
           <h1 className="text-4xl font-semibold my-5 font-Roboto">
             Get in touch
           </h1>
-          <p className="text-xl text-gray-700 text-justify">
+          <p className=" text-gray-700 text-justify">
             We'd love to hear from you! For any questions, travel inquiries, or
             special requests, our team is ready to assist. Reach out to us to
             start planning your next unforgettable journey. Contact us today.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 font-Lato">
             <div className="flex my-5">
-              <ApartmentIcon fontSize="large" />
-              <p className="ml-5 translate-y-1">
-                268/2, Jayasuriya Building, Galle Road, Bentota, Sri Lanka
+              <ApartmentIcon fontSize="small" />
+              <p className="ml-5 -translate-y-1">
+                268/2, Jayasuriya Building, Galle Road, Alutgama, Sri Lanka
               </p>
             </div>
             <div className="flex my-5">
-              <LocalPhoneIcon fontSize="large" />{" "}
-              <p className="ml-5 translate-y-1">Whatsapp : +94 77 902 7052</p>
+              <LocalPhoneIcon fontSize="small" />{" "}
+              <p className="ml-5 -translate-y-1">
+                Whatsapp / Mobile : +94 77 902 7052
+              </p>
             </div>
             <div className="flex my-5">
-              <LocalPhoneIcon fontSize="large" />{" "}
-              <p className="ml-5 translate-y-1">HotLine : +94 76 663 9599</p>
+              <LocalPhoneIcon fontSize="small" />{" "}
+              <p className="ml-5 -translate-y-1">HotLine : +94 76 663 9599</p>
             </div>
             <div className="flex my-5">
-              <EmailIcon fontSize="large" />
-              <p className="ml-2 text-sm md:text-lg sm:ml-5 translate-y-1">
+              <EmailIcon fontSize="small" />
+              <p className="ml-2 text-sm md:text-base sm:ml-5 -translate-y-1">
                 geniuslankatours01@gmail.com{" "}
               </p>
             </div>

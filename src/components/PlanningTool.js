@@ -27,6 +27,7 @@ import { GlobleContext } from "../globleState/GlobleState";
 //button
 import Button from "@mui/material/Button";
 import { color } from "framer-motion";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 // loading
 import CircularProgress from "@mui/material/CircularProgress";
@@ -92,6 +93,10 @@ const PlanningTool = () => {
   const navigate = useNavigate();
 
   // const [searchInput, setSearchInput] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -187,7 +192,7 @@ const PlanningTool = () => {
   };
 
   return (
-    <div className="w-11/12 m-auto pt-20 lg:flex lg:gap-10">
+    <div className="w-11/12 m-auto pt-20 lg:flex lg:gap-10 relative ">
       <div className="lg:w-9/12 m-auto">
         <div>
           <div>
@@ -195,10 +200,22 @@ const PlanningTool = () => {
               Choose places that you want to visit
             </h1>
           </div>
+          <div className="fixed bottom-10 right-10 max-h-screen z-50">
+            <Stack spacing={2} direction="row" sx={{ mt: 3 }}>
+              <Button
+                variant="contained"
+                onClick={buttonClickHandler}
+                sx={{ paddingLeft: "20px" }}
+              >
+                Next
+                <ArrowForwardIosIcon fontSize="small" />
+              </Button>
+            </Stack>
+          </div>
 
           <div className="sm:flex w-full">
             <div className="sm:w-1/3">
-              <Box sx={{ minWidth: "100%", mt: 1 }}>
+              <Box sx={{ minWidth: "100%", mt: 2 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
                     Interets
@@ -222,7 +239,7 @@ const PlanningTool = () => {
               </Box>
             </div>
             <div className="sm:w-1/3 sm:ml-5">
-              <Box sx={{ minWidth: "100%", mt: 1 }}>
+              <Box sx={{ minWidth: "100%", mt: 2 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
                     Activities
@@ -246,7 +263,7 @@ const PlanningTool = () => {
             </div>
 
             <div className="sm:w-1/3 sm:ml-5">
-              <Box sx={{ minWidth: "100%", mt: 1 }}>
+              <Box sx={{ minWidth: "100%", mt: 2 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Weather</InputLabel>
                   <Select
@@ -265,17 +282,6 @@ const PlanningTool = () => {
                   </Select>
                 </FormControl>
               </Box>
-            </div>
-            <div className="sm:ml-5">
-              <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
-                <Button
-                  variant="contained"
-                  onClick={buttonClickHandler}
-                  sx={{ paddingX: "30px" }}
-                >
-                  select
-                </Button>
-              </Stack>
             </div>
           </div>
         </div>

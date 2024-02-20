@@ -47,10 +47,10 @@ const Navbar = () => {
 
   return (
     <div className="font-Roboto">
-      <div className="flex justify-between px-8 top-0 left-0 w-full  z-10 font-bold fixed bg-white text-white shadow-sm p-2 text-sm  backdrop-blur-sm">
+      <div className="flex justify-between px-2 top-0 left-0 w-full  z-10 font-bold fixed bg-white text-white shadow-sm p-2 text-sm  backdrop-blur-sm">
         <Link to="/" className="">
           <div
-            className="-translate-y-0 md:w-64 p-3 w-48 pl-4 "
+            className="-translate-y-0 md:w-64 p-3 w-48 md:pl-4 "
             // style={{
             //   backgroundSize: "cover",
             //   backgroundImage: `url(${logoBlack})`,

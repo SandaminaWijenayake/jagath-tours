@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
       <div className="w-11/12 m-auto border-slate-600 border-double border-t-2"></div>
       <p className="font-extralight text-sm w-11/12 m-auto py-5 ">
-        © 2023 Jagath Travels, Inc. All rights reserved.
+        © 2023 Genius Lanka Tours, Inc. All rights reserved.
       </p>
     </div>
   );
