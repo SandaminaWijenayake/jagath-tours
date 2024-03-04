@@ -192,11 +192,11 @@ const PlanningTool = () => {
   };
 
   return (
-    <div className="w-11/12 m-auto pt-20 lg:flex lg:gap-10 relative ">
+    <div className="w-11/12 m-auto pt-20 lg:flex lg:gap-10 relative font-Merriweather md:text-sm text-xs text-gray-600 font-light">
       <div className="lg:w-9/12 m-auto">
         <div>
           <div>
-            <h1 className="text-3xl sm:text-4xl font-semibold my-5 font-Roboto">
+            <h1 className="text-3xl sm:text-4xl font-semibold my-5  text-center md:text-left">
               Choose places that you want to visit
             </h1>
           </div>
@@ -227,13 +227,33 @@ const PlanningTool = () => {
                     label="Weather"
                     onChange={InterestHandleChange}
                   >
-                    <MenuItem value="">
+                    <MenuItem sx={{ fontFamily: "-moz-initial" }} value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value={"adventure"}>adventure</MenuItem>
-                    <MenuItem value={"beach"}>beach</MenuItem>
-                    <MenuItem value={"culture"}>culture</MenuItem>
-                    <MenuItem value={"nature"}>nature</MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"adventure"}
+                    >
+                      Adventure
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"beach"}
+                    >
+                      Beach
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"culture"}
+                    >
+                      Culture
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"nature"}
+                    >
+                      Nature
+                    </MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -251,12 +271,27 @@ const PlanningTool = () => {
                     label="Weather"
                     onChange={ActivityHandleChange}
                   >
-                    <MenuItem value="">
+                    <MenuItem sx={{ fontFamily: "-moz-initial" }} value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value={"hiking"}>Hiking</MenuItem>
-                    <MenuItem value={"water sports"}>Water sports</MenuItem>
-                    <MenuItem value={"shopping"}>Shopping</MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"hiking"}
+                    >
+                      Hiking
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"water sports"}
+                    >
+                      Water sports
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"shopping"}
+                    >
+                      Shopping
+                    </MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -273,12 +308,24 @@ const PlanningTool = () => {
                     label="Weather"
                     onChange={WeatherHandleChange}
                   >
-                    <MenuItem value="">
+                    <MenuItem sx={{ fontFamily: "-moz-initial" }} value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value={"Tropical"}>Tropical Weather</MenuItem>
-                    <MenuItem value={"Hot"}>Hot Weather</MenuItem>
-                    <MenuItem value={"Cold"}>Cold Weather</MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"Tropical"}
+                    >
+                      Tropical Weather
+                    </MenuItem>
+                    <MenuItem sx={{ fontFamily: "-moz-initial" }} value={"Hot"}>
+                      Hot Weather
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ fontFamily: "-moz-initial" }}
+                      value={"Cold"}
+                    >
+                      Cold Weather
+                    </MenuItem>
                   </Select>
                 </FormControl>
               </Box>

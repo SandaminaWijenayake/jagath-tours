@@ -46,8 +46,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="font-Roboto">
-      <div className="flex justify-between px-2 top-0 left-0 w-full  z-10 font-bold fixed bg-white text-white shadow-sm p-2 text-sm  backdrop-blur-sm">
+    <div className="font-Merriweather">
+      <div className="flex justify-between px-2 top-0 left-0 w-full z-10 font-bold fixed bg-white text-white shadow-sm p-4 lg:p-2 text-sm  backdrop-blur-sm">
         <Link to="/" className="">
           <div
             className="-translate-y-0 md:w-64 p-3 w-48 md:pl-4 "
@@ -65,19 +65,19 @@ const Navbar = () => {
         <div className="hidden lg:inline-block">
           <ul className="flex justify-around text-xs translate-y-4 sm:w-96 text-black">
             <Link to="/Packages" className="hover:text-sky-700">
-              PACKAGES
+              Packages
             </Link>
             {/* <Link to="/Blogs" className="hover:text-sky-500">
               BLOGS
             </Link> */}
             <Link to="/PlanningTool" className="hover:text-sky-700">
-              PLAN YOUR TRIP
+              Plan Your Trip
             </Link>
             <Link to="/Contact_us" className="hover:text-sky-700">
-              CONTACT US
+              Contact Us
             </Link>
             <Link to="/About_us" className="hover:text-sky-700">
-              ABOUT US
+              About Us
             </Link>
           </ul>
         </div>

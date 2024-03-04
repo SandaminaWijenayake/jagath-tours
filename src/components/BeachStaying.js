@@ -137,13 +137,13 @@ const BeachStaying = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="font-Roboto">
+    <div className="font-Merriweather text-xs leading-5 text-gray-600">
       <div className="py-14 w-3/4 m-auto">
         <h1 className="sm:text-5xl text-4xl font-bold  lg:mt-20 mt-16 lg:text-left text-center">
           Genius Lanka tours packages
         </h1>
       </div>
-      <h1 className="w-3/4 hidden md:block my-10 md:text-left m-auto text-2xl font-Roboto font-bold text-center sm:text-3xl border-b-2">
+      <h1 className="w-3/4 hidden md:block my-10 md:text-left m-auto text-2xl  font-bold text-center sm:text-3xl border-b-2 text-blue-900">
         Tour Package Beach Staying
       </h1>
       <div className="w-11/12 m-auto md:hidden">

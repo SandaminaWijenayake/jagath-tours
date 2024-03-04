@@ -24,10 +24,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const OurServices = () => {
   return (
-    <div className="xl:w-5/6 m-auto mt-20 font-Roboto w-11/12">
+    <div className="xl:w-4/5 m-auto mt-20 font-Merriweather w-11/12 md:text-sm text-xs text-gray-600 font-light leading-5">
       {" "}
-      <h1 className="text-4xl lg:w-3/5 mt-5 font-Roboto font-semibold">
-        OUR SERVICES
+      <h1 className="text-4xl lg:w-3/5 mt-5  font-semibold text-orange-400">
+        {" "}
+        <span className="text-blue-900"> OUR</span> SERVICES
       </h1>
       <p className="w-full mb-10">
         We are fully equipped to cater to all tourists who visit Sri Lanka.
@@ -182,9 +183,7 @@ const OurServices = () => {
         </div>
       </div>
       <div className="mt-20">
-        <h1 className="text-4xl lg:w-3/5  font-Roboto font-semibold">
-          HOTELS TO STAY
-        </h1>
+        <h1 className="text-4xl lg:w-3/5  font-semibold">HOTELS TO STAY</h1>
         <p className="my-10 w-4/6">
           {" "}
           We find all kinds of hotels for you. Whether you're looking for

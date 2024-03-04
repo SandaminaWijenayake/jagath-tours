@@ -7,6 +7,8 @@ module.exports = {
         manrope: ["Manrope"],
         Roboto: ["Roboto"],
         Lato: ["Lato"],
+        LibreBaskerville: ["Libre Baskerville"],
+        Merriweather: ["Merriweather"],
       },
       backgroundImage: {
         blueLogo: "url('./images/logoblue.png')",

@@ -9,12 +9,12 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const Section2 = () => {
   const navigate = useNavigate();
   return (
-    <div className="my-40 text-center">
+    <div className="my-40 text-center md:text-sm text-xs text-gray-600 font-light font-Merriweather">
       {/* <div className="font-Roboto">3 STEPS TO THE PERFECT TRIP</div> */}
-      <h1 className="text-4xl lg:w-2/5 m-auto my-5 font-Roboto font-semibold text-center">
+      <h1 className="md:text-4xl text-xl lg:w-2/5 m-auto my-5  font-semibold text-center  text-blue-900">
         FIND TRAVEL PERFECTION WITH THE WISDOM OF EXPERTS
       </h1>
-      <p className="w-2/3 m-auto font-Roboto">
+      <p className="w-2/3 m-auto">
         Naturally head of the class when is comes to luxury travel planning.
         because we do more work then anyone else, with a few lettle sweeteners
         thrown in! travel to four corners of the Sri lanka without going around

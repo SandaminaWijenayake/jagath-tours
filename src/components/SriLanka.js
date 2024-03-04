@@ -23,13 +23,13 @@ import animationData2 from "../images/svg/Animation - 1698641345767.json";
 
 const SriLanka = () => {
   return (
-    <div className="xl:w-4/5 m-auto mt-20 font-Roboto w-11/12">
-      <div className="xl:flex lg:gap-10">
+    <div className="xl:w-4/5 m-auto mt-20 font-Merriweather w-11/12 md:text-sm text-xs text-gray-600 font-light">
+      <div className="xl:flex lg:gap-10 ">
         <div className="xl:w-6/12">
-          <h1 className="xl:text-4xl text-4xl my-5 font-semibold font-Roboto">
+          <h1 className="xl:text-4xl text-4xl my-5 font-semibold font-Merriweather text-center md:text-left text-blue-900">
             What is Sri Lanka?
           </h1>
-          <p className="mt-10 sm:text-justify">
+          <p className="mt-10 sm:text-justify text-center leading-5 ">
             Sri Lanka officially, the democratic socialist republic of Sri Lanka
             is an island country located to the southeast of India. Being a
             democracy Free elections are held every five years to choose a
@@ -44,8 +44,8 @@ const SriLanka = () => {
             className="rounded-md my-5 w-full xl:hidden"
           />
 
-          <p className="mt-10 sm:text-justify">
-            <h1 className="text-4xl font-semibold my-5 font-Roboto">
+          <p className="mt-10 sm:text-justify text-center leading-5">
+            <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
               Demograpy
             </h1>
             Sri Lanka is home to a rich mixture of people. They are the
@@ -56,8 +56,8 @@ const SriLanka = () => {
             Sri Lanka a truly multi-religious, multilingual, and multi-ethnic
             country with a population of more than 20 million.
           </p>
-          <p className="mt-10 sm:text-justify">
-            <h1 className="text-4xl font-semibold my-5 font-Roboto">
+          <p className="mt-10 sm:text-justify text-center leading-5">
+            <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
               Geography
             </h1>
             Geographically, it is approximately 433km long, 244km wide, and 66
@@ -79,14 +79,16 @@ const SriLanka = () => {
         The main export crops are tea, rubber and coconut. Being close to the
         equator, it has a hot, wet climate.
       </p> */}
-      <p className="mt-10 sm:text-justify">
-        <h1 className="text-4xl font-semibold my-5 font-Roboto">History</h1>
+      <p className="mt-10 sm:text-justify text-center leading-5">
+        <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
+          History
+        </h1>
         Sri Lanka was ruled by Kings from ancient times as far back as the 3rd
         century B.C spanning over 2.500 years as recorded history depicts.
         Recent excavations show that even during the Neolithic Age, there were
         food gatherers and rice cultivators in Sri Lanka.
       </p>
-      <p className="mt-5 sm:text-justify">
+      <p className="mt-5 sm:text-justify text-center leading-5">
         The Mahavansa relates that the island was conquered in 504 BC by Vijaya,
         a hindu prince from Northeast India. After subjugating the aboriginal
         inhabitants, a people now know as Veddas, vijaya married a native
@@ -107,14 +109,18 @@ const SriLanka = () => {
         southeast. both in succession became capitals of the Sinhalese kingdom.
       </p>
       <p className="mt-10 sm:text-justify">
-        <h1 className="text-4xl font-semibold my-5 font-Roboto">Wildlife</h1>
-        Sri Lanka is the Best for Big Game Safaris outside Africa. Its Big Five
-        are the Elephant, Leopard, Sloth Bear, Blue and Sperm Whale. Few
-        countries can rival its combination of Big Game safari animals, species
-        densities and tourism infrastructure. It is undoubtedly the Ultimate
-        Island Safari. Sri Lanka offers with six most recommended wildlife
-        safari Udawalwawe, Yala, Wilpattu, Minneriya national parks, Kaudulla
-        and Eco park.
+        <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
+          Wildlife
+        </h1>
+        <p className="sm:text-justify text-center leading-5">
+          Sri Lanka is the Best for Big Game Safaris outside Africa. Its Big
+          Five are the Elephant, Leopard, Sloth Bear, Blue and Sperm Whale. Few
+          countries can rival its combination of Big Game safari animals,
+          species densities and tourism infrastructure. It is undoubtedly the
+          Ultimate Island Safari. Sri Lanka offers with six most recommended
+          wildlife safari Udawalwawe, Yala, Wilpattu, Minneriya national parks,
+          Kaudulla and Eco park.
+        </p>
         <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-5 lg:mx-0 ">
           <li>Udawalawa National Park</li>
           <li>Yala National Park</li>
@@ -149,20 +155,25 @@ const SriLanka = () => {
         </div>
       </div>
       <p className="mt-10 sm:text-justify">
-        <h1 className="text-4xl font-semibold my-5 font-Roboto">Activities</h1>
-        There's good swimming at any number of beaches along the south western
-        coast with excellent scuba diving, snorkelling and surfing found at
-        Hikkaduwa, Unawatuna and Weligama along with sailing, windsurfing and
-        water skiing in Bentota River. Get on board at Mini Adam's Peak, Flying
-        Ravana Zip Line and fly over iconic tea estates and lush greenery
-        overlooking the famous Ella Gap. The hike to Ella Rock is more strenuous
-        than the hike to Little Adam's Peak. Besides being a holy tourist
-        destination, Adam's Peak is extremely popular with tourists for its
-        alluring beauty and unmatched trekking. The peak, the seventh tallest
-        peak in Sri Lanka, is also known as Sri Pada (sacred footstep) and
-        Samanala Kanda (butterfly mountain). Climbing Sigiriya or Sinhagiri is
-        an ancient rock fortress located in the northern Matale District near
-        the town of Dambulla in the Central Province, Sri Lanka.
+        <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
+          Activities
+        </h1>
+        <p className="sm:text-justify text-center leading-5">
+          There's good swimming at any number of beaches along the south western
+          coast with excellent scuba diving, snorkelling and surfing found at
+          Hikkaduwa, Unawatuna and Weligama along with sailing, windsurfing and
+          water skiing in Bentota River. Get on board at Mini Adam's Peak,
+          Flying Ravana Zip Line and fly over iconic tea estates and lush
+          greenery overlooking the famous Ella Gap. The hike to Ella Rock is
+          more strenuous than the hike to Little Adam's Peak. Besides being a
+          holy tourist destination, Adam's Peak is extremely popular with
+          tourists for its alluring beauty and unmatched trekking. The peak, the
+          seventh tallest peak in Sri Lanka, is also known as Sri Pada (sacred
+          footstep) and Samanala Kanda (butterfly mountain). Climbing Sigiriya
+          or Sinhagiri is an ancient rock fortress located in the northern
+          Matale District near the town of Dambulla in the Central Province, Sri
+          Lanka.
+        </p>
         <ul className="list-disc marker:text-sky-500 list-outside my-10 mx-5 lg:mx-0 ">
           <li>Water rafting- kithulgala </li>
           <li>Ella rock climbing </li>
@@ -186,8 +197,10 @@ const SriLanka = () => {
         />
         <img src={activity_1} alt="" className="rounded-md object-cover mt-2" />
       </div>
-      <p className="mt-10 sm:text-justify">
-        <h1 className="text-4xl font-semibold my-5">Economy</h1>
+      <p className="mt-10 sm:text-justify text-center leading-5">
+        <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
+          Economy
+        </h1>
         The currency in use is the Sri Lankan rupee. Sri Lanka, being a
         developing country, has initiated many development projects. The road
         network is constantly being improved with the opening of many road
@@ -198,7 +211,7 @@ const SriLanka = () => {
         Lanka has many banks, both local and international, that serve its
         customers with many banking cards and foreign currency.
       </p>
-      <p className="mt-10 sm:text-justify">
+      <p className="mt-10 sm:text-justify text-center leading-5">
         Sri Lanka has one of the highest literacy rates in the world. The health
         care system is also on par with the developed world. Sri Lanka provides
         free education and health care to all its citizens. However, there are
@@ -207,8 +220,8 @@ const SriLanka = () => {
         country. In areas where this facility is not available, people use water
         from filtered wells for their own consumption.
       </p>
-      <p className="mt-10 sm:text-justify">
-        <h1 className="text-3xl sm:text-4xl font-semibold my-5">
+      <p className="mt-10 sm:text-justify text-center leading-5">
+        <h1 className="text-3xl sm:text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
           Sri Lankan Cuisines
         </h1>
         Due to its tropical location and varied landscapes, Sri Lanka has a
@@ -242,12 +255,12 @@ const SriLanka = () => {
           className="rounded-md h-full object-cover"
         />
       </div>
-      <p className=" mt-5 sm:text-justify">
+      <p className=" mt-5 sm:text-justify text-center leading-5">
         Boiled or steamed rice, served with a curry of fish or meat, along with
         other curries made with vegetables, lentils, or fruits. Dishes are
         accompanied by pickled fruits or vegetables, chutneys, and sambols.
       </p>
-      <p className="mt-5 sm:text-justify">
+      <p className="mt-5 sm:text-justify text-center leading-5">
         A variety of cuisines are available, which include both eastern and
         western Chinese and local dishes.
       </p>
@@ -255,8 +268,10 @@ const SriLanka = () => {
         <div className="lg:w-1/3 lg:block hidden lg:mt-10">
           <Lottie animationData={animationData2} />
         </div>
-        <p className="mt-10 sm:text-justify lg:w-2/3 lg:ml-10">
-          <h1 className="text-4xl font-semibold my-5">Travel Guides</h1>
+        <p className="mt-10 sm:text-justify lg:w-2/3 lg:ml-10 text-center leading-5">
+          <h1 className="text-4xl font-semibold my-5 font-Merriweather text-center md:text-left text-blue-900">
+            Travel Guides
+          </h1>
           Our Sri Lanka Travel Guides will tell you all you need to know about
           visiting the wonderful island of Sri Lanka. Tourist guides provides
           the visitor with in depth knowledge in their mother tongue, all

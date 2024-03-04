@@ -202,14 +202,14 @@ const Packages = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="font-Roboto">
+    <div className="font-Merriweather text-xs leading-5 text-gray-600">
       <div className="py-14 w-3/4 m-auto">
         <h1 className="sm:text-5xl text-4xl font-bold  lg:mt-20 mt-16 lg:text-left text-center">
           Genius Lanka tours packages
         </h1>
       </div>
       <div className="w-11/12 m-auto md:hidden">
-        <ul className="list-disc marker:text-sky-500 text-lg pl-5">
+        <ul className="list-disc marker:text-sky-500 md:text-sm text-xs text-gray-600 font-light pl-5">
           <li>day 01 - Colombo/Nigombo</li>
           <li>day 02 - Sigiriya</li>
           <li>day 03 - kandy</li>
@@ -222,7 +222,7 @@ const Packages = () => {
         </ul>
       </div>
       <div className="w-3/4 m-auto hidden md:block">
-        <h1 className="my-10 md:text-left m-auto text-2xl font-Roboto font-bold text-center sm:text-3xl border-b-2">
+        <h1 className="my-10 md:text-left m-auto text-2xl font-bold text-center sm:text-3xl border-b-2 text-blue-900">
           Tour package 14 days (including beach staying)
         </h1>
         <table id="packageTable">
@@ -341,26 +341,7 @@ const Packages = () => {
               </ul>
             </td>
           </tr>
-          {/* <tr>
-            <td className="text-center text-sky-700 text-sm font-bold">
-              Day 7
-            </td>
-            <td className="text-sm font-bold text-center">Bentota</td>
-            <td>
-              <ul className="px-5 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
-                <li>Beach</li>
-                <li>Water Sports</li>
-              </ul>
-            </td>
-            <td>
-              <ul className="px-5 grid grid-cols-2 text-xs font-bold text-gray-700  gap-x-4 gap-2 list-disc">
-                <li>Water sport</li>
-                <li>Sri Lankan turtles</li>
-                <li>Fish therapy </li>
-                <li>Boat ride in Madu River</li>
-              </ul>
-            </td>
-          </tr> */}
+
           <tr>
             <td className="text-center text-sky-700 text-sm font-bold">
               Day 7 - 14
@@ -388,7 +369,7 @@ const Packages = () => {
         <Stack sx={{ width: "100%" }} spacing={2}>
           <Alert severity="info">
             <ul className="list-disc  md:mx-5 mx-4 text-xs md:text-sm">
-              <li>
+              <li className="font-Merriweather">
                 If you choose to depart in 7 days, your exploration begins with
                 Sigiriya and continues accordingly. We assistant at the airport
                 and Proceed to Sigiriya. On the 7th day, you can depart.
@@ -435,7 +416,7 @@ const Packages = () => {
           <div className="md:w-3/4 w-11/12 m-auto">
             <h1 className="my-12 md:text-left text-center text-4xl">
               <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 01 Program - Colombo? Nigambo
+              Day 01 Program - Colombo / Nigambo
             </h1>
             <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
               <li>
@@ -544,7 +525,7 @@ const Packages = () => {
           </div>
         </div>
         <div className="mt-20">
-          <h1 className="mb-12 text-left w-3/4 m-auto  text-4xl   ">
+          <h1 className="mb-12 text-left w-3/4 m-auto  text-4xl font-semibold   ">
             <LocationOnIcon fontSize="large" sx={iconColors} />
             Kandy
           </h1>
@@ -1041,7 +1022,7 @@ const Packages = () => {
             {" "}
             <Stack sx={{ width: "100%" }} spacing={2}>
               <Alert severity="info">
-                <ul className="list-disc  md:mx-5 mx-4 text-xs md:text-sm">
+                <ul className="list-disc  md:mx-5 mx-4 text-xs md:text-sm font-Merriweather">
                   <li>
                     For the rest of the seven days out of fourteen days, you'll
                     be staying at the beaches in Sri Lanka, where you can choose

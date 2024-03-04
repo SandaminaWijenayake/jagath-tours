@@ -11,6 +11,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 // emailJs
 import emailjs from "@emailjs/browser";
@@ -27,6 +28,8 @@ const Result = () => {
   const [places, setPlaces] = useState([]);
   const form = useRef();
   const [name, setName] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
+  const navigate = useNavigate();
 
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
@@ -37,7 +40,6 @@ const Result = () => {
     setOpen(true);
   };
 
-  const navigate = useNavigate();
   // useEffect(() => {
   //   select.forEach((data) => {
   //     setName(data.Name);
@@ -63,6 +65,7 @@ const Result = () => {
         }
       );
     e.target.reset();
+    chosenPlaces.current.length = [];
   };
 
   useEffect(() => {
@@ -90,15 +93,36 @@ const Result = () => {
     console.log("newArray: " + newArray);
   };
 
+  const checkTheChoosePlaces = () => {
+    if (chosenPlaces.current.length === 0) {
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 3000);
+    }
+  };
+
   return (
-    <div className="w-4/5 m-auto font-Roboto lg:py-36 py-20">
+    <div className="w-4/5 m-auto font-Merriweather md:text-sm text-xs text-gray-600 font-light lg:py-36 py-20">
       <div className="md:flex">
         <div className="md:w-1/2">
-          <h1 className="text-3xl md:text-4xl font-semibold my-5  md:mb-5 font-Roboto">
+          <h1 className="text-3xl md:text-4xl font-semibold my-5  md:mb-5 text-center md:text-left">
             Chosen places
           </h1>
           {chosenPlaces.current.length === 0 ? (
-            <h1 className="my-10">You haven't choose any places</h1>
+            <div className="  ">
+              <h1 className="">You haven't choose any places</h1>
+              <h1 className="md:text-left text-4xl">
+                <Button
+                  size="medium"
+                  onClick={() => {
+                    navigate("/PlanningTool");
+                  }}
+                >
+                  <KeyboardArrowLeftIcon /> choose places
+                </Button>
+              </h1>
+            </div>
           ) : (
             <div>
               {select.map((data) => {
@@ -118,7 +142,8 @@ const Result = () => {
             </div>
           )}
         </div>
-        <div className="md:w-1/2">
+
+        <div className="md:w-1/2 leading-5">
           <p className="pt-4">
             Thank you for expressing interest in exploring new destinations!
             Please provide us with your preferred locations, and any additional
@@ -213,15 +238,24 @@ const Result = () => {
                   </Grid>
                 </Grid>
               </Box>
+              {showMessage && (
+                <p className="text-red-700 mt-2">
+                  Please choose some destinations
+                </p>
+              )}
               <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
                 <Button
                   variant="contained"
                   type="submit"
                   value="Send"
                   sx={{ paddingX: "30px" }}
+                  onClick={() => {
+                    checkTheChoosePlaces();
+                  }}
                 >
                   send an email
                 </Button>
+
                 <div>
                   <Backdrop
                     sx={{

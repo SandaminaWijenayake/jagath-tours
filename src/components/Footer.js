@@ -11,7 +11,7 @@ const onHover = {
 
 const Footer = () => {
   return (
-    <div className="bg-black h-full mt-20 rounded-t-lg text-white font-Roboto">
+    <div className="bg-black h-full mt-20 rounded-t-lg text-white font-Merriweather md:text-base text-xs">
       <div className="sm:flex w-11/12 m-auto sm:py-28 py-16">
         <div className="w-2/6 m-auto  font-light text-center">
           <ul className="text-center">
