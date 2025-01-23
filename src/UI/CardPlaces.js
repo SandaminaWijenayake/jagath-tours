@@ -67,10 +67,11 @@ const CardPlaces = ({
                 left: -16,
                 padding: 3,
                 color: "#fff",
-                fontSize: "17px",
+                fontSize: "20px",
+                lineHeight: "1.3",
                 borderRadius: "8px",
                 zIndex: (theme) => theme.zIndex.drawer + 1,
-                fontFamily: "monospace",
+                fontFamily: "initial",
               }}
               open={open}
               onClick={(e) => {

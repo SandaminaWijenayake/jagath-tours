@@ -49,7 +49,7 @@ const Section1 = () => {
               preferences.
             </p>
             <div className="text-center mt-4">
-              <Link to="/Packages">
+              <Link to="/packages">
                 <Button variant="outlined">
                   Tour packages <ArrowForwardIcon />
                 </Button>

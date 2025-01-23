@@ -46,27 +46,27 @@ const Result = () => {
   //   });
   // }, []);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    handleOpen();
-    emailjs
-      .sendForm(
-        "service_efkbr9o",
-        "template_9nybhvk",
-        form.current,
-        "iX2lOgrjJzkOvLK06"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
-    chosenPlaces.current.length = [];
-  };
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   handleOpen();
+  //   emailjs
+  //     .sendForm(
+  //       "service_efkbr9o",
+  //       "template_9nybhvk",
+  //       form.current,
+  //       "iX2lOgrjJzkOvLK06"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  //   e.target.reset();
+  //   chosenPlaces.current.length = [];
+  // };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -155,7 +155,7 @@ const Result = () => {
             <WhatsAppIcon fontSize="large" color="success" /> +94 77 902 7052
           </p>
           <div>
-            <form ref={form} onSubmit={sendEmail}>
+            {/* <form ref={form} onSubmit={sendEmail}>
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={4}>
                   <Grid item xs={12}>
@@ -274,7 +274,7 @@ const Result = () => {
                   </Backdrop>
                 </div>
               </Stack>
-            </form>
+            </form> */}
             {/* <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
               <Button
                 variant="contained"

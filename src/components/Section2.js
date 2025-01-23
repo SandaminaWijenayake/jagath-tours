@@ -36,7 +36,7 @@ const Section2 = () => {
         sx={{ marginTop: "15px" }}
         variant="outlined"
         onClick={() => {
-          navigate("/PlanningTool");
+          navigate("/planningTool");
         }}
       >
         LETS PLAN YOUR TRIP <ArrowForwardIcon />

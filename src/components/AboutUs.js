@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const AboutUs = () => {
   return (
     <>
-      <div className="w-11/12 lg:w-8/12 m-auto font-Merriweather md:text-sm text-xs text-gray-600 font-light">
+      <div className="w-11/12 lg:w-8/12 m-auto font-Merriweather md:text-base text-sm leading-5 md:leading-6 text-gray-600 font-light">
         <h1 className="sm:text-6xl text-5xl font-bold mt-28 lg:text-left text-center">
           Who We Are
         </h1>
@@ -35,7 +35,7 @@ const AboutUs = () => {
               src={aboutusImage}
               alt=""
             />
-            <p className="leading-5 lg:w-5/6 w-11/12 m-auto lg:m-0 text-gray-700">
+            <p className="leading-5 lg:w-5/6 w-11/12 m-auto lg:m-0 text-gray-700  md:leading-6">
               My name is Jagath Nilantha de Silva (Jagath de Silva). My family
               hails from Kaluwamodara Aluthgama in the Kaluthara district. This
               town is in close proximity to the world-famous Golden Mile, a
@@ -53,7 +53,7 @@ const AboutUs = () => {
               alt=""
             /> */}
 
-            <p className="leading-5  mt-10 lg:w-5/6 m-auto lg:m-0 lg:mt-10  w-11/12 text-gray-700">
+            <p className="leading-5  mt-10 lg:w-5/6 m-auto lg:m-0 lg:mt-10 md:leading-6 w-11/12 text-gray-700">
               I started my trade as a guide cum driver. I was rewarded for my
               hard work, dedication, efficiency, and honesty. when the tour
               operators started liaising closely with me about their travel
@@ -83,7 +83,7 @@ const AboutUs = () => {
         <div className="sm:flex">
           <div className="sm:w-1/2 lg:pt-96 w-11/12 m-auto sm:m-0 md:pt-44">
             <h1 className="text-5xl font-bold mb-10">Our Vision for You</h1>
-            <p className="leading-5 md:w-5/6 w-11/12 m-auto md:m-0 text-gray-700 text-justify">
+            <p className="leading-5 md:w-5/6 w-11/12 m-auto md:m-0 text-gray-700 md:leading-6 text-justify">
               Our vision is to be your trusted partner in discovering the true
               essence of Sri Lanka. We aspire to create journeys that connect
               you with the country's culture, heritage, and natural beauty. When
@@ -91,7 +91,7 @@ const AboutUs = () => {
               an adventure.
             </p>
           </div>
-          <div className="flex sm:w-1/2 h-96 mb-52 lg:mb-96 pb-10 pt-10 md:pt-0">
+          <div className="flex sm:w-1/2 h-96 mb-52 lg:mb-96 pb-10 pt-10 md:pt-0 2xl:mt-52">
             <div className="w-1/3 mx-2 mt-80 h-full ">
               <img className="rounded-lg" src={about1} alt="" />
             </div>
@@ -110,7 +110,7 @@ const AboutUs = () => {
             <h1 className="text-5xl mt-7 lg:mt-16 font-bold mb-10">
               Why Choose Genius Lanka Tours?
             </h1>
-            <p className="leading-5 sm:w-5/6 text-gray-700">
+            <p className="leading-5 sm:w-5/6 text-gray-700 md:leading-6">
               Join us at Genius Lanka Tours, and let's embark on a journey that
               will forever change the way you see Sri Lanka.
             </p>
@@ -127,28 +127,28 @@ const AboutUs = () => {
               <h1 className="leading-5 font-semibold">
                 Personalized Experiences
               </h1>
-              <p className=" text-gray-700 leading-5">
+              <p className=" text-gray-700 leading-5 md:leading-6">
                 We believe every traveler is unique. We tailor our tours to your
                 interests and preferences, ensuring a memorable adventure.
               </p>
             </div>
             <div className="mt-5 sm:mt-0">
               <h1 className="leading-5 font-semibold">Safety and Comfort</h1>
-              <p className=" text-gray-700 leading-5">
+              <p className=" text-gray-700 leading-5 md:leading-6">
                 Your safety is our priority. Our experienced team is dedicated
                 to ensuring you have a secure and comfortable journey.
               </p>
             </div>
             <div className="mt-5 sm:mt-0">
               <h1 className="leading-5 font-semibold">Diverse Services</h1>
-              <p className=" text-gray-700 leading-5">
+              <p className=" text-gray-700 leading-5 md:leading-6">
                 From guided tours to accommodations, dining, and currency
                 exchange, we've got all your travel needs covered.
               </p>
             </div>
             <div className="mt-5 sm:mt-0">
               <h1 className="leading-5 font-semibold">Legacy of Excellence</h1>
-              <p className=" text-gray-700 leading-5">
+              <p className=" text-gray-700 leading-5 md:leading-6">
                 With three decades of experience, we've gained the trust of
                 thousands of travelers, making us a leading name in the
                 industry.
@@ -156,7 +156,7 @@ const AboutUs = () => {
             </div>
             <div className="mt-5 sm:mt-0">
               <h1 className="leading-5 font-semibold">Local Expertise</h1>
-              <p className=" text-gray-700 leading-5">
+              <p className=" text-gray-700 leading-5 md:leading-6">
                 With deep roots in Sri Lanka, we provide authentic experiences,
                 taking you off the beaten path to discover hidden gems.
               </p>

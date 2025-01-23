@@ -6,16 +6,19 @@ import train from "../images/train.jpeg";
 import perahara from "../images/perahara.png";
 import oruva from "../images/photosgeniuslankatours/sigiriya/sigiriya_boat_ride.jpg";
 import watar_rift from "../images/New folder/activity_4.jpg";
+import bentota from "../images/photosgeniuslankatours/Bentota/bentota_1.jpg";
+import shiva from "../images/Hindu+Coin+Offerings+-+Trincomalee.jpg";
+
 import lotus from "../images/photosgeniuslankatours/colombo/colombo-3.avif";
 
 const Blogs = () => {
   return (
-    <div className="w-4/5 m-auto mt-32 font-Merriweather text-xs md:text-sm  text-gray-600 font-light">
+    <div className="w-4/5 m-auto mt-32 font-Merriweather text-xs md:text-base  text-gray-600 font-light">
       <div className="text-center"></div>
       <h1 className="text-2xl xl:text-4xl  font-semibold  text-blue-900 text-center my-10">
         POPULAR DESTINATIONS TO GO
       </h1>
-      <p className=" text-center leading-5 ">
+      <p className=" text-center leading-5 md:leading-6">
         You are the type of person who wants to take amazing unique
         vacations-the kink where luxury meets authentic, and each experience
         above all else and are differentiated by serving their needs first - we
@@ -47,7 +50,7 @@ const Blogs = () => {
           <img src={lotus} alt="" className="h-full rounded-md mt-2 lg:mt-0" />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white   text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
             <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0">
-              <h1 className="text-xl font-bold">Lotus tower</h1>
+              <h1 className="text-xl font-bold">Lotus tower, Colombo</h1>
               <p className="md:block hidden text-base w-10/12 text-center">
                 The Colombo Lotus Tower, standing at 356 meters, is Sri Lanka's
                 tallest structure. Serving as a telecommunications and
@@ -58,7 +61,11 @@ const Blogs = () => {
           </div>
         </div>
         <div className="relative">
-          <img src={oruva} alt="" className="h-full rounded-md mt-2 lg:mt-0" />
+          <img
+            src={oruva}
+            alt=""
+            className="h-full w-full rounded-md mt-2 lg:mt-0"
+          />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
             <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0 text-center">
               <h1 className="text-xl font-bold">Sigiriya boat ride</h1>
@@ -95,11 +102,11 @@ const Blogs = () => {
           <img
             src={perahara}
             alt=""
-            className="sm:h-full h-60 object-cover rounded-md mt-2 lg:mt-0"
+            className="sm:h-full w-full object-cover rounded-md mt-2 lg:mt-0"
           />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
             <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0 text-center">
-              <h1 className="text-xl font-bold">Kandy Perahera</h1>
+              <h1 className="text-xl font-bold">Kandy Perahera, Kandy</h1>
 
               <p className="md:block hidden text-base w-10/12 text-center ">
                 The Kandy Perahera is a spectacular annual procession in Sri
@@ -114,7 +121,7 @@ const Blogs = () => {
           <img
             src={train}
             alt=""
-            className="sm:h-full h-60 object-cover rounded-md mt-2 lg:mt-0"
+            className="sm:h-full w-full object-cover rounded-md mt-2 lg:mt-0"
           />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
             <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0 text-center">
@@ -144,6 +151,48 @@ const Blogs = () => {
                 enthusiasts. The Kelani River's rapids offer exciting challenges
                 amidst breathtaking jungle scenery, providing an unforgettable
                 adventure in nature.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-2 relative">
+          <img
+            src={bentota}
+            alt=""
+            className="sm:h-full w-full object-cover rounded-md mt-2 lg:mt-0"
+          />
+          <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
+            <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0 text-center">
+              <h1 className="text-xl font-bold">Bentota</h1>
+
+              <p className="md:block hidden text-base w-10/12 text-center ">
+                Bentota, famed for its serene beaches and water sports, offers a
+                tranquil escape for travelers. With its palm-fringed coastline
+                and a range of aquatic activities, it's a favored spot for those
+                seeking relaxation and adventure by the sea.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-1 relative">
+          <img
+            src={shiva}
+            alt=""
+            className="sm:h-full w-full object-cover rounded-md mt-2 lg:mt-0"
+          />
+          <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
+            <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0 text-center">
+              <h1 className="text-xl font-bold">Trincomalee</h1>
+
+              <p className="md:block hidden text-base w-10/12 text-center ">
+                Trincomalee, renowned for its pristine beaches and vibrant water
+                activities, beckons travelers seeking a blissful retreat.
+                Nestled along its picturesque coastline adorned with swaying
+                palms, Trincomalee entices adventurers and relaxation seekers
+                alike with its diverse range of aquatic pursuits. Whether you
+                crave tranquil moments by the sea or crave exhilarating
+                adventures, Trincomalee promises an unforgettable coastal
+                experience.
               </p>
             </div>
           </div>

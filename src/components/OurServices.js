@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const OurServices = () => {
   return (
-    <div className="xl:w-4/5 m-auto mt-20 font-Merriweather w-11/12 md:text-sm text-xs text-gray-600 font-light leading-5">
+    <div className="xl:w-4/5 m-auto mt-20 font-Merriweather w-11/12 md:text-base text-xs text-gray-600 font-light leading-5">
       {" "}
       <h1 className="text-4xl lg:w-3/5 mt-5  font-semibold text-orange-400">
         {" "}
@@ -183,8 +183,10 @@ const OurServices = () => {
         </div>
       </div>
       <div className="mt-20">
-        <h1 className="text-4xl lg:w-3/5  font-semibold">HOTELS TO STAY</h1>
-        <p className="my-10 w-4/6">
+        <h1 className="text-4xl lg:w-3/5 md:text-left text-center font-semibold">
+          HOTELS TO STAY
+        </h1>
+        <p className="my-10 w-5/6  m-auto md:ml-0 text-center md:text-left">
           {" "}
           We find all kinds of hotels for you. Whether you're looking for
           something affordable (budget) or luxurious, we've got you covered. Our

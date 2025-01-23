@@ -26,18 +26,18 @@ const App = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/Packages" element={<Packages />} />
+          <Route path="/packages" element={<Packages />} />
           {/* <Route path="/Blogs" element={<BlogContent />} /> */}
-          <Route path="/Reviews" element={<Reviews />} />
-          <Route path="/Contact_us" element={<ContactUs />} />
-          <Route path="/About_us" element={<AboutUs />} />
-          <Route path="/Create" element={<Create />} />
-          <Route path="/SevenDaysPackage" element={<SevenDaysPackage />} />
-          <Route path="/FourDaysPackage" element={<FourDaysPackage />} />
-          <Route path="/BeachStaying" element={<BeachStaying />} />
-          <Route path="/Planning" element={<Planning />} />
-          <Route path="/PlanningTool" element={<PlanningTool />} />
-          <Route path="/Result" element={<Result />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/contact_us" element={<ContactUs />} />
+          <Route path="/about_us" element={<AboutUs />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/sevenDaysPackage" element={<SevenDaysPackage />} />
+          <Route path="/fourDaysPackage" element={<FourDaysPackage />} />
+          <Route path="/beachStaying" element={<BeachStaying />} />
+          <Route path="/planning" element={<Planning />} />
+          <Route path="/planningTool" element={<PlanningTool />} />
+          <Route path="/result" element={<Result />} />
         </Route>
       </Routes>
     </GlobleContext.Provider>

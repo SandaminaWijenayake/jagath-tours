@@ -137,7 +137,7 @@ const BeachStaying = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="font-Merriweather text-xs leading-5 text-gray-600">
+    <div className="font-Merriweather text-xs md:text-base leading-5 md:leading-6 text-gray-600">
       <div className="py-14 w-3/4 m-auto">
         <h1 className="sm:text-5xl text-4xl font-bold  lg:mt-20 mt-16 lg:text-left text-center">
           Genius Lanka tours packages

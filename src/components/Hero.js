@@ -1,112 +1,82 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import image from "../images/beach-3.jpg";
-import image1 from "../images/wellpaper_1.jpeg";
+import image1 from "../images/photosgeniuslankatours/kandy/the-temple-of-tooth.jpg";
+import test1 from "../images/photosgeniuslankatours/slider-4-slide-1-1920x678.jpg";
+import test2 from "../images/photosgeniuslankatours/slider-4-slide-2-1920x678.jpg";
+import test3 from "../images/photosgeniuslankatours/slider-4-slide-3-1920x678.jpg";
 import { color, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //mui
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import SliderContent from "./SliderContent";
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
+  const getStartedButtonHandler = () => {
+    navigate("/Packages");
+  };
+  const slides = [
+    {
+      id: 1,
+      src: test1,
+      small_text: "A team of professional Travel Experts",
+      largeText: "Our Experience",
+      semiText: "Trust",
+    },
+    {
+      id: 2,
+      src: test2,
+      small_text: "Build your Next Holiday Trip with Us",
+      largeText: "Your Tour",
+      semiText: "Create",
+    },
+    {
+      id: 3,
+      src: test3,
+      small_text: "Enjoy the Best Destinations with Our Travel Agency",
+      largeText: "The World",
+      semiText: "Explore",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <>
-      <div className="px-5 absolute top-1/4 sm:top-1/3 text-2xl lg:text-2xl md:right-1/3 font-Roboto sm:w-6/12 w-full font-normal sm:text-left text-white text-center">
-        <motion.p
-          variants={{
-            hidden: { opacity: 0, y: 75 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-4xl md:text-6xl mb-0 font-bold font-Merriweather"
-        >
-          Sri Lanka
-        </motion.p>
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 75 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: 1 }}
-          className="text-base  font-Roboto"
-        >
-          Genius lanka tours has open doors to warmly welcome you to its
-          countless and remarkable experience in the pearl of indian ocean
-        </motion.div>
-        <div className="lg:flex lg:gap-2">
-          <div>
-            <motion.button
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5, delay: 1 }}
-              className="mt-2"
-            >
-              <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
-                <Link to="/PlanningTool">
-                  <Button
-                    variant="contained"
-                    sx={{ padding: "10px", paddingLeft: "20px" }}
-                  >
-                    Start planning <ArrowForwardIosIcon />
-                  </Button>
-                </Link>
-              </Stack>
-            </motion.button>
-          </div>
-          <div>
-            <motion.button
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5, delay: 1 }}
-              className="mt-2"
-            >
-              <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
-                <Link to="/Packages">
-                  <Button
-                    variant="contained"
-                    sx={{
-                      width: "100%",
-                      padding: "10px",
-                      paddingX: "19px",
-                      color: "#2A76D2",
-                      bgcolor: "white",
-                      ":hover": { color: "white" },
-                    }}
-                  >
-                    TOUR PACKAGES <ArrowForwardIosIcon />
-                  </Button>
-                </Link>
-              </Stack>
-            </motion.button>
-          </div>
-        </div>
-      </div>
-
       <div
-        className="min-h-screen overflow-hidden  w-full bg-center bg-fixed  bg-blend-overlay  bg-black/25"
-        style={{
-          backgroundSize: "cover",
-          backgroundImage: `url(${image1})`,
-        }}
+        className="h-[678px] overflow-hidden w-full bg-center bg-cover relative"
+        // Ensure no conflicting background color (e.g., bg-white)
       >
-        {/* <img
-          src={image}
-          alt=""
-          className="h-screen object-cover w-full bg-fixed bg-center bg-blend-overlay bg-black/20"
-        /> */}
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <img
+              src={slide.src}
+              alt={`Slide ${slide.id}`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+
+            <SliderContent
+              slide={slide}
+              getStartedButtonHandler={getStartedButtonHandler}
+              slideIndex={currentIndex}
+            />
+          </div>
+        ))}
       </div>
     </>
   );

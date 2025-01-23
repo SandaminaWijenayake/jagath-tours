@@ -85,16 +85,16 @@ const ContactUs = () => {
         <img src={image} alt="" className="object-cover w-full" />
       </div>
       <div className="lg:flex w-5/6 m-auto">
-        <div className="lg:w-1/2 lg:mr-10 md:text-sm text-xs text-gray-600 font-light">
+        <div className="lg:w-1/2 lg:mr-10 md:text-base text-xs text-gray-600 font-light">
           <h1 className="text-4xl font-semibold my-5  text-blue-900 text-center md:text-left">
             Get in touch
           </h1>
-          <p className=" text-gray-700 text-justify">
+          <p className=" text-gray-700 text-justify leading-5 md:leading-6">
             We'd love to hear from you! For any questions, travel inquiries, or
             special requests, our team is ready to assist. Reach out to us to
             start planning your next unforgettable journey. Contact us today.
           </p>
-          <div className="mt-10 text-xs">
+          <div className="mt-10 text:sm md:text-base">
             <div className="flex my-5">
               <ApartmentIcon fontSize="small" />
               <p className="ml-5 -translate-y-1">
