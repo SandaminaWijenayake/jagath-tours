@@ -66,15 +66,15 @@ const Navbar = () => {
 
   return (
     <div className="font-Montserrat top-0 z-30 lg:sticky bg-navBarColor">
-      <div className="flex justify-between px-2 w-8/12 m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
+      <div className="flex justify-between px-2 xl:w-8/12 sm:w-full m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
         <div className="hidden lg:inline-block">
-          <ul className="flex justify-around text-sm font-medium sm:w-96 lg:w-full">
+          <ul className="flex justify-between text-lg  font-medium sm:w-96 lg:w-full">
             {NavItems.map((items) => (
               <Link
                 key={items.path}
                 to={items.path}
                 onClick={() => setActive(items.label)}
-                className={` p-3 ${
+                className={` p-4 ${
                   active === items.label
                     ? "bg-slate-600 text-blue-50"
                     : "hover:text-sky-100  hover:bg-bgColorOfNavbar"
@@ -88,16 +88,16 @@ const Navbar = () => {
         <div className="hidden  lg:flex justify-evenly items-center">
           <Link>
             <FacebookOutlinedIcon
-              fontSize="small"
+              fontSize="medium"
               color="primary"
               sx={onHover}
             />
           </Link>
           <Link to="https://x.com/jagath_tou38334 ">
-            <TwitterIcon fontSize="small" color="primary" sx={onHover} />
+            <TwitterIcon fontSize="medium" color="primary" sx={onHover} />
           </Link>
           <Link to="https://www.instagram.com/geniuslankatours/">
-            <InstagramIcon fontSize="small" color="error" sx={onHover} />
+            <InstagramIcon fontSize="medium" color="error" sx={onHover} />
           </Link>
           {/* <WhatsAppIcon fontSize="small" color="success" sx={onHover} /> */}
         </div>

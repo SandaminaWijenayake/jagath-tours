@@ -101,7 +101,7 @@ const SecondNavBar = () => {
 
   return (
     <div className="">
-      <div className=" flex justify-around fixed lg:relative z-20  lg:justify-between lg:px-2 top-0 left-0 lg:w-8/12 w-full m-auto font-bold  bg-white text-white shadow-sm py-2 lg:p-3 text-sm">
+      <div className=" flex justify-around fixed lg:relative z-20  lg:justify-between lg:px-2 top-0 left-0 lg:w-8/12 w-full m-auto font-bold  bg-white text-white shadow-sm py-2 lg:p-[28px] text-sm">
         <div className="lg:hidden block">
           <List sx={{ marginLeft: "auto", padding: "0px" }}>
             <span>
@@ -134,8 +134,8 @@ const SecondNavBar = () => {
 
         <div className="hidden text-black  xl:flex justify-between  items-center ">
           <div className="">
-            <h1 className="font-Montserrat font-medium text-xs ">
-              <PhoneIcon fontSize="small" sx={{ marginRight: "20px" }} />
+            <h1 className="font-Montserrat font-medium text-sm ">
+              <PhoneIcon fontSize="medium" sx={{ marginRight: "20px" }} />
               +94 77-902-7052
             </h1>
           </div>
@@ -145,7 +145,7 @@ const SecondNavBar = () => {
             <Button
               onClick={startPlaningButtonHandler}
               variant="outlined"
-              sx={{ padding: "6px", paddingLeft: "20px" }}
+              sx={{ padding: "10px", paddingX: "20px" }}
             >
               Start planning
             </Button>

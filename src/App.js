@@ -16,6 +16,7 @@ import BeachStaying from "./components/BeachStaying";
 import { GlobleContext } from "./globleState/GlobleState";
 import { useState, useRef } from "react";
 import Result from "./components/Result";
+import ReadMore from "./components/ReadMore";
 
 const App = () => {
   const [select, setSelect] = useState([]);
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/planning" element={<Planning />} />
           <Route path="/planningTool" element={<PlanningTool />} />
           <Route path="/result" element={<Result />} />
+          <Route path="/AboutSriLanka" element={<ReadMore />} />
         </Route>
       </Routes>
     </GlobleContext.Provider>

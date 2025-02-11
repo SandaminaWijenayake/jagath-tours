@@ -7,6 +7,7 @@ import Accodion from "./Accodion";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import OurServices from "./OurServices";
+import Intro from "./Intro";
 
 const Home = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const Home = () => {
     <>
       <Hero />
       {/* <Section1 /> */}
+      <Intro />
       <SriLanka />
       <OurServices />
       <Blogs />
