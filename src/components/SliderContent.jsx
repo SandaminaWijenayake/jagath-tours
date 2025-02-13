@@ -1,7 +1,9 @@
 import { Button } from "@mui/material";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const SliderContent = ({ slide, getStartedButtonHandler, slideIndex }) => {
+  const navigate = useNavigate();
   return (
     <div className="absolute flex flex-col justify-center font-Montserrat inset-0 text-white lg:w-8/12 m-auto w-11/12">
       <div>
@@ -35,24 +37,12 @@ const SliderContent = ({ slide, getStartedButtonHandler, slideIndex }) => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Button
+          <button
             onClick={getStartedButtonHandler}
-            variant="outlined"
-            sx={{
-              color: "white",
-              marginTop: "25px",
-              borderColor: "white",
-              paddingX: "25px",
-              paddingY: "15px",
-              "&:hover": {
-                color: "white",
-                borderColor: "#007BFF",
-                backgroundColor: "#007BFF",
-              },
-            }}
+            className="mt-[25px] font-Montserrat text-base inline-block pt-[17px] pr-[28px] pb-[15px] px-[25px] py-[15px] border-2 border-white text-white font-medium  transition hover:bg-[#01b3a7] hover:border-[#01b3a7]"
           >
-            Explore Now
-          </Button>
+            Plan Your Trip
+          </button>
         </motion.div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 
 const onHover = {
@@ -32,14 +33,19 @@ const Footer = () => {
         </div>
         <div className="w-2/6 hidden sm:block">
           <div className="flex justify-around mx-10">
-            <FacebookOutlinedIcon
-              fontSize="large"
-              color="primary"
-              sx={onHover}
-            />
-            <TwitterIcon fontSize="large" color="primary" sx={onHover} />
-            <WhatsAppIcon fontSize="large" color="success" sx={onHover} />
-            <YouTubeIcon fontSize="large" color="error" sx={onHover} />
+            <Link>
+              <FacebookOutlinedIcon
+                fontSize="medium"
+                color="primary"
+                sx={onHover}
+              />
+            </Link>
+            <Link to="https://x.com/jagath_tou38334 ">
+              <TwitterIcon fontSize="medium" color="primary" sx={onHover} />
+            </Link>
+            <Link to="https://www.instagram.com/geniuslankatours/">
+              <InstagramIcon fontSize="medium" color="error" sx={onHover} />
+            </Link>
           </div>
           <p className="text-center mt-9 hover:text-sky-300">
             Mobile: +94 77 902 7052
@@ -58,14 +64,19 @@ const Footer = () => {
         </div>
         <div className="sm:w-2/6 m-auto sm:hidden mt-9 sm:mt-0">
           <div className="flex justify-around mx-10">
-            <FacebookOutlinedIcon
-              fontSize="large"
-              color="primary"
-              sx={onHover}
-            />
-            <TwitterIcon fontSize="large" color="primary" sx={onHover} />
-            <WhatsAppIcon fontSize="large" color="success" sx={onHover} />
-            <YouTubeIcon fontSize="large" color="error" sx={onHover} />
+            <Link>
+              <FacebookOutlinedIcon
+                fontSize="medium"
+                color="primary"
+                sx={onHover}
+              />
+            </Link>
+            <Link to="https://x.com/jagath_tou38334 ">
+              <TwitterIcon fontSize="medium" color="primary" sx={onHover} />
+            </Link>
+            <Link to="https://www.instagram.com/geniuslankatours/">
+              <InstagramIcon fontSize="medium" color="error" sx={onHover} />
+            </Link>
           </div>
           <p className="text-center mt-9 hover:text-sky-300">
             Mobile: +94 77 902 7052

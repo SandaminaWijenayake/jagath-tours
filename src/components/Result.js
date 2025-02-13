@@ -1,105 +1,69 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
-import { GlobleContext } from "../globleState/GlobleState";
-import ChosonCardPlaces from "../UI/ChosonCardPlaces";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../config/firebase";
-
-//mui
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-
-// emailJs
-import emailjs from "@emailjs/browser";
-
+import React, { useContext, useState } from "react";
+import { GlobleContext } from "../globleState/GlobleState"; // Assuming this is where select is from
+import { useNavigate } from "react-router-dom";
+import { Box, TextField, Grid, Button, Snackbar, Alert } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
-import { Alert } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 
-// snackbar
+// Snackbar Alert
+const blert = React.forwardRef(function Alert(props, ref) {
+  return <Alert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Result = () => {
-  const { select, setSelect, chosenPlaces } = useContext(GlobleContext);
-  const [places, setPlaces] = useState([]);
-  const form = useRef();
-  const [name, setName] = useState("");
-  const [showMessage, setShowMessage] = useState(false);
+  const { select } = useContext(GlobleContext); // Assuming this is how you get select array
+  const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    phone_number: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
     setOpen(false);
-    navigate("/");
-  };
-  const handleOpen = () => {
-    setOpen(true);
   };
 
-  // useEffect(() => {
-  //   select.forEach((data) => {
-  //     setName(data.Name);
-  //   });
-  // }, []);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   handleOpen();
-  //   emailjs
-  //     .sendForm(
-  //       "service_efkbr9o",
-  //       "template_9nybhvk",
-  //       form.current,
-  //       "iX2lOgrjJzkOvLK06"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  //   e.target.reset();
-  //   chosenPlaces.current.length = [];
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    const getPlaces = async () => {
-      const colRef = collection(db, "places");
+    setLoading(true); // Start the loading spinner
 
-      const docSnap = await getDocs(colRef);
-      setPlaces(docSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      // setTempState(docSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    // Collecting form data
+    const data = {
+      ...formData,
+      places: select.map((data) => data.Name).join(", "), // Places selected as string
     };
-    getPlaces();
-  }, []);
 
-  let toText = [];
-  toText.push(name);
+    // Sending the form data to Formspree
+    const response = await fetch("https://formspree.io/f/movjnbwl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  const deleteHandler = (id) => {
-    const newArray = chosenPlaces.current.filter((data) => data !== id);
-    chosenPlaces.current = newArray;
-    setSelect(places.filter((data) => newArray.includes(data.id)));
-
-    console.log("chosenPlaces.current : " + chosenPlaces.current);
-    console.log("id : " + id);
-    console.log("newArray: " + newArray);
-  };
-
-  const checkTheChoosePlaces = () => {
-    if (chosenPlaces.current.length === 0) {
-      setShowMessage(true);
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 3000);
+    if (response.ok) {
+      setOpen(true); // Show success alert
+      setFormData({
+        user_name: "",
+        user_email: "",
+        phone_number: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong. Please try again.");
     }
+
+    setLoading(false); // Stop the loading spinner
   };
 
   return (
@@ -109,182 +73,115 @@ const Result = () => {
           <h1 className="text-3xl md:text-4xl font-semibold my-5  md:mb-5 text-center md:text-left">
             Chosen places
           </h1>
-          {chosenPlaces.current.length === 0 ? (
-            <div className="  ">
-              <h1 className="">You haven't choose any places</h1>
-              <h1 className="md:text-left text-4xl">
-                <Button
-                  size="medium"
-                  onClick={() => {
-                    navigate("/PlanningTool");
-                  }}
-                >
-                  <KeyboardArrowLeftIcon /> choose places
-                </Button>
-              </h1>
+          {select.length === 0 ? (
+            <div className="text-center">
+              <h1>You haven't selected any places</h1>
+              <Button onClick={() => navigate("/PlanningTool")}>
+                Go back to choose places
+              </Button>
             </div>
           ) : (
             <div>
-              {select.map((data) => {
-                return (
-                  <div className="py-2 md:mr-16">
-                    <ChosonCardPlaces
-                      key={data.id}
-                      name={data.Name}
-                      place={data.Description}
-                      imageURL={data.imageURL}
-                      deleteHandler={deleteHandler}
-                      id={data.id}
-                    />
-                  </div>
-                );
-              })}{" "}
+              {select.map((data, index) => (
+                <div key={index} className="py-2">
+                  <h2>{data.Name}</h2> {/* Display selected places */}
+                </div>
+              ))}
             </div>
           )}
         </div>
 
         <div className="md:w-1/2 leading-5">
           <p className="pt-4">
-            Thank you for expressing interest in exploring new destinations!
-            Please provide us with your preferred locations, and any additional
-            details you'd like to share. We'll promptly reach out to you via
-            email to assist you further in planning your dream trip.
+            Thank you for selecting your destinations! Please provide us with
+            your contact information, and we'll get in touch soon to help you
+            with your travel plans.
           </p>
-          <p className="py-5">
-            {" "}
-            <WhatsAppIcon fontSize="large" color="success" /> +94 77 902 7052
-          </p>
-          <div>
-            {/* <form ref={form} onSubmit={sendEmail}>
-              <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={4}>
-                  <Grid item xs={12}>
-                    <Box>
-                      <TextField
-                        id="outlined-basic"
-                        label="Name"
-                        variant="outlined"
-                        sx={{
-                          width: "100%",
-                        }}
-                        type="text"
-                        name="user_name"
-                        required
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} sx={{ display: "none" }}>
-                    <Box>
-                      <TextField
-                        id="outlined-basic"
-                        label="places"
-                        variant="outlined"
-                        sx={{
-                          width: "100%",
-                        }}
-                        type="text"
-                        name="places"
-                        required
-                        value={select.map((item) => item.Name).join(",")}
-                      />
-                    </Box>
-                  </Grid>
 
-                  <Grid item xs={12}>
-                    <Box>
-                      <TextField
-                        id="outlined-basic"
-                        label="Your Email"
-                        variant="outlined"
-                        sx={{
-                          width: "100%",
-                        }}
-                        type="email"
-                        name="user_email"
-                        required
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Box>
-                      <TextField
-                        id="outlined-basic"
-                        label="Phone number"
-                        variant="outlined"
-                        sx={{
-                          width: "100%",
-                        }}
-                        type="number"
-                        name="phone_number"
-                        required
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Box>
-                      <TextField
-                        id="outlined-multiline-static"
-                        label="Additional Details"
-                        multiline
-                        rows={4}
-                        defaultValue=""
-                        sx={{
-                          width: "100%",
-                        }}
-                        name="message"
-                        required
-                      />
-                    </Box>
-                  </Grid>
+          {/* Form for submitting */}
+          <form onSubmit={handleSubmit}>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid container spacing={4}>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Name"
+                    variant="outlined"
+                    fullWidth
+                    type="text"
+                    name="user_name"
+                    value={formData.user_name}
+                    onChange={handleChange}
+                    required
+                  />
                 </Grid>
-              </Box>
-              {showMessage && (
-                <p className="text-red-700 mt-2">
-                  Please choose some destinations
-                </p>
-              )}
-              <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
-                <Button
-                  variant="contained"
-                  type="submit"
-                  value="Send"
-                  sx={{ paddingX: "30px" }}
-                  onClick={() => {
-                    checkTheChoosePlaces();
-                  }}
-                >
-                  send an email
-                </Button>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Your Email"
+                    variant="outlined"
+                    fullWidth
+                    type="email"
+                    name="user_email"
+                    value={formData.user_email}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Phone number"
+                    variant="outlined"
+                    fullWidth
+                    type="number"
+                    name="phone_number"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Additional Details"
+                    multiline
+                    rows={4}
+                    fullWidth
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+              </Grid>
+            </Box>
 
-                <div>
-                  <Backdrop
-                    sx={{
-                      color: "#fff",
-                      zIndex: (theme) => theme.zIndex.drawer + 1,
-                    }}
-                    open={open}
-                    onClick={handleClose}
-                  >
-                    <Alert severity="success" sx={{ width: "50%" }}>
-                      {" "}
-                      Thank you for sharing your desired destinations with us!
-                      I'll get back to you via email as soon as possible to
-                      discuss your travel plans further. Your adventure awaits!
-                    </Alert>
-                  </Backdrop>
-                </div>
-              </Stack>
-            </form> */}
-            {/* <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
-              <Button
-                variant="contained"
-                onClick={confirmButtonClickHandler}
-                sx={{ paddingX: "30px" }}
-              >
-                send an email
-              </Button>
-            </Stack>  */}
-          </div>
+            <Button
+              variant="contained"
+              type="submit"
+              sx={{ paddingX: "30px", marginTop: "20px" }}
+            >
+              Send Email
+            </Button>
+          </form>
+
+          {/* Backdrop for loading */}
+          {loading && (
+            <Backdrop
+              sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+              open={loading}
+            >
+              <CircularProgress color="inherit" />
+            </Backdrop>
+          )}
+
+          {/* Display success or error message */}
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Email sent successfully!
+            </Alert>
+          </Snackbar>
         </div>
       </div>
     </div>

@@ -9,12 +9,11 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const Section2 = () => {
   const navigate = useNavigate();
   return (
-    <div className="my-40 text-center md:text-sm text-xs text-gray-600 font-light font-Merriweather">
-      {/* <div className="font-Roboto">3 STEPS TO THE PERFECT TRIP</div> */}
-      <h1 className="md:text-4xl text-xl lg:w-2/5 m-auto my-5  font-semibold text-center  text-blue-900">
+    <div className="xl:w-3/5 w-full m-auto py-2 mt-20 font-Montserrat">
+      <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
         FIND TRAVEL PERFECTION WITH THE WISDOM OF EXPERTS
       </h1>
-      <p className="w-2/3 m-auto">
+      <p className="text-gray-700 max-w-4xl font-Montserrat  text-center text-base lg:text-lg mx-auto mt-3 mb-16">
         Naturally head of the class when is comes to luxury travel planning.
         because we do more work then anyone else, with a few lettle sweeteners
         thrown in! travel to four corners of the Sri lanka without going around
@@ -31,16 +30,14 @@ const Section2 = () => {
           <img src={travel} alt="" className="w-56" />
         </div>
       </div>
-
-      <Button
-        sx={{ marginTop: "15px" }}
-        variant="outlined"
-        onClick={() => {
-          navigate("/planningTool");
-        }}
-      >
-        LETS PLAN YOUR TRIP <ArrowForwardIcon />
-      </Button>
+      <div className="flex justify-center">
+        <button
+          className="mt-4  m-auto font-Montserrat text-base inline-block pt-[17px] pr-[28px] pb-[15px] pl-[28px] py-2 border-2 border-black text-black font-medium  transition hover:bg-black hover:text-white"
+          onClick={() => navigate("./planningTool")}
+        >
+          Let's Plan Your Trip
+        </button>
+      </div>
     </div>
   );
 };

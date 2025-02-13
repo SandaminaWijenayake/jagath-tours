@@ -23,7 +23,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import XIcon from "@mui/icons-material/X";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -64,6 +64,24 @@ const SecondNavBar = () => {
     { text: "About us", url: "/About_us" },
   ];
 
+  const socialLinks = [
+    {
+      name: "Facebook",
+      icon: <FacebookOutlinedIcon />,
+      url: "https://www.facebook.com",
+    },
+    {
+      name: "X",
+      icon: <XIcon />,
+      url: "https://x.com/jagath_tou38334",
+    },
+    {
+      name: "Instagram",
+      icon: <InstagramIcon />,
+      url: "https://www.instagram.com/geniuslankatours/",
+    },
+  ];
+
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
@@ -77,21 +95,16 @@ const SecondNavBar = () => {
       </List>
       <Divider />
       <List>
-        {["Facebook", "Twitter", "instagram"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {text === "Facebook" ? (
-                  <FacebookOutlinedIcon />
-                ) : text === "Twitter" ? (
-                  <TwitterIcon />
-                ) : text === "instagram" ? (
-                  <InstagramIcon />
-                ) : (
-                  "default"
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+        {socialLinks.map(({ name, icon, url }) => (
+          <ListItem key={name} disablePadding>
+            <ListItemButton
+              component="a"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemText primary={name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -147,13 +160,13 @@ const SecondNavBar = () => {
               variant="outlined"
               sx={{ padding: "10px", paddingX: "20px" }}
             >
-              Start planning
+              Start Planning
             </Button>
           </div>
         </div>
-        <div className="lg:hidden flex items-center">
+        {/* <div className="lg:hidden flex items-center">
           <MoreVertIcon sx={{ color: "black" }} fontSize="large" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

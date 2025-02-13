@@ -78,7 +78,7 @@ function ReadMore() {
       <div className="xl:w-3/5 w-11/12 m-auto  font-Montserrat">
         {/* Title & Description */}
         <div className="pt-20 ">
-          <h1 className="sm:text-[36px]  text-[28px] text-center font-semibold font-Merriweather my-2">
+          <h1 className="sm:text-[36px]  text-[28px] text-center font-semibold font-Montserrat my-2">
             Wildlife
           </h1>
         </div>
@@ -133,12 +133,12 @@ function ReadMore() {
       </div>
 
       <div className="lg:mt-10  m-auto w-11/12 lg:w-3/5 pt-20  font-Montserrat">
-        <div className=" font-Raleway py-2">
-          <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Merriweather my-2">
+        <div className="py-2">
+          <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat my-2">
             Adventure
           </h1>
         </div>
-        <p className="text-sm mt-2">
+        <p className="text-sm mt-2 leading-6">
           There's good swimming at any number of beaches along the south western
           coast with excellent scuba diving, snorkelling and surfing found at
           Hikkaduwa, Unawatuna and Weligama along with sailing, windsurfing and
@@ -178,11 +178,14 @@ function ReadMore() {
         />
         <img src={activity_1} alt="" className="rounded-md object-cover mt-2" />
       </div>
-      <div className="lg:mt-10 lg:w-3/5 w-11/12 m-auto sm:text-justify font-Montserrat pt-20 text-center leading-5 md:leading-6">
-        <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Merriweather py-2">
-          Economy
-        </h1>
-        <p className="text-sm mt-2 text-justify">
+      <div className="lg:mt-10 lg:w-3/5 w-11/12 m-auto sm:text-justify font-Montserrat pt-20 text-center ">
+        <div className="py-2">
+          <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat my-2">
+            Economy
+          </h1>
+        </div>
+
+        <p className="text-sm mt-2 text-justify leading-6">
           The currency in use is the Sri Lankan rupee. Sri Lanka, being a
           developing country, has initiated many development projects. The road
           network is constantly being improved with the opening of many road
@@ -193,7 +196,7 @@ function ReadMore() {
           Lanka has many banks, both local and international, that serve its
           customers with many banking cards and foreign currency.
         </p>
-        <p className="text-sm mt-2">
+        <p className="text-sm mt-2 leading-6 text-justify">
           Sri Lanka has one of the highest literacy rates in the world. The
           health care system is also on par with the developed world. Sri Lanka
           provides free education and health care to all its citizens. However,
@@ -203,11 +206,13 @@ function ReadMore() {
           use water from filtered wells for their own consumption.
         </p>
       </div>
-      <div className="lg:mt-10 lg:w-3/5 w-11/12 m-auto sm:text-justify font-Montserrat pt-20 text-center leading-5 md:leading-6">
-        <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Merriweather py-2">
-          Sri Lankan Cuisines
-        </h1>
-        <p className="text-sm mt-2 text-justify">
+      <div className="lg:mt-10 lg:w-3/5 w-11/12 m-auto sm:text-justify font-Montserrat pt-20 text-center">
+        <div className="py-2">
+          <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
+            Sri Lankan Cuisines
+          </h1>
+        </div>
+        <p className="text-sm mt-2 text-justify leading-6">
           Due to its tropical location and varied landscapes, Sri Lanka has a
           healthy supply of fresh vegetables and luscious fruits throughout the
           year; they are also organically grown in the rural regions of the
@@ -247,7 +252,7 @@ function ReadMore() {
           are accompanied by pickled fruits or vegetables, chutneys, and
           sambols.
         </p>
-        <p className="mt-5 text-justify text-center leading-5 md:leading-6">
+        <p className="mt-5 text-justify  leading-5 md:leading-6">
           A variety of cuisines are available, which include both eastern and
           western Chinese and local dishes.
         </p>
@@ -256,11 +261,13 @@ function ReadMore() {
         <div className="lg:w-1/3 lg:block hidden lg:mt-10">
           <Lottie animationData={animationData2} />
         </div>
-        <div className="lg:mt-10 sm:text-justify lg:w-2/3 w-11/12 lg:ml-10 leading-5 md:leading-6">
-          <h1 className="text-[36px] font-semibold font-Montserrat lg:py-2">
-            Travel Guides
-          </h1>
-          <p className="text-sm mt-2">
+        <div className="lg:mt-10 sm:text-justify lg:w-2/3 w-11/12 lg:ml-10 ">
+          <div className="py-2">
+            <h1 className="md:text-[36px] text-center md:text-left text-[28px] font-semibold font-Montserrat my-2">
+              Travel Guides
+            </h1>
+          </div>
+          <p className="text-sm mt-2 leading-6">
             Our Sri Lanka Travel Guides will tell you all you need to know about
             visiting the wonderful island of Sri Lanka. Tourist guides provides
             the visitor with in depth knowledge in their mother tongue, all

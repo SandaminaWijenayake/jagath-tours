@@ -30,10 +30,10 @@ const SriLanka = () => {
       <div className="xl:flex lg:gap-10 font-Raleway items-center pt-10">
         {/* Left Side - Text Content */}
         <div className="xl:w-6/12">
-          <h1 className="xl:text-4xl text-4xl my-5 font-semibold text-center md:text-left text-blue-900">
+          <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat my-2">
             What is Sri Lanka?
           </h1>
-          <p className="mt-10 text-justify  leading-5 md:leading-6">
+          <p className="mt-10 text-justify text-sm leading-6 md:leading-6">
             Sri Lanka, officially the Democratic Socialist Republic of Sri
             Lanka, is an island country located to the southeast of India. Being
             a democracy, free elections are held every five years to choose a
@@ -45,7 +45,7 @@ const SriLanka = () => {
 
           {/* Button with Arrow Animation */}
           <Link to="/AboutSriLanka">
-            <button className="mt-5 text-blue-900 font-semibold flex items-center gap-2 group">
+            <button className="mt-5 text-black font-semibold flex items-center gap-2 group">
               <span className="group-hover:underline">
                 Read More About Sri Lanka
               </span>

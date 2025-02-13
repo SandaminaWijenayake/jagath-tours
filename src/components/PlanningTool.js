@@ -332,18 +332,6 @@ const PlanningTool = () => {
             </div>
           </div>
         </div>
-        {/* <div className="pt-10 sticky top-10">
-          <Stack sx={{ direction: { xs: "colunm", lg: "row" } }} spacing={1}>
-            {select.map((data) => (
-              <Chip
-                variant="outlined"
-                label={data.Name}
-                onClick={handleClick}
-                onDelete={handleDelete}
-              />
-            ))}
-          </Stack>
-        </div> */}
 
         {isLoading ? (
           <div className="min-h-screen flex justify-center mt-52">
@@ -370,33 +358,6 @@ const PlanningTool = () => {
           </div>
         )}
       </div>
-      {/* <div className="lg:w-5/12">
-        <h1 className="text-4xl font-semibold my-5 font-Roboto">
-          Chosen places
-        </h1>
-        {places.map((data) => {
-          return (
-            <ChosonCardPlaces
-              name={data.Name}
-              place={data.Description}
-              imageURL={data.imageURL}
-            />
-          );
-        })}
-
-        {select.map((data) => {
-          return (
-            <ChosonCardPlaces
-              key={data.id}
-              name={data.Name}
-              place={data.Description}
-              imageURL={data.imageURL}
-              deleteHandler={deleteHandler}
-              id={data.id}
-            />
-          );
-        })}
-      </div> */}
     </div>
   );
 };

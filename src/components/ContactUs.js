@@ -1,79 +1,65 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import image from "../images/New folder/contact.png";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
-import Button from "@mui/material/Button";
-import Lottie from "lottie-react";
-import animationData from "../images/svg/Animation - 1698642072236.json";
 
-import Stack from "@mui/material/Stack";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
-import emailjs from "@emailjs/browser";
-
-// snackbar
+// Snackbar Alert
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-//form
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
 const ContactUs = () => {
-  const [open, setOpen] = React.useState(false);
-
-  // const handleClick = () => {
-  //   setOpen(true);
-  // };
+  const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    phone_number: "",
+    message: "",
+  });
 
   const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
+    if (reason === "clickaway") return;
     setOpen(false);
   };
 
-  const form = useRef();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const sendEmail = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_efkbr9o",
-        "template_hqtveuo",
-        form.current,
-        "iX2lOgrjJzkOvLK06"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setOpen(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
+    const response = await fetch("https://formspree.io/f/movjnbwl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setOpen(true);
+      setFormData({
+        user_name: "",
+        user_email: "",
+        phone_number: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
     <div className="font-Merriweather">
-      <div className=" font-semibold mt-32 text-center">
+      <div className="font-semibold mt-32 text-center">
         <p className="lg:text-6xl text-4xl font-light mb-0">
           LET'S KEEP IN TOUCH
         </p>
@@ -85,130 +71,104 @@ const ContactUs = () => {
         <img src={image} alt="" className="object-cover w-full" />
       </div>
       <div className="lg:flex w-5/6 m-auto">
-        <div className="lg:w-1/2 lg:mr-10 md:text-base text-xs text-gray-600 font-light">
-          <h1 className="text-4xl font-semibold my-5  text-blue-900 text-center md:text-left">
+        <div className="lg:w-1/2 lg:mr-10 text-gray-600 font-light">
+          <h1 className="text-4xl font-semibold my-5 text-blue-900 text-center md:text-left">
             Get in touch
           </h1>
-          <p className=" text-gray-700 text-justify leading-5 md:leading-6">
+          <p className="text-gray-700 text-justify">
             We'd love to hear from you! For any questions, travel inquiries, or
-            special requests, our team is ready to assist. Reach out to us to
-            start planning your next unforgettable journey. Contact us today.
+            special requests, our team is ready to assist.
           </p>
-          <div className="mt-10 text:sm md:text-base">
+          <div className="mt-10">
             <div className="flex my-5">
               <ApartmentIcon fontSize="small" />
-              <p className="ml-5 -translate-y-1">
-                268/2, Jayasuriya Building, Galle Road, Alutgama, Sri Lanka
+              <p className="ml-5">
+                268/2, Jayasuriya Building, Alutgama, Sri Lanka
               </p>
             </div>
             <div className="flex my-5">
-              <LocalPhoneIcon fontSize="small" />{" "}
-              <p className="ml-5 -translate-y-1">
-                Whatsapp / Mobile : +94 77 902 7052
-              </p>
-            </div>
-            <div className="flex my-5">
-              <LocalPhoneIcon fontSize="small" />{" "}
-              <p className="ml-5 -translate-y-1">HotLine : +94 76 663 9599</p>
+              <LocalPhoneIcon fontSize="small" />
+              <p className="ml-5">Whatsapp / Mobile: +94 77 902 7052</p>
             </div>
             <div className="flex my-5">
               <EmailIcon fontSize="small" />
-              <p className="ml-2  sm:ml-5 -translate-y-1">
-                geniuslankatours01@gmail.com
-              </p>
+              <p className="ml-5">geniuslankatours01@gmail.com</p>
             </div>
           </div>
         </div>
         <div className="lg:w-1/2 lg:ml-10 w-11/12 m-auto">
-          <form ref={form} onSubmit={sendEmail}>
+          <form onSubmit={handleSubmit}>
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={4}>
                 <Grid item xs={12}>
-                  <Box>
-                    <TextField
-                      id="outlined-basic"
-                      label="Name"
-                      variant="outlined"
-                      sx={{
-                        width: "100%",
-                      }}
-                      type="text"
-                      name="user_name"
-                      required
-                    />
-                  </Box>
-                </Grid>
-
-                <Grid item xs={12}>
-                  <Box>
-                    <TextField
-                      id="outlined-basic"
-                      label="Email"
-                      variant="outlined"
-                      sx={{
-                        width: "100%",
-                      }}
-                      type="email"
-                      name="user_email"
-                      required
-                    />
-                  </Box>
+                  <TextField
+                    label="Name"
+                    variant="outlined"
+                    sx={{ width: "100%" }}
+                    type="text"
+                    name="user_name"
+                    value={formData.user_name}
+                    onChange={handleChange}
+                    required
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <Box>
-                    <TextField
-                      id="outlined-basic"
-                      label="Phone number"
-                      variant="outlined"
-                      sx={{
-                        width: "100%",
-                      }}
-                      type="number"
-                      name="phone_number"
-                      required
-                    />
-                  </Box>
+                  <TextField
+                    label="Email"
+                    variant="outlined"
+                    sx={{ width: "100%" }}
+                    type="email"
+                    name="user_email"
+                    value={formData.user_email}
+                    onChange={handleChange}
+                    required
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <Box>
-                    <TextField
-                      id="outlined-multiline-static"
-                      label="Message"
-                      multiline
-                      rows={4}
-                      defaultValue=""
-                      sx={{
-                        width: "100%",
-                      }}
-                      name="message"
-                      required
-                    />
-                  </Box>
+                  <TextField
+                    label="Phone number"
+                    variant="outlined"
+                    sx={{ width: "100%" }}
+                    type="number"
+                    name="phone_number"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Message"
+                    multiline
+                    rows={4}
+                    sx={{ width: "100%" }}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
                 </Grid>
               </Grid>
             </Box>
             <div className="mt-5 flex justify-center lg:justify-end">
-              <Stack spacing={2} sx={{ width: "100%" }}>
-                <Button variant="contained" type="submit">
-                  send message
-                </Button>
-                <Snackbar
-                  open={open}
-                  autoHideDuration={6000}
+              <Button variant="contained" type="submit">
+                Send Message
+              </Button>
+              <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+              >
+                <Alert
                   onClose={handleClose}
+                  severity="success"
+                  sx={{ width: "100%" }}
                 >
-                  <Alert
-                    onClose={handleClose}
-                    severity="success"
-                    sx={{ width: "100%" }}
-                  >
-                    The message sent successfully.
-                  </Alert>
-                </Snackbar>
-              </Stack>
+                  Message sent successfully!
+                </Alert>
+              </Snackbar>
             </div>
           </form>
-          <div>{/* <Lottie animationData={animationData} /> */}</div>
         </div>
       </div>
     </div>

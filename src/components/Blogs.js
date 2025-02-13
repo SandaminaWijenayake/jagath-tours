@@ -13,12 +13,12 @@ import lotus from "../images/photosgeniuslankatours/colombo/colombo-3.avif";
 
 const Blogs = () => {
   return (
-    <div className="w-4/5 m-auto mt-32 font-Merriweather text-xs md:text-base  text-gray-600 font-light">
-      <div className="text-center"></div>
-      <h1 className="text-2xl xl:text-4xl  font-semibold  text-blue-900 text-center my-10">
-        POPULAR DESTINATIONS TO GO
+    <div className="xl:w-3/5 w-full m-auto py-2 mt-20 font-Montserrat">
+      <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
+        Popular Destinations
       </h1>
-      <p className=" text-center leading-5 md:leading-6">
+
+      <p className="text-gray-700 max-w-4xl font-Montserrat  text-center text-base lg:text-lg mx-auto mt-3 mb-16">
         You are the type of person who wants to take amazing unique
         vacations-the kink where luxury meets authentic, and each experience
         above all else and are differentiated by serving their needs first - we

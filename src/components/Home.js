@@ -8,6 +8,8 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import OurServices from "./OurServices";
 import Intro from "./Intro";
+import TourCard from "./TourCard";
+import TimeLine from "./TimeLine";
 
 const Home = () => {
   useEffect(() => {
@@ -20,6 +22,8 @@ const Home = () => {
       <Intro />
       <SriLanka />
       <OurServices />
+      <TimeLine />
+      <TourCard />
       <Blogs />
       <Section2 />
       {/* <Accodion /> */}
