@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import image from "../images/New folder/contact.png";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -23,6 +23,9 @@ const ContactUs = () => {
     phone_number: "",
     message: "",
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;
@@ -36,7 +39,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://formspree.io/f/movjnbwl", {
+    const response = await fetch("https://formspree.io/f/meoeybyg", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,12 +61,12 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="font-Merriweather">
+    <div className="font-Montserrat">
       <div className="font-semibold mt-32 text-center">
         <p className="lg:text-6xl text-4xl font-light mb-0">
           LET'S KEEP IN TOUCH
         </p>
-        <h1 className="lg:text-8xl text-4xl font-bold text-blue-900">
+        <h1 className="lg:text-8xl text-4xl font-bold text-black">
           CONTACT US
         </h1>
       </div>
@@ -71,17 +74,17 @@ const ContactUs = () => {
         <img src={image} alt="" className="object-cover w-full" />
       </div>
       <div className="lg:flex w-5/6 m-auto">
-        <div className="lg:w-1/2 lg:mr-10 text-gray-600 font-light">
-          <h1 className="text-4xl font-semibold my-5 text-blue-900 text-center md:text-left">
+        <div className="lg:w-1/2 lg:mr-10  font-light">
+          <h1 className="text-4xl font-semibold my-5 text-black text-center md:text-left">
             Get in touch
           </h1>
-          <p className="text-gray-700 text-justify">
+          <p className=" text-justify">
             We'd love to hear from you! For any questions, travel inquiries, or
             special requests, our team is ready to assist.
           </p>
           <div className="mt-10">
             <div className="flex my-5">
-              <ApartmentIcon fontSize="small" />
+              <ApartmentIcon fontSize="small" color="#01b3a7" />
               <p className="ml-5">
                 268/2, Jayasuriya Building, Alutgama, Sri Lanka
               </p>
@@ -103,7 +106,7 @@ const ContactUs = () => {
                 <Grid item xs={12}>
                   <TextField
                     label="Name"
-                    variant="outlined"
+                    variant="filled"
                     sx={{ width: "100%" }}
                     type="text"
                     name="user_name"
@@ -115,7 +118,7 @@ const ContactUs = () => {
                 <Grid item xs={12}>
                   <TextField
                     label="Email"
-                    variant="outlined"
+                    variant="filled"
                     sx={{ width: "100%" }}
                     type="email"
                     name="user_email"
@@ -127,7 +130,7 @@ const ContactUs = () => {
                 <Grid item xs={12}>
                   <TextField
                     label="Phone number"
-                    variant="outlined"
+                    variant="filled"
                     sx={{ width: "100%" }}
                     type="number"
                     name="phone_number"
@@ -146,14 +149,18 @@ const ContactUs = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    variant="filled"
                   />
                 </Grid>
               </Grid>
             </Box>
             <div className="mt-5 flex justify-center lg:justify-end">
-              <Button variant="contained" type="submit">
+              <button
+                className="bg-[#01b3a7] text-white px-6 py-3 font-medium border-2 border-[#01b3a7] hover:border-black hover:bg-white hover:text-black"
+                type="submit"
+              >
                 Send Message
-              </Button>
+              </button>
               <Snackbar
                 open={open}
                 autoHideDuration={6000}

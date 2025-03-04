@@ -1,5 +1,5 @@
-import React from "react";
-import aboutusImage from "../images/beach-1.jpg";
+import React, { useEffect } from "react";
+import aboutusImage from "../images/about-1-519x564.jpg";
 import about1 from "../images/about/photo-1585171328560-947fbd92d6f0.jpeg";
 import about2 from "../images/about/photo-1623595289196-007a22dd8560.png";
 import about3 from "../images/about/tooth.jpg";
@@ -22,20 +22,30 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const images = [[about1], [about2, about3], [about4, about5]];
+
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
   return (
     <>
-      <div className="w-11/12 lg:w-8/12 m-auto font-Merriweather md:text-base text-sm leading-5 md:leading-6 text-gray-600 font-light">
-        <h1 className="sm:text-6xl text-5xl font-bold mt-28 lg:text-left text-center">
-          Who We Are
-        </h1>
-        <div className="lg:flex lg:pt-14">
-          <div className="lg:w-1/2 text-justify">
-            <img
-              className="rounded-xl lg:hidden my-10"
-              src={aboutusImage}
-              alt=""
-            />
-            <p className="leading-5 lg:w-5/6 w-11/12 m-auto lg:m-0 text-gray-700  md:leading-6">
+      <div className="mt-10 m-auto font-Montserrat md:text-base text-sm leading-5 md:leading-6 text-gray-600 font-light">
+        <div className="xl:w-[1200px] lg:w-[960px]   w-[510px] m-auto  lg:flex pt-14">
+          <div className="lg:w-1/2 text-justify  m-auto">
+            <img className="" src={aboutusImage} alt="" />
+          </div>
+          <div className="lg:w-1/2 w-11/12 md:w-full m-auto text-sm lg:px-8 xl:px-0 text-justify">
+            <h1 className=" mt-10 text-[40px] text-[#15151517] font-normal  md:w-[510px]   leading-[1.2]   lg:text-[64px] mb-10 lg:text-left text-center">
+              Why choose us
+            </h1>
+            <p className="leading-5   m-auto lg:m-0   md:leading-6">
               My name is Jagath Nilantha de Silva (Jagath de Silva). My family
               hails from Kaluwamodara Aluthgama in the Kaluthara district. This
               town is in close proximity to the world-famous Golden Mile, a
@@ -47,13 +57,8 @@ const AboutUs = () => {
               with the passage of time, I came into close contact with travel
               agents from Scandinavian and European countries.
             </p>
-            {/* <img
-              className="rounded-xl lg:hidden my-10"
-              src={aboutusImage}
-              alt=""
-            /> */}
 
-            <p className="leading-5  mt-10 lg:w-5/6 m-auto lg:m-0 lg:mt-10 md:leading-6 w-11/12 text-gray-700">
+            <p className="leading-5 hidden xl:block mt-10  m-auto lg:m-0  lg:mt-10 md:leading-6  ">
               I started my trade as a guide cum driver. I was rewarded for my
               hard work, dedication, efficiency, and honesty. when the tour
               operators started liaising closely with me about their travel
@@ -71,19 +76,29 @@ const AboutUs = () => {
               during your stay in Sri Lanka.
             </p>
           </div>
-          <div className="w-1/2 h-32 lg:mt-36">
-            {/* <Lottie animationData={animationData} /> */}
-            <img
-              className="rounded-xl hidden lg:block"
-              src={aboutusImage}
-              alt=""
-            />
-          </div>
         </div>
-        <div className="sm:flex">
-          <div className="sm:w-1/2 lg:pt-96 w-11/12 m-auto sm:m-0 md:pt-44">
+        <div className="block xl:hidden mt-10      md:leading-6 xl:w-[1200px] lg:w-[960px]  w-[510px] m-auto  md:w-[510px]  text-justify text-sm  ">
+          <p className="leading-5 w-11/12 md:w-full m-auto">
+            I started my trade as a guide cum driver. I was rewarded for my hard
+            work, dedication, efficiency, and honesty. when the tour operators
+            started liaising closely with me about their travel arrangements and
+            tours. These tour operators were Finnmatkat (Scandinavian),
+            Vingresor, Scan Tours, Tiaereborg, Ving Tours, My Travel, Always
+            Fritidsresor, Arurinko Matkat, Tui Nordic, Tui, and Start Tour. I
+            handled these travel operations under my travel company, Jagath
+            travels (Now new name Genius Lanka Tours). With the industry in Sri
+            Lanka, I opened a seafood restaurant named Sunset Restaurant in
+            Bentota 14-room hotel Southern Palm Villa. I have been in the travel
+            trade for 30 years and have wide experience in this field. I am
+            committed to maintaining the same high standards for all tourists
+            who wish to make use of my service. We assure you of your security
+            and safety at all times during your stay in Sri Lanka.
+          </p>
+        </div>
+        <div className="w-/12 sm:h-full m-auto">
+          <div className="w-[400px] mt-[64px] sm:w-[550px] md:w-[600px]  lg:w-[700px] xl:w-[1200px] m-auto  ">
             <h1 className="text-5xl font-bold mb-10">Our Vision for You</h1>
-            <p className="leading-5 md:w-5/6 w-11/12 m-auto md:m-0 text-gray-700 md:leading-6 text-justify">
+            <p className="leading-5   text-gray-700 md:leading-6 text-justify">
               Our vision is to be your trusted partner in discovering the true
               essence of Sri Lanka. We aspire to create journeys that connect
               you with the country's culture, heritage, and natural beauty. When
@@ -91,21 +106,8 @@ const AboutUs = () => {
               an adventure.
             </p>
           </div>
-          <div className="flex sm:w-1/2 h-96 mb-52 lg:mb-96 pb-10 pt-10 md:pt-0 2xl:mt-52">
-            <div className="w-1/3 mx-2 mt-80 h-full ">
-              <img className="rounded-lg" src={about1} alt="" />
-            </div>
-            <div className="w-1/3  mx-2 mt-40 h-full">
-              <img className="rounded-lg my-4" src={about2} alt="" />
-              <img className="rounded-lg object-cover" src={about3} alt="" />
-            </div>
-            <div className="w-1/3  mx-2 h-full">
-              <img className="rounded-lg my-4" src={about4} alt="" />
-              <img className="rounded-lg" src={about5} alt="" />
-            </div>
-          </div>
         </div>
-        <div className=" md:mt-32 pb-32">
+        <div className=" sm:mt-32 w-11/12 m-auto  pb-32">
           <div className="xl:w-1/2 mb-16">
             <h1 className="text-5xl mt-7 lg:mt-16 font-bold mb-10">
               Why Choose Genius Lanka Tours?

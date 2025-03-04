@@ -1,4 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
 
 //Tangalla
 import Tangalla from "../images/photosgeniuslankatours/Tangalla/Tangalle-Beach-scaled.png";
@@ -44,6 +52,7 @@ import StarIcon from "@mui/icons-material/Star";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
+import Alert from "@mui/material/Alert";
 
 const itemData = [
   {
@@ -133,6 +142,46 @@ const iconColors = {
 };
 
 const BeachStaying = () => {
+  const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    phone_number: "",
+    message: "",
+  });
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // sanda - https://formspree.io/f/meoeybyg
+    // jagath - https://formspree.io/f/movjnbwl
+    const response = await fetch("https://formspree.io/f/meoeybyg", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok) {
+      setOpen(true);
+      setFormData({
+        user_name: "",
+        user_email: "",
+        phone_number: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -429,6 +478,102 @@ const BeachStaying = () => {
               <li>Good bye from Genius Lanka Tours</li>
             </ul>
           </div>
+        </div>
+        <div className="lg:w-9/12 font-Montserrat py-20  w-11/12 m-auto ">
+          <div className="pb-10">
+            <h1 className="text-[64px] font-semibold inline-block">
+              Book this tour now
+            </h1>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid container spacing={4}>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Name"
+                    variant="filled"
+                    sx={{ width: "100%" }}
+                    type="text"
+                    name="user_name"
+                    value={formData.user_name}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Package Name"
+                    variant="outlined"
+                    disabled
+                    sx={{ width: "100%" }}
+                    type="text"
+                    name="package_name"
+                    value="Beach Staying"
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Email"
+                    variant="filled"
+                    sx={{ width: "100%" }}
+                    type="email"
+                    name="user_email"
+                    value={formData.user_email}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Phone number"
+                    variant="filled"
+                    sx={{ width: "100%" }}
+                    type="number"
+                    name="phone_number"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Message"
+                    multiline
+                    rows={4}
+                    sx={{ width: "100%" }}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    variant="filled"
+                  />
+                </Grid>
+              </Grid>
+            </Box>
+            <div className="mt-5 flex justify-center lg:justify-end">
+              <button
+                className="bg-[#01b3a7] text-white px-6 py-3 font-medium border-2 border-[#01b3a7] hover:border-black hover:bg-white hover:text-black"
+                type="submit"
+              >
+                Send Message
+              </button>
+              <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+              >
+                <Alert
+                  onClose={handleClose}
+                  severity="success"
+                  sx={{ width: "100%" }}
+                >
+                  Message sent successfully!
+                </Alert>
+              </Snackbar>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -1,88 +1,58 @@
 import React, { useContext } from "react";
 import { GlobleContext } from "../globleState/GlobleState";
-import Button from "@mui/material/Button";
-import { Alert, Backdrop, Stack } from "@mui/material";
+import { Check } from "lucide-react"; // Icon for selected state
 
-const CardPlaces = ({
-  name,
-  place,
-  imageURL,
-  choosePlacesHandler,
-  id,
-  Weather,
-  Activities,
-}) => {
+const CardPlaces = ({ name, place, imageURL, choosePlacesHandler, id }) => {
   const { chosenPlaces } = useContext(GlobleContext);
-  let color = chosenPlaces.current.includes(id) ? " bg-blue-200" : null;
 
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  let isSelected = chosenPlaces.current.includes(id);
+  let buttonStyles = isSelected
+    ? "bg-[#01b3a7] text-white border-[#01b3a7] hover:bg-[#02C8BA]"
+    : "border-gray-800 text-gray-800 hover:bg-gray-900 hover:text-white";
+
+  let cardBorder = isSelected ? "border-[#01b3a7]" : "border-gray-300";
+  let cardBackground = isSelected ? "bg-[#E5F8F7]" : "bg-white";
+  let hoverEffect = "hover:bg-gray-100 transition";
 
   return (
-    <div
-      style={{ position: "relative" }}
-      className="rounded-lg shadow-2xl hover:shadow-md transition-transform hover:-translate-y-1 border dark:bg-gray-100 ease-in "
-    >
+    <div className="py-6 relative">
       <div
-        className={`   rounded-lg  dark:bg-gray-100 ${color}`}
-        onClick={(e) => {
-          choosePlacesHandler(id);
-        }}
+        className={` w-full  border-3 transition ${cardBorder} ${cardBackground} ${hoverEffect}`}
       >
-        <img
-          className="rounded-t-lg w-full h-56 object-cover cursor-pointer shadow-xl hover:shadow-md"
-          src={imageURL}
-        />
+        {/* Checkmark Icon (Only visible when selected) */}
+        {isSelected && (
+          <div className="absolute top-10 right-2 bg-[#01b3a7] text-white p-1 rounded-full">
+            <Check size={18} />
+          </div>
+        )}
 
-        <div
-          className={`p-5 h-full cursor-pointer ${color}  rounded-b-lg h-auto`}
-        >
-          <h5 className="mb-2 text-2xl font-bold tracking-tight  text-blue-900 dark:text-700 line-clamp-1">
-            {name}
-          </h5>
+        {/* Image Section */}
+        <div className="md:flex">
+          <div className="md:w-1/2 overflow-hidden">
+            <img
+              onClick={() => choosePlacesHandler(id)}
+              src={imageURL}
+              alt={name}
+              className="w-full h-60 md:h-80 object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+            />
+          </div>
 
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-600 line-clamp-3 cursor-pointer text-sm min-h-[3.6em]">
-            {place}
-          </p>
-          <Stack spacing={2} direction="row" sx={{ mt: 2 }}>
-            <Button
-              variant="contained"
-              sx={{ fontSize: "15px" }}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleOpen();
-              }}
-            >
-              Read more
-            </Button>
-            <Backdrop
-              sx={{
-                position: "absolute",
-                left: -16,
-                padding: 3,
-                color: "#fff",
-                fontSize: "20px",
-                lineHeight: "1.3",
-                borderRadius: "8px",
-                zIndex: (theme) => theme.zIndex.drawer + 1,
-                fontFamily: "initial",
-              }}
-              open={open}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleClose();
-              }}
-            >
+          {/* Content Section */}
+          <div className="w-full md:w-1/2 p-6">
+            <h2 className="text-[22px] font-medium text-gray-900">{name}</h2>
+            <p className="text-gray-700 text-sm mt-3 leading-relaxed">
               {place}
-            </Backdrop>
-          </Stack>
+            </p>
+
+            <div className="flex md:justify-end justify-center mt-6">
+              <button
+                className={`px-6 py-2 w-36 border-2 font-medium uppercase transition ${buttonStyles}`}
+                onClick={() => choosePlacesHandler(id)}
+              >
+                {isSelected ? "Selected" : "Select"}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

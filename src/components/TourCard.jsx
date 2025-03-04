@@ -61,7 +61,7 @@ const TourCard = () => {
                 </p>
 
                 <button
-                  className="mt-4 inline-block pt-[17px] pr-[28px] pb-[15px] pl-[28px] py-2 border-2 border-black text-black font-medium  transition hover:bg-black hover:text-white"
+                  className="mt-[25px] font-Montserrat text-base inline-block pt-[17px] pr-[28px] pb-[15px] px-[25px] py-[15px] border-2 border-black text-black font-medium  transition hover:bg-[#01b3a7] hover:border-[#01b3a7]"
                   onClick={() => navigate(items.link)}
                 >
                   Check This Tour

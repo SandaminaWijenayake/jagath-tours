@@ -65,8 +65,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="font-Montserrat top-0 z-30 lg:sticky bg-navBarColor">
-      <div className="flex justify-between px-2 xl:w-8/12 sm:w-full m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
+    <div className="font-Montserrat top-0 z-50 lg:sticky bg-navBarColor">
+      <div className="flex justify-between px-2 sm:w-8/12 lg:w-10/12 xl:w-8/12 m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
         <div className="hidden lg:inline-block">
           <ul className="flex justify-between text-lg  font-medium sm:w-96 lg:w-full">
             {NavItems.map((items) => (

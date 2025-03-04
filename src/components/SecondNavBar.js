@@ -114,7 +114,7 @@ const SecondNavBar = () => {
 
   return (
     <div className="">
-      <div className=" flex justify-around fixed lg:relative z-20  lg:justify-between lg:px-2 top-0 left-0 lg:w-8/12 w-full m-auto font-bold  bg-white text-white shadow-sm py-2 lg:p-[28px] text-sm">
+      <div className=" flex justify-left items-center fixed lg:relative z-20  lg:justify-between lg:px-2 top-0 left-0 lg:w-8/12 w-full m-auto font-bold  bg-white text-white shadow-sm py-2 lg:p-[20px] text-sm">
         <div className="lg:hidden block">
           <List sx={{ marginLeft: "auto", padding: "0px" }}>
             <span>
@@ -145,7 +145,7 @@ const SecondNavBar = () => {
           </div>
         </Link>
 
-        <div className="hidden text-black  xl:flex justify-between  items-center ">
+        <div className="hidden text-black  lg:flex justify-between  items-center ">
           <div className="">
             <h1 className="font-Montserrat font-medium text-sm ">
               <PhoneIcon fontSize="medium" sx={{ marginRight: "20px" }} />
@@ -154,15 +154,12 @@ const SecondNavBar = () => {
           </div>
           <div class="w-px bg-gray-300 h-1/3 mx-4"></div>
 
-          <div className="">
-            <Button
-              onClick={startPlaningButtonHandler}
-              variant="outlined"
-              sx={{ padding: "10px", paddingX: "20px" }}
-            >
-              Start Planning
-            </Button>
-          </div>
+          <button
+            onClick={() => navigate("/PlanningTool")}
+            className="font-Montserrat text-base inline-block pt-[17px] pr-[28px] pb-[15px] px-[25px] py-[15px] border-2 border-[#01b3a7] text-black font-medium  transition hover:bg-[#01b3a7] hover:border-[#01b3a7] hover:text-white"
+          >
+            Get Started
+          </button>
         </div>
         {/* <div className="lg:hidden flex items-center">
           <MoreVertIcon sx={{ color: "black" }} fontSize="large" />

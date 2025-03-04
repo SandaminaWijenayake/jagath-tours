@@ -21,7 +21,7 @@ import ReadMore from "./components/ReadMore";
 const App = () => {
   const [select, setSelect] = useState([]);
   const chosenPlaces = useRef([]);
-
+  // const [chosenPlaces, setChosenPlaces] = useState([]);
   return (
     <GlobleContext.Provider value={{ select, setSelect, chosenPlaces }}>
       <Routes>

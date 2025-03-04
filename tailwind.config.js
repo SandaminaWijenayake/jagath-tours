@@ -11,9 +11,10 @@ module.exports = {
         Lato: ["Lato"],
         LibreBaskerville: ["Libre Baskerville"],
         Merriweather: ["Merriweather"],
-        OldStandardTT: ["Old Standard TT", "serif"], // Fix: Separate font family and fallback
-        Raleway: ["Raleway", "serif"], // Fix: Same here
-        Montserrat: ["Montserrat", "serif"], // Fix: Same here
+        OldStandardTT: ["Old Standard TT", "serif"],
+        Raleway: ["Raleway", "serif"],
+        Montserrat: ["Montserrat", "serif"],
+        oswald: ["Oswald", "sans-serif"],
       },
       backgroundImage: {
         blueLogo: "url('./images/logoblue.png')",

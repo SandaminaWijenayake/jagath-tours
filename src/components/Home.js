@@ -10,6 +10,9 @@ import OurServices from "./OurServices";
 import Intro from "./Intro";
 import TourCard from "./TourCard";
 import TimeLine from "./TimeLine";
+import FirstClassImpression from "./FirstClassImpression";
+import QuickTour from "./QuickTour";
+import DiscoverNewHorizon from "./DiscoverNewHorizon";
 
 const Home = () => {
   useEffect(() => {
@@ -19,13 +22,16 @@ const Home = () => {
     <>
       <Hero />
       {/* <Section1 /> */}
-      <Intro />
+      <QuickTour />
+      {/* <Intro /> */}
       <SriLanka />
+      <DiscoverNewHorizon />
       <OurServices />
-      <TimeLine />
+      {/* <TimeLine /> */}
       <TourCard />
       <Blogs />
-      <Section2 />
+      <FirstClassImpression />
+      {/* <Section2 /> */}
       {/* <Accodion /> */}
     </>
   );

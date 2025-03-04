@@ -30,7 +30,7 @@ const SriLanka = () => {
       <div className="xl:flex lg:gap-10 font-Raleway items-center pt-10">
         {/* Left Side - Text Content */}
         <div className="xl:w-6/12">
-          <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat my-2">
+          <h1 className="sm:text-[36px] text-[28px] text-left font-semibold font-Montserrat my-2">
             What is Sri Lanka?
           </h1>
           <p className="mt-10 text-justify text-sm leading-6 md:leading-6">

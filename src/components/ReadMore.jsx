@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import image1 from "../images/New folder/lep.png";
 import image3 from "../images/New folder/lepperd.jpg";
 import image4 from "../images/New folder/yala-2.jpeg";
@@ -21,6 +21,9 @@ import animationData from "../images/svg/Animation - 1698640438657.json";
 import animationData2 from "../images/svg/Animation - 1698641345767.json";
 
 function ReadMore() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="text-justify">
       <div className="relative">

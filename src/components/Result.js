@@ -1,9 +1,21 @@
 import React, { useContext, useState } from "react";
 import { GlobleContext } from "../globleState/GlobleState"; // Assuming this is where select is from
 import { useNavigate } from "react-router-dom";
-import { Box, TextField, Grid, Button, Snackbar, Alert } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Grid,
+  Button,
+  Snackbar,
+  Alert,
+  CardContent,
+  Typography,
+  Card,
+} from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import CloseIcon from "@mui/icons-material/Close";
+import { logDOM } from "@testing-library/react";
 
 // Snackbar Alert
 const blert = React.forwardRef(function Alert(props, ref) {
@@ -11,7 +23,7 @@ const blert = React.forwardRef(function Alert(props, ref) {
 });
 
 const Result = () => {
-  const { select } = useContext(GlobleContext); // Assuming this is how you get select array
+  const { select, chosenPlaces, setSelect } = useContext(GlobleContext); // Assuming this is how you get select array
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     user_name: "",
@@ -43,7 +55,7 @@ const Result = () => {
     };
 
     // Sending the form data to Formspree
-    const response = await fetch("https://formspree.io/f/movjnbwl", {
+    const response = await fetch("https://formspree.io/f/meoeybyg", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,9 +75,13 @@ const Result = () => {
       alert("Something went wrong. Please try again.");
     }
 
-    setLoading(false); // Stop the loading spinner
+    setLoading(false);
   };
 
+  const removePlaceHandler = (id) => {
+    chosenPlaces.current = chosenPlaces.current.filter((item) => item !== id);
+    setSelect((prevSelect) => prevSelect.filter((item) => item.id !== id));
+  };
   return (
     <div className="w-4/5 m-auto font-Merriweather md:text-sm text-xs text-gray-600 font-light lg:py-36 py-20">
       <div className="md:flex">
@@ -74,25 +90,54 @@ const Result = () => {
             Chosen places
           </h1>
           {select.length === 0 ? (
-            <div className="text-center">
+            <div className="text-left">
               <h1>You haven't selected any places</h1>
-              <Button onClick={() => navigate("/PlanningTool")}>
+              <h1
+                className="text-[#01b3a7] hover:text-[#02C8BA] cursor-pointer underline mt-2"
+                onClick={() => navigate("/PlanningTool")}
+              >
                 Go back to choose places
-              </Button>
+              </h1>
             </div>
           ) : (
-            <div>
-              {select.map((data, index) => (
-                <div key={index} className="py-2">
-                  <h2>{data.Name}</h2> {/* Display selected places */}
-                </div>
+            <Box className="w-full md:w-8/12 flex-grow overflow-y-auto space-y-3">
+              {select.map((data) => (
+                <Card
+                  key={data.id}
+                  sx={{
+                    backgroundColor: "#E5F8F7",
+                    padding: "8px",
+                    boxShadow: "none",
+                    width: "fullWidth",
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      padding: "8px !important",
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Typography variant="body1">{data.Name}</Typography>
+                    <CloseIcon
+                      sx={{
+                        ":hover": {
+                          backgroundColor: "#01b3a7",
+                          color: "white",
+                          borderRadius: "50%",
+                        },
+                      }}
+                      onClick={() => removePlaceHandler(data.id)}
+                    />
+                  </CardContent>
+                </Card>
               ))}
-            </div>
+            </Box>
           )}
         </div>
 
-        <div className="md:w-1/2 leading-5">
-          <p className="pt-4">
+        <div className="md:w-1/2 leading-5 font-Montserrat">
+          <p className="py-4 text-sm font-normal">
             Thank you for selecting your destinations! Please provide us with
             your contact information, and we'll get in touch soon to help you
             with your travel plans.
@@ -155,8 +200,13 @@ const Result = () => {
 
             <Button
               variant="contained"
-              type="submit"
-              sx={{ paddingX: "30px", marginTop: "20px" }}
+              fullWidth
+              sx={{
+                marginTop: "16px",
+                backgroundColor: "#01b3a7",
+                "&:hover": { backgroundColor: "#02C8BA" },
+                textTransform: "none",
+              }}
             >
               Send Email
             </Button>

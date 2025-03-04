@@ -69,7 +69,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const OurServices = () => {
   return (
     <div className="">
-      <section className="lg:mt-10  m-auto w-11/12 xl:w-3/5 pt-20  font-Montserrat">
+      <section className="lg:mt-10  m-auto w-11/12 sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] pt-20  font-Montserrat">
         <div className="py-2">
           <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
             Our Services
