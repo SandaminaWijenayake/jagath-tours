@@ -1,5 +1,5 @@
 import React from "react";
-import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.jpeg";
+import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.webp";
 import BeachStayingPackage from "../images/photosgeniuslankatours/hikkaduwa.jpg";
 import fourDaysTourPackage from "../images/photosgeniuslankatours/aru.jpeg";
 import yala from "../images/photosgeniuslankatours/yala/yala_4.jpg";

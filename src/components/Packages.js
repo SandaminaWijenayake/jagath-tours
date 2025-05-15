@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.jpeg";
-import fourDaysTourPackage from "../images/packages/beach-4.png";
-import BeachStayingPackage from "../images/packages/beach-5.png";
+import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.webp";
+import fourDaysTourPackage from "../images/packages/beach-4.webp";
+import BeachStayingPackage from "../images/packages/beach-5.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 const sxStyle = {

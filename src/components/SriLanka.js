@@ -1,34 +1,11 @@
 import React from "react";
 import image from "../images/photosgeniuslankatours/srilanka-tour-map.webp";
-import image1 from "../images/New folder/lep.png";
-import image3 from "../images/New folder/lepperd.jpg";
-import image4 from "../images/New folder/yala-2.jpeg";
-
-//activity
-import activity_1 from "../images/New folder/activity_1.jpg";
-import activity_2 from "../images/New folder/Activity_2.jpg";
-import activity_3 from "../images/New folder/Activity_3.jpg";
-import activity_4 from "../images/New folder/activity_4.jpg";
-
-//cuisines
-import cuisines_1 from "../images/Cuisines/food.png";
-import cuisines_2 from "../images/Cuisines/fresh-fruits.png";
-import cuisines_3 from "../images/Cuisines/image.jpg";
-import cuisines_4 from "../images/Cuisines/seafood.png";
-// import cuisines_5 from "../images/Cuisines/tea.jpg";
-
-import Lottie from "lottie-react";
-import animationData from "../images/svg/Animation - 1698640438657.json";
-import animationData2 from "../images/svg/Animation - 1698641345767.json";
 import { Link } from "react-router-dom";
 
 const SriLanka = () => {
   return (
     <div className="xl:w-3/5 m-auto  font-Merriweather w-11/12 md:text-base text-xs lg:leading-7 text-gray-600 font-light">
-      {/* Absolute Header */}
-      {/* Main Content */}
       <div className="xl:flex lg:gap-10 font-Raleway items-center pt-10">
-        {/* Left Side - Text Content */}
         <div className="xl:w-6/12">
           <h1 className="sm:text-[36px] text-[28px] text-left font-semibold font-Montserrat my-2">
             What is Sri Lanka?
@@ -43,7 +20,6 @@ const SriLanka = () => {
             Ceylon.
           </p>
 
-          {/* Button with Arrow Animation */}
           <Link to="/AboutSriLanka">
             <button className="mt-5 text-black font-semibold flex items-center gap-2 group">
               <span className="group-hover:underline">
@@ -56,7 +32,6 @@ const SriLanka = () => {
           </Link>
         </div>
 
-        {/* Right Side - Map Image */}
         <div className="xl:w-6/12 flex justify-center mt-10 xl:mt-0">
           <img
             src={image}

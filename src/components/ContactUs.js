@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import image from "../images/New folder/contact.png";
+import image from "../images/New folder/contact.webp";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";

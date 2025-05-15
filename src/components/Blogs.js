@@ -1,15 +1,15 @@
 import React from "react";
 import beach_2 from "../images/beach-2.jpeg";
-import beach_3 from "../images/beach-3.jpg";
-import elephant from "../images/elephant.jpg";
+import beach_3 from "../images/blogImages/beach-3.webp";
+import elephant from "../images/blogImages/elephant.webp";
 import train from "../images/train.jpeg";
-import perahara from "../images/perahara.png";
+import perahara from "../images/blogImages/perahara.webp";
 import oruva from "../images/photosgeniuslankatours/sigiriya/sigiriya_boat_ride.jpg";
 import watar_rift from "../images/New folder/activity_4.jpg";
 import bentota from "../images/photosgeniuslankatours/Bentota/bentota_1.jpg";
-import shiva from "../images/Hindu+Coin+Offerings+-+Trincomalee.jpg";
+import shiva from "../images/blogImages/Hindu+Coin+Offerings+-+Trincomalee.webp";
 
-import lotus from "../images/photosgeniuslankatours/colombo/colombo-3.avif";
+import lotus from "../images/blogImages/colombo-3.webp";
 
 const Blogs = () => {
   return (

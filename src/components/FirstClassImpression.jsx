@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../images/parallax-1-1920x850.jpg";
+import image from "../images/parallax-1-1920x850.webp";
 import { useNavigate } from "react-router-dom";
 
 function FirstClassImpression() {

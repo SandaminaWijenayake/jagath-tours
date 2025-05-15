@@ -1,6 +1,6 @@
 import React from "react";
-import image1 from "../images/beach-2.jpeg";
-import image2 from "../images/1288609237.jpg";
+import image1 from "../images/beach-2.webp";
+import image2 from "../images/1288609237.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 const TourCard = () => {
@@ -49,12 +49,7 @@ const TourCard = () => {
                 <h2 className="text-[21px] font-medium font-Montserrat">
                   {items.title}
                 </h2>
-                <div className="flex justify-center md:justify-start items-center my-2">
-                  {/* <span className="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span> */}
-                  {/* <span className="text-gray-500 text-sm ml-2">
-                4 customer reviews
-            </span> */}
-                </div>
+                <div className="flex justify-center md:justify-start items-center my-2"></div>
 
                 <p className="text-gray-600 text-sm mt-[14px] leading-relaxed">
                   {items.Description}

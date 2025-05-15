@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import aboutusImage from "../images/about-1-519x564.jpg";
-import about1 from "../images/about/photo-1585171328560-947fbd92d6f0.jpeg";
-import about2 from "../images/about/photo-1623595289196-007a22dd8560.png";
-import about3 from "../images/about/tooth.jpg";
-import about4 from "../images/about/photo-1627895457805-c7bf42cb9873.png";
-import about5 from "../images/about/photo-1665194653893-e5c58037fd0b.png";
+import aboutusImage from "../images/about-1-519x564.webp";
+import about1 from "../images/about/photo-1585171328560-947fbd92d6f0.webp";
+import about2 from "../images/about/photo-1623595289196-007a22dd8560.webp";
+import about3 from "../images/about/tooth.webp";
+import about4 from "../images/about/photo-1627895457805-c7bf42cb9873.webp";
+import about5 from "../images/about/photo-1665194653893-e5c58037fd0b.webp";
 import Lottie from "lottie-react";
 import animationData from "../images/svg/Animation - 1698642732391.json";
 
