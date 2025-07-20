@@ -13,7 +13,7 @@ import lotus from "../images/blogImages/colombo-3.webp";
 
 const Blogs = () => {
   return (
-    <div className="xl:w-3/5 w-full m-auto py-2 mt-20 font-Montserrat">
+    <div className="xl:w-4/5 w-full m-auto py-2 mt-20 font-Montserrat">
       <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
         Popular Destinations
       </h1>
@@ -185,14 +185,10 @@ const Blogs = () => {
               <h1 className="text-xl font-bold">Trincomalee</h1>
 
               <p className="md:block hidden text-base w-10/12 text-center ">
-                Trincomalee, renowned for its pristine beaches and vibrant water
-                activities, beckons travelers seeking a blissful retreat.
-                Nestled along its picturesque coastline adorned with swaying
-                palms, Trincomalee entices adventurers and relaxation seekers
-                alike with its diverse range of aquatic pursuits. Whether you
-                crave tranquil moments by the sea or crave exhilarating
-                adventures, Trincomalee promises an unforgettable coastal
-                experience.
+                Trincomalee boasts stunning beaches and lively water activities,
+                offering a coastal escape for both relaxation and adventure.
+                With swaying palms and crystal shores, it's a paradise for those
+                seeking serenity or thrills by the sea.
               </p>
             </div>
           </div>

@@ -20,15 +20,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import XIcon from "@mui/icons-material/X";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-import HomeIcon from "@mui/icons-material/Home";
+
 
 const SecondNavBar = () => {
   const [over, setOver] = useState(false);
@@ -125,7 +123,7 @@ const SecondNavBar = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={toggleDrawer(true)}
-                sx={{ color: "black" }}
+                sx={{ color: "black" , marginLeft:1 }}
               >
                 {" "}
               </MenuIcon>
@@ -137,7 +135,7 @@ const SecondNavBar = () => {
         </div>
         <Link to="/" className="">
           <div
-            className="  md:w-72 p-3 w-48 md:pl-4 "
+            className="  md:w-72 p-3 w-60 md:pl-4"
             onMouseOver={() => setOver(true)}
             onMouseOut={() => setOver(false)}
           >
@@ -152,7 +150,7 @@ const SecondNavBar = () => {
               +94 77-902-7052
             </h1>
           </div>
-          <div class="w-px bg-gray-300 h-1/3 mx-4"></div>
+          <div className ="w-px bg-gray-300 h-1/3 mx-4"></div>
 
           <button
             onClick={() => navigate("/PlanningTool")}

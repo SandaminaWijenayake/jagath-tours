@@ -31,7 +31,7 @@ const SliderContent = ({ slide, getStartedButtonHandler, slideIndex }) => {
           </span>
         </motion.div>
 
-        <motion.div
+        <motion.div className="relative z-[50]"
           key={`button-${slideIndex}`}
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

@@ -1,20 +1,22 @@
-import React from "react";
-import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.webp";
-import BeachStayingPackage from "../images/photosgeniuslankatours/hikkaduwa.jpg";
-import fourDaysTourPackage from "../images/photosgeniuslankatours/aru.jpeg";
-import yala from "../images/photosgeniuslankatours/yala/yala_4.jpg";
-import colombo from "../images/photosgeniuslankatours/colombo/colombo-4.jpg";
+
+import { motion } from "framer-motion";
 import newimage1 from "../images/cta-1-368x420.jpg";
 import newimage2 from "../images/cta-2-368x420.jpg";
 import newimage3 from "../images/cta-3-368x420.jpg";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useNavigate } from "react-router-dom";
 
+
 function QuickTour() {
   const navigate = useNavigate();
   return (
     <div className="w-full bg-[#F7F7F7] pt-20 lg:pt-0 pb-8">
-      <div className="xl:w-[1200px] xl:h-[420px] lg:w-[960px] lg:h-[330px] md:w-[720px] md:h-[240px] w-[368px]  m-auto  gap-7 flex-col flex md:flex-row mb-20 font-Montserrat text-xl xl:text-2xl z-30 lg:-translate-y-8 sm:font-bold">
+      <motion.div 
+      initial={{ y: -100, opacity: 0 }}
+      whileInView={{ y: -32, opacity: 1 }}
+      // animate={{ y: -32, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="xl:w-[1200px] xl:h-[420px] lg:w-[960px] lg:h-[330px] md:w-[720px] md:h-[240px] w-[320px]  m-auto  gap-7 flex-col flex md:flex-row mb-20 font-Montserrat text-xl xl:text-2xl z-30 lg:-translate-y-8 sm:font-bold justify-center">
         <div
           className="md:w-[368px] relative overflow-hidden cursor-pointer"
           onClick={() => navigate("/sevenDaysPackage")}
@@ -54,7 +56,7 @@ function QuickTour() {
             Beach Holidays
           </p>
         </div>
-      </div>
+      </motion.div>
       <p
         onClick={() => navigate("/Packages")}
         className="text-center -translate-y-16 cursor-pointer font-Montserrat"

@@ -2,6 +2,7 @@ import React from "react";
 import image1 from "../images/beach-2.webp";
 import image2 from "../images/1288609237.webp";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const TourCard = () => {
   const tourDetails = [
@@ -30,10 +31,17 @@ const TourCard = () => {
 
       <div className="flex justify-center font-Montserrat items-center py-10">
         <div className="xl:w-3/5 lg:w-4/5 w-11/12 bg-white  overflow-hidden transition">
-          {/* Image Section */}
           {tourDetails.map((items, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index * 0.05,
+              }}
               className="md:flex mt-12 md:border-[2px] font-Montserrat border-gray-200"
             >
               <div className="md:w-1/2 overflow-hidden ">
@@ -62,7 +70,7 @@ const TourCard = () => {
                   Check This Tour
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

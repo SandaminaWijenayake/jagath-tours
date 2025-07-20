@@ -37,7 +37,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="mt-10 m-auto font-Montserrat md:text-base text-sm leading-5 md:leading-6 text-gray-600 font-light">
-        <div className="xl:w-[1200px] lg:w-[960px]   w-[510px] m-auto  lg:flex pt-14">
+        <div className="xl:w-[1200px] lg:w-[960px]   w-[320px] m-auto  lg:flex pt-14">
           <div className="lg:w-1/2 text-justify  m-auto">
             <img className="" src={aboutusImage} alt="" />
           </div>

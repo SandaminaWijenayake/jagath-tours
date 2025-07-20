@@ -6,13 +6,11 @@ import test6 from "../images/homepage_image_slider/slider-4-slide-3-1920x678.web
 import { color, motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
 import SliderContent from "./SliderContent";
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); 
   const navigate = useNavigate();
   const getStartedButtonHandler = () => {
     navigate("/Packages");

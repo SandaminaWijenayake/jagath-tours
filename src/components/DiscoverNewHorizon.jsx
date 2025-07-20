@@ -3,6 +3,7 @@ import image from "../images/index-3-556x382.jpg";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function DiscoverNewHorizon() {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,10 +11,22 @@ function DiscoverNewHorizon() {
   const navigate = useNavigate();
   return (
     <div className="pt-24 xl:w-[1200px] md:w-[556px] lg:flex-row flex-col lg:w-[960px] font-Montserrat flex m-auto">
-      <div className="lg:w-1/2   px-3 m-auto">
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
+        className="lg:w-1/2   px-3 m-auto"
+      >
         <img src={image} alt="" />
-      </div>
-      <div className="lg:w-1/2 px-3 pt-10 lg:pt-0  m-auto">
+      </motion.div>
+      <motion.div
+        initial={{ x: +50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
+        className="lg:w-1/2 px-3 pt-10 lg:pt-0  m-auto"
+      >
         <div className="max-w-[470px]">
           <div className="max-w-2xl mx-auto text-center">
             {/* Heading */}
@@ -81,7 +94,7 @@ function DiscoverNewHorizon() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

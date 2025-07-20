@@ -14,6 +14,7 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import LuggageIcon from "@mui/icons-material/Luggage";
+import { motion } from "framer-motion";
 
 const heights = [
   150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80,
@@ -68,9 +69,21 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const OurServices = () => {
   return (
-    <div className="">
-      <section className="lg:mt-10  m-auto w-11/12 sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] pt-20  font-Montserrat">
-        <div className="py-2">
+    <motion.div className="">
+      <motion.section
+        // initial={{ opacity: 0 }}
+        // whileInView={{ opacity: 1 }}
+        // transition={{ duration: 0.5, ease: "easeInOut" }}
+        // viewport={{ once: true }}
+        className="lg:mt-10  m-auto w-11/12 sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] pt-20  font-Montserrat"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          viewport={{ once: true }}
+          className="py-2"
+        >
           <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
             Our Services
           </h1>
@@ -94,9 +107,9 @@ const OurServices = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>{" "}
-    </div>
+        </motion.div>
+      </motion.section>
+    </motion.div>
   );
 };
 

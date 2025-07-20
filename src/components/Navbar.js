@@ -1,24 +1,14 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import { Link, useNavigate } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
-import { List } from "@mui/material";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-import logoBlack from "../images/logoblack.png";
-import logoblue from "../images/logoblue.png";
+
 const onHover = {
   ":hover": { color: "white" },
   marginLeft: "20px",
-  // cursor: "pointer",
+  
 };
 
 const Navbar = () => {
@@ -65,24 +55,26 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="font-Montserrat top-0 z-50 lg:sticky bg-navBarColor">
+    <div className="z-[100] font-Montserrat top-0  lg:sticky bg-navBarColor">
       <div className="flex justify-between px-2 sm:w-8/12 lg:w-10/12 xl:w-8/12 m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
         <div className="hidden lg:inline-block">
           <ul className="flex justify-between text-lg  font-medium sm:w-96 lg:w-full">
-            {NavItems.map((items) => (
-              <Link
-                key={items.path}
-                to={items.path}
-                onClick={() => setActive(items.label)}
-                className={` p-4 ${
-                  active === items.label
-                    ? "bg-slate-600 text-blue-50"
-                    : "hover:text-sky-100  hover:bg-bgColorOfNavbar"
-                }`}
-              >
-                {items.label}
-              </Link>
-            ))}
+           {NavItems.map((items) => (
+  <NavLink
+    key={items.path}
+    to={items.path}
+    className={({ isActive }) =>
+      `p-4 ${
+        isActive
+          ? "bg-slate-600 text-blue-50"
+          : "hover:text-sky-100 hover:bg-bgColorOfNavbar"
+      }`
+    }
+  >
+    {items.label}
+  </NavLink> 
+))}
+
           </ul>
         </div>
         <div className="hidden  lg:flex justify-evenly items-center">
@@ -99,7 +91,7 @@ const Navbar = () => {
           <Link to="https://www.instagram.com/geniuslankatours/">
             <InstagramIcon fontSize="medium" color="error" sx={onHover} />
           </Link>
-          {/* <WhatsAppIcon fontSize="small" color="success" sx={onHover} /> */}
+         
         </div>
       </div>
     </div>

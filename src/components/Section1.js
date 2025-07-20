@@ -1,12 +1,7 @@
-import React from "react";
-import image1 from "../images/New folder/03.jpg";
-import image2 from "../images/New folder/beautiful-train-ride-sri-lanka-kandy-ella-best-seat.jpg";
+
 import image3 from "../images/sigiriya.jpg";
 import { Link } from "react-router-dom";
-import Card from "../UI/Card";
-import Lottie from "lottie-react";
-import animationData from "../images/svg/planYourTrip.json";
-import packagesMap from "../images/svg/packagesMap.json";
+
 import { Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -20,21 +15,7 @@ const Section1 = () => {
       </p>
       <div className="">
         <div className="mt-20">
-          {/* <div className="lg:w-1/2 lg:m-auto">
-            <img
-              src={image1}
-              alt=""
-              className="h-80 sm:w-11/12 m-auto rounded-xl object-cover"
-            />
-            <p className="text-center text-xl mt-4 font-medium">
-              Hotels to stay
-            </p>
-            <p className="text-center text-sm mt-4 font-medium">
-              We find all kinds of hotels for you. Whether you're looking for
-              something affordable (budget) or luxurious, we've got you covered.
-              Our network includes top hotels from all over the country.
-            </p>
-          </div> */}
+       
 
           <div className="lg:w-1/2 mt-5 lg:mt-20 lg:m-auto">
             <img
