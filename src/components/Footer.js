@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import { motion } from "framer-motion";
 
 const onHover = {
   ":hover": { color: "#01b3a7" },
@@ -16,9 +17,14 @@ const onHover = {
 const Footer = () => {
   return (
     <div className="bg-[#162E43] h-full mt-10  text-white font-Montserrat md:text-base text-xs">
-      <div className="md:flex w-11/12 lg:w-9/12 m-auto  py-16">
+      <div className="md:flex w-11/12 lg:w-10/12 m-auto overflow-hidden py-16">
         <div className="w-full sm:flex md:w-2/3">
-          <div className="sm:w-1/2   text-sm leading-9 text-left">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeIn" }}
+            whileInView={{ x: 0, opacity: 1 }}
+            className="sm:w-1/2   text-sm leading-9 text-left"
+          >
             <h1 className="text-base font-semibold md:text-left text-center mb-8">
               CONTACT US
             </h1>
@@ -36,26 +42,36 @@ const Footer = () => {
                 268/2, Jayasuriya Building, Alutgama, Sri Lanka
               </span>
             </p>
-          </div>
+          </motion.div>
 
-          <div className="sm:w-1/2 m-auto leading-9 text-sm   mt-9 sm:mt-0">
-            <h1 className="text-center md:text-left text-base font-semibold mb-8">
+          <motion.div
+            initial={{ y: -50, opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeIn" }}
+            whileInView={{ y: 0, opacity: 1 }}
+            className="sm:w-1/2 m-auto leading-9 text-sm md:text-left text-center  ml-[30px]   mt-9 sm:mt-0"
+          >
+            <h1 className="md:text-left  text-base font-semibold mb-8">
               POPULAR TOURS
             </h1>
             <Link to="/SevenDaysPackage">
-              <p className="hover:text-[#50ba87] ml-[30px]  text-[#01b3a7]">
+              <p className="hover:text-[#50ba87] text-[#01b3a7]">
                 14 Days Tour Package
               </p>
             </Link>
             <Link to="/BeachStaying">
-              <p className="hover:text-[#50ba87] ml-[30px]  text-[#01b3a7]">
+              <p className="hover:text-[#50ba87]  text-[#01b3a7]">
                 Beach Staying Tour Package
               </p>
             </Link>
-          </div>
+          </motion.div>
         </div>
-        <div className="md:w-1/3 m-auto text-sm mt-9 leading-9 md:mt-0">
-          <h1 className="text-base font-semibold md:text-left text-center mb-8">
+        <motion.div
+          initial={{ x: +50, opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeIn" }}
+          whileInView={{ x: 0, opacity: 1 }}
+          className="md:w-1/3 m-auto text-sm mt-9 leading-9 md:mt-0"
+        >
+          <h1 className="text-base font-semibold md:text-left text-center ml-[20px] mb-8">
             Quick links
           </h1>
           <div className="ml-[20px]">
@@ -82,17 +98,17 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="w-full bg-[#11263A] ">
-        <div className="w-8/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] flex">
+        <div className="w-10/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] flex">
           <div className="w-1/3">
             <p className=" text-sm w-11/12 m-auto py-5 ">
               © 2023 Genius Lanka Tours, Inc. All rights reserved.
             </p>
           </div>
           <div className="w-1/3 hidden sm:block">
-            <div className="flex my-5 justify-around mx-32">
+            <div className="flex my-5 justify-around mx-5">
               <Link>
                 <FacebookOutlinedIcon fontSize="medium" sx={onHover} />
               </Link>

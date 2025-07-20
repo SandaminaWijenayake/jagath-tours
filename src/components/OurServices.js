@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
@@ -68,28 +68,41 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const OurServices = () => {
+  const [triggerShake, setTriggerShake] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTriggerShake(true);
+      setTimeout(() => setTriggerShake(false), 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const shakeVariants = {
+    shaken: {
+      rotate: [0, -10, 10, -10, 10, 0],
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+      },
+    },
+    still: {
+      x: 0,
+    },
+  };
   return (
-    <motion.div className="">
-      <motion.section
-        // initial={{ opacity: 0 }}
-        // whileInView={{ opacity: 1 }}
-        // transition={{ duration: 0.5, ease: "easeInOut" }}
-        // viewport={{ once: true }}
-        className="lg:mt-10  m-auto w-11/12 sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] pt-20  font-Montserrat"
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          viewport={{ once: true }}
-          className="py-2"
-        >
+    <div className="">
+      <section className="lg:mt-10  m-auto w-11/12 sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] pt-20  font-Montserrat">
+        <div className="py-2">
           <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
             Our Services
           </h1>
           <div className="grid grid-cols-1 font-Montserrat sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
             {services.map((service, index) => (
-              <div
+              <motion.div
+                variants={shakeVariants}
+                animate={triggerShake ? "shaken" : "still"}
                 key={index}
                 className="py-8 pl-4 border-8 border-gray-100  shadow-sm  hover:shadow-md transition"
               >
@@ -104,12 +117,12 @@ const OurServices = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </motion.div>
-      </motion.section>
-    </motion.div>
+        </div>
+      </section>
+    </div>
   );
 };
 

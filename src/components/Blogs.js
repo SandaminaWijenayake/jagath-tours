@@ -8,8 +8,8 @@ import oruva from "../images/photosgeniuslankatours/sigiriya/sigiriya_boat_ride.
 import watar_rift from "../images/New folder/activity_4.jpg";
 import bentota from "../images/photosgeniuslankatours/Bentota/bentota_1.jpg";
 import shiva from "../images/blogImages/Hindu+Coin+Offerings+-+Trincomalee.webp";
-
 import lotus from "../images/blogImages/colombo-3.webp";
+import { motion } from "framer-motion";
 
 const Blogs = () => {
   return (
@@ -25,8 +25,13 @@ const Blogs = () => {
         want to make their hectic and stressful lives easier by enabling them to
         forcus on enjoying their vacation and ensuring they get the most.
       </p>
-      <div className="lg:grid lg:grid-flow-row grid-cols-3 lg:gap-5 mt-16">
-        <div className="col-span-2 row-span-2 relative ">
+      <div className="lg:grid lg:grid-flow-row grid-cols-3 lg:gap-5 mt-16 overflow-hidden">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="col-span-2 row-span-2 relative"
+        >
           <img src={beach_3} alt="" className="h-full rounded-md block " />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white  text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
             <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0 text-center ">
@@ -45,8 +50,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="row-span-2 relative">
+        </motion.div>
+        <motion.div
+          initial={{ x: +50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="row-span-2 relative"
+        >
           <img src={lotus} alt="" className="h-full rounded-md mt-2 lg:mt-0" />
           <div className="absolute top-0 left-0 w-full h-full backdrop-brightness-50 text-white   text-xl opacity-0 hover:opacity-100 rounded-md transition-opacity delay-100 ease-in ">
             <div className="w-full h-full flex flex-col items-center justify-center  translate-y-4 transition-transform delay-100 ease-in hover:translate-y-0">
@@ -59,8 +69,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="relative"
+        >
           <img
             src={oruva}
             alt=""
@@ -78,8 +93,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="relative"
+        >
           <img
             src={elephant}
             alt=""
@@ -97,8 +117,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div
+          initial={{ x: +50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="relative"
+        >
           <img
             src={perahara}
             alt=""
@@ -116,8 +141,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="relative"
+        >
           <img
             src={train}
             alt=""
@@ -135,8 +165,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>{" "}
-        <div className="col-span-2 relative">
+        </motion.div>{" "}
+        <motion.div
+          initial={{ y: +50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="col-span-2 relative"
+        >
           <img
             src={watar_rift}
             alt=""
@@ -154,8 +189,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="col-span-2 relative">
+        </motion.div>
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="col-span-2 relative"
+        >
           <img
             src={bentota}
             alt=""
@@ -173,8 +213,13 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="col-span-1 relative">
+        </motion.div>
+        <motion.div
+          initial={{ y: +50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
+          className="col-span-1 relative"
+        >
           <img
             src={shiva}
             alt=""
@@ -192,7 +237,7 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
