@@ -1,22 +1,20 @@
 import React from "react";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { motion } from "framer-motion";
-
 const onHover = {
   ":hover": { color: "#01b3a7" },
 };
 
 const Footer = () => {
   return (
-    <div className="bg-[#162E43] h-full mt-10  text-white font-Montserrat md:text-base text-xs">
+    <div className="bg-[#162E43] h-full  text-white font-Montserrat md:text-base text-xs">
       <div className="md:flex w-11/12 lg:w-10/12 m-auto overflow-hidden py-16">
         <div className="w-full sm:flex md:w-2/3">
           <motion.div
@@ -25,7 +23,7 @@ const Footer = () => {
             whileInView={{ x: 0, opacity: 1 }}
             className="sm:w-1/2   text-sm leading-9 text-left"
           >
-            <h1 className="text-base font-semibold md:text-left text-center mb-8">
+            <h1 className="text-base font-semibold text-left  mb-8">
               CONTACT US
             </h1>
             <p className=" hover:text-[#01b3a7]">
@@ -48,7 +46,7 @@ const Footer = () => {
             initial={{ y: -50, opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeIn" }}
             whileInView={{ y: 0, opacity: 1 }}
-            className="sm:w-1/2 m-auto leading-9 text-sm md:text-left text-center  ml-[30px]   mt-9 sm:mt-0"
+            className="sm:w-1/2 m-auto leading-9 text-sm text-left   md:ml-[30px]   mt-9 sm:mt-0"
           >
             <h1 className="md:text-left  text-base font-semibold mb-8">
               POPULAR TOURS
@@ -71,10 +69,10 @@ const Footer = () => {
           whileInView={{ x: 0, opacity: 1 }}
           className="md:w-1/3 m-auto text-sm mt-9 leading-9 md:mt-0"
         >
-          <h1 className="text-base font-semibold md:text-left text-center ml-[20px] mb-8">
+          <h1 className="text-base font-semibold text-left md:ml-[20px] mb-8">
             Quick links
           </h1>
-          <div className="ml-[20px]">
+          <div className="md:ml-[20px]">
             <ul className="grid  xl:grid-cols-2 md:grid-cols-1 grid-cols-2  gap-x-8 gap-y-2">
               <li className="flex items-center hover:text-[#01b3a7]">
                 <span className="w-2.5 h-2.5 bg-[#01b3a7] rounded-full mr-2"></span>

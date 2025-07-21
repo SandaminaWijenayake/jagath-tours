@@ -4,10 +4,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
-import ApartmentIcon from "@mui/icons-material/Apartment";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import EmailIcon from "@mui/icons-material/Email";
 
 //mui
 import Alert from "@mui/material/Alert";
@@ -52,11 +48,11 @@ import mirissa_4 from "../images/photosgeniuslankatours/mirissa/mirissa_4.jpg";
 import mirissa_5 from "../images/photosgeniuslankatours/mirissa/Mirissa_5.jpg";
 
 //bentota
-import bentota_1 from "../images/photosgeniuslankatours/Bentota/bentota_1.jpg";
-import bentota_2 from "../images/photosgeniuslankatours/Bentota/bentota_2.jpg";
-import bentota_3 from "../images/photosgeniuslankatours/Bentota/bentota_3.jpg";
-import bentota_4 from "../images/photosgeniuslankatours/Bentota/bentota_4.jpg";
-import bentota_5 from "../images/photosgeniuslankatours/Bentota/bentota_5.png";
+// import bentota_1 from "../images/photosgeniuslankatours/Bentota/bentota_1.jpg";
+// import bentota_2 from "../images/photosgeniuslankatours/Bentota/bentota_2.jpg";
+// import bentota_3 from "../images/photosgeniuslankatours/Bentota/bentota_3.jpg";
+// import bentota_4 from "../images/photosgeniuslankatours/Bentota/bentota_4.jpg";
+// import bentota_5 from "../images/photosgeniuslankatours/Bentota/bentota_5.png";
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EventNoteIcon from "@mui/icons-material/EventNote";
@@ -179,21 +175,6 @@ const itemDataMirissa = [
   },
   {
     img: mirissa_5,
-  },
-];
-
-const itemDataBentota = [
-  {
-    img: bentota_2,
-  },
-  {
-    img: bentota_3,
-  },
-  {
-    img: bentota_4,
-  },
-  {
-    img: bentota_5,
   },
 ];
 
@@ -952,113 +933,7 @@ const Packages = () => {
             </ImageList>
           </div>
         </div>
-        {/* <div className="md:w-3/4 w-11/12 m-auto">
-          <h1 className="my-12 md:text-left text-center text-4xl">
-            {" "}
-            <EventNoteIcon fontSize="large" sx={iconColors} />
-            Day 07 Program - Mirissa
-          </h1>
-          <ul className="list-disc">
-            <li>After the breakfast at hotel proceed to Mirissa</li>
-          </ul>
-        </div> */}
 
-        {/* <div className="mt-20">
-          <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
-            <LocationOnIcon fontSize="large" sx={iconColors} />
-            BENTOTA
-          </h1>
-          <img
-            className="md:w-3/4 w-11/12 rounded-md md:rounded-none m-auto mb-12"
-            src={bentota_1}
-            alt=""
-          />
-          <p className="py-10 md:w-3/5 w-11/12 m-auto text-justify border-y-2">
-            Bentota is a small resort town by the southern coastal belt of Sri
-            Lanka. Cycle around the vibrant town and try out delicious Sri
-            Lankan seafood. Connect with turtles in a turtle sanctuary and
-            release baby turtles back to the sea. You can also explore a
-            historical chapter of Sri Lanka in “Kande Viharaya” (Buddhist
-            temple). What more? Trek through nature trails, paddle through
-            mangroves at Madu River and sightsee the photogenic stilt fishermen
-            in Sri Lanka! This picture-perfect town will be a highlight in your
-            itinerary as you will experience the gifts of nature every minute of
-            your stay!
-          </p>
-          <div className="md:w-3/4 w-11/12 m-auto">
-            <h1 className="my-12 md:text-left text-center text-4xl">
-              <EventNoteIcon fontSize="large" sx={iconColors} />
-              Day 07 Program - Bentota
-            </h1>
-            <ul className="list-disc marker:text-sky-500 list-outside pl-5 md:pl-0">
-              <li>
-                After breakfast at the hotel proceed to Galle and enjoy city
-                tour
-              </li>
-              <li>
-                Stop by at The Galle Dutch Fort, a UNESCO World Heritage resting
-                by the sea with dark stone walls
-              </li>
-              <li>
-                Discover a exquisite collection of exhibits from the Portuguese,
-                Dutch and British period at the National Museum of Galle
-              </li>
-              <li>
-                Walk in the old post office, old library and old Dutch church to
-                experience the city in its true sense
-              </li>
-              <li>
-                Sightsee Galle Lighthouse, also known as Pointe de Galle Light
-              </li>
-              <li>Once completed proceeds to Bentota</li>
-              <li>
-                Bentota is famous for water sports. Jet ski, banana & tube
-                boating, diving, snorkeling, deep sea fishing are a few that are
-                popular
-              </li>
-              <li>
-                Learn about Sri Lankan sea turtles at a turtle hatchery in
-                Kosgoda
-              </li>
-              <li>
-                Along the Madu River on the boat you will arrive to Fish farm
-                and if interested get to try Sri Lankan fish therapy
-              </li>
-              <li>
-                Next, go on an amazing boat ride in Madu River through
-                eye-catching mangroves (aquatic trees in coastal waters)
-              </li>
-              <li>
-                Take a stroll along the calming beach and enjoy the spectacular
-                sunset
-              </li>
-              <li>Check in to the hotel & Relax</li>
-            </ul>
-          </div>
-          <div className="md:w-3/4 w-11/12 m-auto">
-            <h1 className="my-12 md:text-left text-center text-4xl border-b-2">
-              <StarIcon fontSize="large" sx={iconColors} />
-              Bentota Highlights
-            </h1>
-            <ImageList sx={{ width: "100%", height: 450 }}>
-              {itemDataBentota.map((item) => (
-                <ImageListItem key={item.img}>
-                  <img
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    alt={item.title}
-                    loading="lazy"
-                  />
-                  <ImageListItemBar
-                    title={item.title}
-                    subtitle={<span>{item.author}</span>}
-                    position="below"
-                  />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </div>
-        </div> */}
         <div className="mt-20">
           <h1 className="mb-12 text-left w-3/4 m-auto font-semibold text-4xl">
             <LocationOnIcon fontSize="large" sx={iconColors} />

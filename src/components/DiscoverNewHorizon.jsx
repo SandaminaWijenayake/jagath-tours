@@ -10,7 +10,7 @@ function DiscoverNewHorizon() {
   const tabs = ["ABOUT US", "WHY CHOOSE US", "OUR MISSION"];
   const navigate = useNavigate();
   return (
-    <div className="pt-24 xl:w-[1200px] md:w-[556px] lg:flex-row flex-col lg:w-[960px] font-Montserrat flex m-auto">
+    <div className="pt-24 xl:w-[1200px] md:w-[556px] lg:flex-row flex-col lg:w-[960px] font-Montserrat flex m-auto overflow-hidden">
       <motion.div
         initial={{ x: -50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -29,12 +29,10 @@ function DiscoverNewHorizon() {
       >
         <div className="max-w-[470px]">
           <div className="max-w-2xl mx-auto text-center">
-            {/* Heading */}
             <h2 className="lg:text-4xl font-semibold text-[28px] lg:font-medium  lg:text-left">
               Discover New Horizons
             </h2>
 
-            {/* Tabs */}
             <div className="flex px-3 lg:px-0 justify-between border-b-2 border-gray-300 mt-4">
               {tabs.map((tab, index) => (
                 <button
@@ -52,7 +50,6 @@ function DiscoverNewHorizon() {
               ))}
             </div>
 
-            {/* Tab Content */}
             <div className="mt-6 text-gray-700 text-center text-sm lg:text-left">
               {activeTab === 0 && (
                 <p>
@@ -77,7 +74,6 @@ function DiscoverNewHorizon() {
               )}
             </div>
 
-            {/* Buttons */}
             <div className="mt-9 flex justify-center lg:justify-left gap-4">
               <button
                 onClick={() => navigate("/Contact_us")}

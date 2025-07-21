@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const SriLanka = () => {
   return (
     <div className="xl:w-3/5 m-auto  font-Merriweather w-11/12 md:text-base text-xs lg:leading-7 text-gray-600 font-light">
-      <div className="xl:flex lg:gap-10 font-Raleway items-center pt-10">
+      <div className="xl:flex lg:gap-10 font-Raleway items-center pt-10 overflow-hidden">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

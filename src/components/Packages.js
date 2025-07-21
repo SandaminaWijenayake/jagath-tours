@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import sevenDaysTourPackage from "../images/packages/SigriyaTumbnail.webp";
 import fourDaysTourPackage from "../images/packages/beach-4.webp";
 import BeachStayingPackage from "../images/packages/beach-5.webp";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const sxStyle = {
   backgroundColor: "#fff",
@@ -31,7 +31,7 @@ const BlogContent = () => {
             src={sevenDaysTourPackage}
             alt=""
           />
-          <p className="absolute bottom-5 left-1/2 -translate-x-1/2  text-white px-4 py-2 text-center w-max">
+          <p className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm text-white px-4 py-2 text-center rounded-md shadow-md w-full font-Roboto font-normal">
             Fourteen Days
           </p>
         </div>
@@ -44,7 +44,7 @@ const BlogContent = () => {
             src={fourDaysTourPackage}
             alt=""
           />
-          <p className="absolute bottom-5 left-1/2 -translate-x-1/2  text-white px-4 py-2 text-center w-max">
+          <p className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm text-white px-4 py-2 text-center rounded-md shadow-md w-full font-Roboto font-normal">
             Four Days
           </p>
         </div>
@@ -57,7 +57,7 @@ const BlogContent = () => {
             src={BeachStayingPackage}
             alt=""
           />
-          <p className="absolute cursor-pointer bottom-5 left-1/2 -translate-x-1/2  text-white px-4 py-2 text-center w-max">
+          <p className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm text-white px-4 py-2 text-center rounded-md shadow-md w-full font-Roboto font-normal">
             Beach Holidays
           </p>
         </div>

@@ -1,17 +1,14 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import aboutusImage from "../images/about-1-519x564.webp";
 import about1 from "../images/about/photo-1585171328560-947fbd92d6f0.webp";
 import about2 from "../images/about/photo-1623595289196-007a22dd8560.webp";
 import about3 from "../images/about/tooth.webp";
 import about4 from "../images/about/photo-1627895457805-c7bf42cb9873.webp";
 import about5 from "../images/about/photo-1665194653893-e5c58037fd0b.webp";
-import Lottie from "lottie-react";
-import animationData from "../images/svg/Animation - 1698642732391.json";
 
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -37,15 +34,15 @@ const AboutUs = () => {
   return (
     <>
       <div className="mt-10 m-auto font-Montserrat md:text-base text-sm leading-5 md:leading-6 text-gray-600 font-light">
-        <div className="xl:w-[1200px] lg:w-[960px] md:w-full w-[320px] m-auto  lg:flex pt-14">
+        <div className="xl:w-[1200px] lg:w-[960px] md:w-full  m-auto  lg:flex pt-14">
           <div className="md:w-2/3 lg:w-1/2 text-justify  m-auto">
             <img className="" src={aboutusImage} alt="" />
           </div>
-          <div className="lg:w-1/2 w-11/12 md:w-full m-auto text-sm lg:px-8 xl:px-0 text-justify">
+          <div className="lg:w-1/2 w-11/12  m-auto text-sm lg:px-8 xl:px-0 text-justify">
             <h1 className=" mt-10 text-[40px] text-[#15151517] font-normal    leading-[1.2]   lg:text-5xl mb-10 lg:text-left text-center">
               Why choose us
             </h1>
-            <p className="leading-5 md:w-11/12  m-auto lg:m-0   md:leading-6">
+            <p className="leading-5  lg:m-0   md:leading-6">
               My name is Jagath Nilantha de Silva (Jagath de Silva). My family
               hails from Kaluwamodara Aluthgama in the Kaluthara district. This
               town is in close proximity to the world-famous Golden Mile, a
@@ -95,8 +92,8 @@ const AboutUs = () => {
             and safety at all times during your stay in Sri Lanka.
           </p>
         </div>
-        <div className="w-11/12 sm:h-full m-auto">
-          <div className="w-full mt-[64px]  md:w-[600px]  lg:w-[700px] xl:w-[1200px] m-auto  ">
+        <div className="w-11/12 m-auto">
+          <div className="w-full mt-[64px]  xl:w-[1200px] m-auto  ">
             <h1 className="md:text-5xl text-3xl font-bold mb-10">
               Our Vision for You
             </h1>
@@ -109,9 +106,9 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-        <div className=" sm:mt-32 w-11/12 m-auto  pb-32">
-          <div className="xl:w-1/2 mb-16">
-            <h1 className="md:text-5xl text-3xl mt-7 lg:mt-16 font-bold mb-10">
+        <div className=" sm:mt-32 w-11/12 xl:w-[1200px] m-auto  pb-32">
+          <div className=" mb-16 xl:w-1/2 ">
+            <h1 className="md:text-5xl text-3xl  mt-7 lg:mt-16 font-bold mb-10">
               Why Choose Genius Lanka Tours?
             </h1>
             <p className="leading-5 sm:w-5/6 text-gray-700 md:leading-6">

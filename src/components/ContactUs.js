@@ -3,7 +3,6 @@ import image from "../images/New folder/contact.webp";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import ApartmentIcon from "@mui/icons-material/Apartment";
@@ -73,7 +72,7 @@ const ContactUs = () => {
       <div className="overflow-hidden mb-16 mt-5 lg:h-96 lg:w-10/12 m-auto lg:rounded-full rounded-s-full">
         <img src={image} alt="" className="object-cover w-full" />
       </div>
-      <div className="lg:flex w-5/6 m-auto">
+      <div className="lg:flex w-5/6 m-auto mb-10">
         <div className="lg:w-1/2 lg:mr-10  font-light">
           <h1 className="text-4xl font-semibold my-5 text-black text-center md:text-left">
             Get in touch

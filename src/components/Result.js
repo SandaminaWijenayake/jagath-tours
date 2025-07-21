@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { GlobleContext } from "../globleState/GlobleState"; // Assuming this is where select is from
+import React, { useContext, useEffect, useState } from "react";
+import { GlobleContext } from "../globleState/GlobleState";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -23,7 +23,10 @@ const blert = React.forwardRef(function Alert(props, ref) {
 });
 
 const Result = () => {
-  const { select, chosenPlaces, setSelect } = useContext(GlobleContext); // Assuming this is how you get select array
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  const { select, chosenPlaces, setSelect } = useContext(GlobleContext);
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     user_name: "",
@@ -46,15 +49,13 @@ const Result = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setLoading(true); // Start the loading spinner
+    setLoading(true);
 
-    // Collecting form data
     const data = {
       ...formData,
-      places: select.map((data) => data.Name).join(", "), // Places selected as string
+      places: select.map((data) => data.Name).join(", "),
     };
 
-    // Sending the form data to Formspree
     const response = await fetch("https://formspree.io/f/meoeybyg", {
       method: "POST",
       headers: {
@@ -64,7 +65,7 @@ const Result = () => {
     });
 
     if (response.ok) {
-      setOpen(true); // Show success alert
+      setOpen(true);
       setFormData({
         user_name: "",
         user_email: "",
@@ -143,7 +144,6 @@ const Result = () => {
             with your travel plans.
           </p>
 
-          {/* Form for submitting */}
           <form onSubmit={handleSubmit}>
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={4}>
@@ -212,7 +212,6 @@ const Result = () => {
             </Button>
           </form>
 
-          {/* Backdrop for loading */}
           {loading && (
             <Backdrop
               sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -222,7 +221,6 @@ const Result = () => {
             </Backdrop>
           )}
 
-          {/* Display success or error message */}
           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
             <Alert
               onClose={handleClose}

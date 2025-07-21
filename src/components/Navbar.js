@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-
 const onHover = {
   ":hover": { color: "white" },
   marginLeft: "20px",
-  
 };
 
 const Navbar = () => {
@@ -56,25 +55,24 @@ const Navbar = () => {
 
   return (
     <div className="z-[100] font-Montserrat top-0  lg:sticky bg-navBarColor">
-      <div className="flex justify-between px-2 sm:w-8/12 lg:w-10/12 xl:w-8/12 m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
+      <div className="flex justify-between px-2 sm:w-8/12 lg:w-10/12 xl:w-10/12 m-auto  left-0  font-bold  text-white shadow-sm sm:p-4 lg:p-0 text-sm">
         <div className="hidden lg:inline-block">
-          <ul className="flex justify-between text-lg  font-medium sm:w-96 lg:w-full">
-           {NavItems.map((items) => (
-  <NavLink
-    key={items.path}
-    to={items.path}
-    className={({ isActive }) =>
-      `p-4 ${
-        isActive
-          ? "bg-slate-600 text-blue-50"
-          : "hover:text-sky-100 hover:bg-bgColorOfNavbar"
-      }`
-    }
-  >
-    {items.label}
-  </NavLink> 
-))}
-
+          <ul className="flex justify-between text-base gap-2 font-semibold sm:w-96 lg:w-full">
+            {NavItems.map((items) => (
+              <NavLink
+                key={items.path}
+                to={items.path}
+                className={({ isActive }) =>
+                  `p-4 ${
+                    isActive
+                      ? "bg-slate-600 text-blue-50"
+                      : "hover:text-sky-100 hover:bg-bgColorOfNavbar"
+                  }`
+                }
+              >
+                {items.label}
+              </NavLink>
+            ))}
           </ul>
         </div>
         <div className="hidden  lg:flex justify-evenly items-center">
@@ -91,7 +89,6 @@ const Navbar = () => {
           <Link to="https://www.instagram.com/geniuslankatours/">
             <InstagramIcon fontSize="medium" color="error" sx={onHover} />
           </Link>
-         
         </div>
       </div>
     </div>

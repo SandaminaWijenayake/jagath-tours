@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db, storage } from "../config/firebase";
 import CardPlaces from "../UI/CardPlaces";
-import { ref, getStorage } from "firebase/storage";
-import ChosonCardPlaces from "../UI/ChosonCardPlaces";
+import { ref } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import {
   Card,
@@ -16,26 +15,19 @@ import {
 //dropdown import
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Chip from "@mui/material/Chip";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
+
 import CloseIcon from "@mui/icons-material/Close";
 
 //search
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Autocomplete from "@mui/material/Autocomplete";
+
 import { GlobleContext } from "../globleState/GlobleState";
 
 //button
 import Button from "@mui/material/Button";
-import { color } from "framer-motion";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 // loading
 import CircularProgress from "@mui/material/CircularProgress";
@@ -46,54 +38,41 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 //MUI
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
 
 //MUI lists
 // const WeatherList = ["Hot Weather", "Cold Weather"];
-const InterestList = ["adventure", "beach", "culture", "nature"];
+// const InterestList = ["adventure", "beach", "culture", "nature"];
 // const ActivityList = ["hiking", "water sports", "shopping"];
-const placesList = [
-  { title: "Nuwara Eliya" },
-  { title: "Mirissa" },
-  { title: "Sigiriya" },
-  { title: "bentota" },
-  { title: "Anuradhapura" },
-  { title: "The Dambulla Cave Temple" },
-  { title: "Galle" },
-  { title: "Hikkaduwa" },
-  { title: "Ella" },
-  { title: "Yala National Park" },
-  { title: "Kandy" },
-];
+// const placesList = [
+//   { title: "Nuwara Eliya" },
+//   { title: "Mirissa" },
+//   { title: "Sigiriya" },
+//   { title: "bentota" },
+//   { title: "Anuradhapura" },
+//   { title: "The Dambulla Cave Temple" },
+//   { title: "Galle" },
+//   { title: "Hikkaduwa" },
+//   { title: "Ella" },
+//   { title: "Yala National Park" },
+//   { title: "Kandy" },
+// ];
 
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+// function getStyles(name, personName, theme) {
+//   return {
+//     fontWeight:
+//       personName.indexOf(name) === -1
+//         ? theme.typography.fontWeightRegular
+//         : theme.typography.fontWeightMedium,
+//   };
+// }
 
 const PlanningTool = () => {
   const [places, setPlaces] = useState([]);
   // const [select, setSelect] = useState([]);
-  const [filtered, setFiltered] = useState([]);
   const [tempState, setTempState] = useState([]);
   const [dropDownInterest, setDropDownInterest] = React.useState("");
   const [dropDownWaether, setDropDownWaether] = React.useState("");
   const [dropDownActivities, setDropDownActivities] = React.useState("");
-
-  const [IntrestOutPut, setInterestOutput] = useState([]);
-  const [activiyOutPut, setActivityOutput] = useState([]);
-  const [weatherOutPut, setWeatherOutPut] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -140,15 +119,12 @@ const PlanningTool = () => {
       );
     }
     setPlaces(updatedList);
-  }, [dropDownInterest, dropDownActivities, dropDownWaether]);
+  }, [dropDownInterest, dropDownActivities, dropDownWaether, tempState]);
 
   const buttonClickHandler = () => {
     console.log("button");
     navigate("/Result");
   };
-
-  //dropdown
-  const theme = useTheme();
 
   const InterestHandleChange = (event) => {
     setDropDownInterest(event.target.value);
@@ -157,8 +133,6 @@ const PlanningTool = () => {
   const ActivityHandleChange = (event) => {
     setDropDownActivities(event.target.value);
   };
-
-  // weather
 
   const WeatherHandleChange = (event) => {
     setDropDownWaether(event.target.value);
@@ -188,17 +162,6 @@ const PlanningTool = () => {
   //   console.log("select ", select);
   // };
 
-  const storageRef = ref(storage);
-  const pathReference = ref(storage, "images/");
-
-  //chlip
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
-  };
-
-  const handleDelete = () => {
-    console.info("You clicked the delete icon.");
-  };
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {

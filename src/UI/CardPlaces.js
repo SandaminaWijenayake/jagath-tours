@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobleContext } from "../globleState/GlobleState";
-import { Check } from "lucide-react"; // Icon for selected state
+import { Check } from "lucide-react";
 
 const CardPlaces = ({ name, place, imageURL, choosePlacesHandler, id }) => {
   const { chosenPlaces } = useContext(GlobleContext);
@@ -19,14 +19,12 @@ const CardPlaces = ({ name, place, imageURL, choosePlacesHandler, id }) => {
       <div
         className={` w-full  border-3 transition ${cardBorder} ${cardBackground} ${hoverEffect}`}
       >
-        {/* Checkmark Icon (Only visible when selected) */}
         {isSelected && (
           <div className="absolute top-10 right-2 bg-[#01b3a7] text-white p-1 rounded-full">
             <Check size={18} />
           </div>
         )}
 
-        {/* Image Section */}
         <div className="md:flex">
           <div className="md:w-1/2 overflow-hidden">
             <img
@@ -37,7 +35,6 @@ const CardPlaces = ({ name, place, imageURL, choosePlacesHandler, id }) => {
             />
           </div>
 
-          {/* Content Section */}
           <div className="w-full md:w-1/2 p-6">
             <h2 className="text-[22px] font-medium text-gray-900">{name}</h2>
             <p className="text-gray-700 text-sm mt-3 leading-relaxed">

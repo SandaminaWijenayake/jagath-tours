@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import SevenDaysPackage from "./components/SevenDaysPackage";
 import Packages from "./components/Packages";
 // import BlogContent from "./components/Packages";
-import Reviews from "./components/Reviews";
+// import Reviews from "./components/Reviews";
 import ContactUs from "./components/ContactUs";
 import Create from "./components/Create";
 import FourDaysPackage from "./components/FourDaysPackage";
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/packages" element={<Packages />} />
           {/* <Route path="/Blogs" element={<BlogContent />} /> */}
-          <Route path="/reviews" element={<Reviews />} />
+          {/* <Route path="/reviews" element={<Reviews />} /> */}
           <Route path="/contact_us" element={<ContactUs />} />
           <Route path="/about_us" element={<AboutUs />} />
           <Route path="/create" element={<Create />} />

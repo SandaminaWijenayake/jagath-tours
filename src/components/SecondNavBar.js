@@ -26,8 +26,6 @@ import XIcon from "@mui/icons-material/X";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-
-
 const SecondNavBar = () => {
   const [over, setOver] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -112,7 +110,7 @@ const SecondNavBar = () => {
 
   return (
     <div className="">
-      <div className=" flex justify-left items-center fixed lg:relative z-20  lg:justify-between lg:px-2 top-0 left-0 lg:w-8/12 w-full m-auto font-bold  bg-white text-white shadow-sm py-2 lg:p-[20px] text-sm">
+      <div className=" flex justify-left items-center fixed lg:relative z-20  lg:justify-between lg:px-2 top-0 left-0 lg:w-10/12 w-full m-auto font-bold  bg-white text-white shadow-sm py-2 lg:p-[10px] text-sm">
         <div className="lg:hidden block">
           <List sx={{ marginLeft: "auto", padding: "0px" }}>
             <span>
@@ -123,7 +121,7 @@ const SecondNavBar = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={toggleDrawer(true)}
-                sx={{ color: "black" , marginLeft:1 }}
+                sx={{ color: "black", marginLeft: 1 }}
               >
                 {" "}
               </MenuIcon>
@@ -150,11 +148,11 @@ const SecondNavBar = () => {
               +94 77-902-7052
             </h1>
           </div>
-          <div className ="w-px bg-gray-300 h-1/3 mx-4"></div>
+          <div className="w-px bg-gray-300 h-1/3 mx-4"></div>
 
           <button
             onClick={() => navigate("/PlanningTool")}
-            className="font-Montserrat text-base inline-block pt-[17px] pr-[28px] pb-[15px] px-[25px] py-[15px] border-2 border-[#01b3a7] text-black font-medium  transition hover:bg-[#01b3a7] hover:border-[#01b3a7] hover:text-white"
+            className="font-Montserrat text-base inline-block  pr-[28px]  px-[25px] py-[10px] border-2 border-[#01b3a7] text-black font-medium  transition hover:bg-[#01b3a7] hover:border-[#01b3a7] hover:text-white"
           >
             Get Started
           </button>
