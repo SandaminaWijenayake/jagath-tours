@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 const SliderContent = ({ slide, getStartedButtonHandler, slideIndex }) => {
-  const navigate = useNavigate();
   return (
     <div className="absolute flex flex-col justify-center font-Montserrat inset-0 text-white lg:w-10/12 m-auto w-11/12">
       <div>

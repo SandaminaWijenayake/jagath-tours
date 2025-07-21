@@ -56,9 +56,6 @@ const TimeLine = () => {
       text: "Helicopter tour",
     },
   ];
-  const [backgroundColors, setBackgroundColors] = useState(
-    events.map(() => colors[Math.floor(Math.random() * colors.length)])
-  );
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -4,11 +4,6 @@ import fourDaysTourPackage from "../images/packages/beach-4.webp";
 import BeachStayingPackage from "../images/packages/beach-5.webp";
 import { useNavigate } from "react-router-dom";
 
-const sxStyle = {
-  backgroundColor: "#fff",
-  paddingTop: "75px",
-};
-
 const BlogContent = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -16,12 +11,12 @@ const BlogContent = () => {
   }, []);
   return (
     <>
-      <div className="py-8">
-        <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Montserrat py-2">
+      <div className="pt-16 pb-8 md:py-8">
+        <h1 className="sm:text-[36px] text-[28px] text-center font-semibold font-Roboto py-2">
           Tour Packages
         </h1>
       </div>
-      <div className="xl:w-[1200px] xl:h-[420px]  lg:w-[960px] lg:h-[330px] md:w-[720px] md:h-[240px] w-[368px]  m-auto  gap-7 flex-col flex md:flex-row mb-20 font-Montserrat text-xl xl:text-2xl z-30  sm:font-bold">
+      <div className="xl:w-[1200px] xl:h-[420px]  lg:w-[960px] lg:h-[330px]  md:h-[240px] md:w-11/12  w-full  m-auto  gap-7 flex-col flex md:flex-row mb-20 font-Montserrat text-xl xl:text-2xl z-30  sm:font-bold">
         <div
           className="md:w-[368px] relative overflow-hidden cursor-pointer"
           onClick={() => navigate("/sevenDaysPackage")}

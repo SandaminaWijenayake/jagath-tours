@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
+
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
+
 import { List } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 import logoBlack from "../images/logoblack.png";
 import logoblue from "../images/logoblue.png";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -36,17 +32,8 @@ const SecondNavBar = () => {
 
   const navigate = useNavigate();
 
-  const startPlaningButtonHandler = () => {
-    navigate("/PlanningTool");
-  };
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-
-    console.log("hello");
-  };
 
   const handleNavigation = (url) => {
     window.location.href = url;

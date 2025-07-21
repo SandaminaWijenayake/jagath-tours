@@ -3,8 +3,6 @@ import bycicle from "../images/section2_images/bicycle-transformed.jpeg";
 import girl from "../images/section2_images/girl-transformed.jpeg";
 import travel from "../images/section2_images/travel_guy-transformed.jpeg";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const Section2 = () => {
   const navigate = useNavigate();

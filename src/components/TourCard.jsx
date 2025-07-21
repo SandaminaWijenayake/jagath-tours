@@ -1,7 +1,7 @@
 import React from "react";
 import image1 from "../images/beach-2.webp";
 import image2 from "../images/1288609237.webp";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const TourCard = () => {
